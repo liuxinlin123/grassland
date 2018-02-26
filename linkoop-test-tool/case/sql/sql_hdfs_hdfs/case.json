@@ -1,0 +1,147 @@
+//本用例是测试minus step
+//预置条件：cdo中存在数据
+//预期结果：dataflow执行成功
+ {
+	"case" :[	
+	//创建source1的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/schema_sql_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source1的cdc
+	   {
+		"action":"query,cdc,schema_sql_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_schema_sql_in.json"
+     	},
+     	//创建source1的cdo
+     	{
+			"action" : "create,cdo",
+			"api" :  "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/dataset_sql_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source1的cdo
+	   {
+		"action":"query,cdo,dataset_sql_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataset_sql_in.json"
+		},
+     	//创建sink的cdc
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/schema_sql_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询sink的cdc
+	   {
+		"action":"query,cdc,schema_sql_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_schema_sql_out.json"
+		
+     	},
+     	//创建sink的cdo
+       /*{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/dataset_sql_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,dataset_sql_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataset_sql_out.json"
+		
+     	},*/
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_sql_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  },
+	  //查询dataflow
+	  /*{
+		"action":"query,dataflow,dataflow-sql",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_sql_hdfs.json"		
+     	},*/
+     	//运行dataflow流程
+        {
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/sql_scheduler_hdfs.json",
+            "status":"201",
+            "expect":""
+       }, 
+       {
+		"action":"query,scheduler,sql_scheduler_hdfs",
+		"api":"/api/schedulers",
+        "sleepTime":"3000",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_sql_scheduler_hdfs.json"
+		
+     	 },
+     	//监控dataflow流程运行情况
+        {
+            "action":"monitor,sql_scheduler_hdfs",
+            "api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },
+        //预览流程运行成功后生成的cdo数据对象
+         {
+        	"action":"preview,dataset_sql_out,20",
+            "api":"/api/datasets",
+            "sleepTime":"2000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_out.json"
+        },
+	   //删除运行生成的数据
+	   {
+           "action" : "delete,all-server",
+        	"api" : "",
+        	"sleepTime":"1000",
+            "data":"",
+        	"status" : "200",
+        	 "expect":""
+        }
+	   ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaName" : "cdc_startjoin_name_sex",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/startjoin_name_sex.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+   "name" : "cdo_startjoin_name_sex",
+  "enabled" : 1,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

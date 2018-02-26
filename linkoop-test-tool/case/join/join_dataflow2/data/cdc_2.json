@@ -1,0 +1,17 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "cdc_join_less2",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "description" : "name_age",
+  "expiredPeriod" : 0
+}

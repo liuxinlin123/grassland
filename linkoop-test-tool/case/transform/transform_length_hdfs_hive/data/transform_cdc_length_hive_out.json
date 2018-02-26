@@ -1,0 +1,17 @@
+{
+  "fields" : [ {
+    "name" : "inStr",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "result_int",
+    "alias" : "",
+    "type" : "int"
+  } ],
+  "name" : "transform_cdc_length_hive_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "接收转换后的数据的cdc",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

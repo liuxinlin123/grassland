@@ -1,0 +1,120 @@
+{
+  "name" : "dataflow-filter_filter_1",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "job"
+      }, {
+        "column" : "sex"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "dataset" : "filter_cdo_name_filter_1",
+      "schema" : "filter_cdc_name_filter_1"
+    }
+  }, {
+    "id" : "filter_0",
+    "name" : "",
+    "type" : "filter",
+    "x" : 611,
+    "y" : 260,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "job"
+      }, {
+        "column" : "sex"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "job"
+      }, {
+        "column" : "sex"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "condition" : "salary>400"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 937,
+    "y" : 270,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "job"
+      }, {
+        "column" : "sex"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "partitionColumns" : "",
+      "table" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "filter_cdc_name_filter_1",
+      "mode" : "overwrite",
+      "sql" : "",
+      "quoteChar" : "\"",
+      "description" : "",
+      "path" : "/tmp/out3/cdo_filter_out_filter_1",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "dataset" : "cdo_filter_out_filter_1"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "filter_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "filter_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

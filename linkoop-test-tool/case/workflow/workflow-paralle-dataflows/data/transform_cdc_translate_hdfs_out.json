@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_translate_hdfs_out",
+    "description": "translate out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },{
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

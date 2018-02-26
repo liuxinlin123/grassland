@@ -1,0 +1,21 @@
+{
+  "schedulerId" : "once",
+  "flowName" : "dataflow_union",
+  "configurations" : {
+    "startTime" : 1474214400000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188855771,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_union_hive",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

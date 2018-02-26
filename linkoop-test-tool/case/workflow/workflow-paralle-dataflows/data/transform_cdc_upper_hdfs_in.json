@@ -1,0 +1,13 @@
+{
+  "fields" : [ {
+    "name" : "inStr",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_upper_hdfs_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "transform upper",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

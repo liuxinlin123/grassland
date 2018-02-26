@@ -1,0 +1,16 @@
+{
+    "id": "",
+    "name": "cdc_aggregate_max_name_height",
+    "description": "aggregate_max",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "max_height",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "steps": [
+        {
+            "id": "dataflow-0",
+            "type": "dataflow",
+            "x": 180,
+            "y": 150,
+            "otherConfigurations": {
+                "dataflowId": "dataflow1",
+                "source_cdo": "cdo_name1"
+            }
+        },
+        {
+            "id": "parallel-0",
+            "type": "parallel",
+            "x": 480,
+            "y": 133,
+            "otherConfigurations": {
+                "conditions": []
+            }
+        },
+        {
+            "id": "dataflow-1",
+            "type": "dataflow",
+            "x": 810,
+            "y": 131,
+            "otherConfigurations": {
+                "dataflowId": "dataflow2",
+                "source_cdo": "cdo_name2"
+            }
+        }
+    ],
+    "flowType": "workflow",
+    "parameters": [],
+    "links": [
+        {
+            "source": "dataflow-0",
+            "target": "parallel-0"
+        },
+        {
+            "source": "parallel-0",
+            "target": "dataflow-1"
+        }
+    ],
+    "name": "workflow"
+}

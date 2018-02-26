@@ -1,0 +1,15 @@
+{
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+  "name" : "cdo_result",
+  "tags" : [ "xs" ]
+}

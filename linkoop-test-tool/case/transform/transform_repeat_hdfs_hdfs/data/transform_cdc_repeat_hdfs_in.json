@@ -1,0 +1,11 @@
+{
+    "name": "transform_cdc_repeat_hdfs_in",
+    "description": "repeat",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ]
+}

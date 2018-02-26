@@ -1,0 +1,817 @@
+{
+    "name": "dataflow_mixsteps_join_transform_union_aggregate",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 20,
+            "y": 180,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "timestamp0",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "mixsteps_cdc_source0",
+                "dataset": "mixsteps_cdo_source0"
+            }
+        },
+        {
+            "id": "source_1",
+            "name": "",
+            "type": "source",
+            "x": 20,
+            "y": 420,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "mixsteps_cdc_source1",
+                "dataset": "mixsteps_cdo_source1"
+            }
+        },
+        {
+            "id": "source_2",
+            "name": "",
+            "type": "source",
+            "x": 20,
+            "y": 620,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "string2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float2",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "mixsteps_cdc_source2",
+                "dataset": "mixsteps_cdo_source2"
+            }
+        },
+        {
+            "id": "join_0",
+            "name": "",
+            "type": "join",
+            "x": 293,
+            "y": 287,
+            "inputConfigurations": [
+                {
+                    "id": "left",
+                    "fields": [
+                        {
+                            "column": "string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "timestamp0",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "right",
+                    "fields": [
+                        {
+                            "column": "string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "joinConditions": [
+                    {
+                        "leftColumn": "string0",
+                        "rightColumn": "string1"
+                    }
+                ],
+                "joinType": "inner",
+                "join_condition": [
+                    {
+                        "rightColumn": "string1",
+                        "leftColumn": "string0"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "transform_0",
+            "name": "",
+            "type": "transform",
+            "x": 520,
+            "y": 280,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rstring",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "keepOrignalColumns": true,
+                "expressions": [
+                    "upper(right_string1) as rstring"
+                ]
+            }
+        },
+        {
+            "id": "union_0",
+            "name": "",
+            "type": "union",
+            "x": 780,
+            "y": 440,
+            "inputConfigurations": [
+                {
+                    "id": "transform_0",
+                    "fields": [
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rstring",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "source_2",
+                    "fields": [
+                        {
+                            "column": "string2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float2",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "string2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rstring",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "distinct": true
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "",
+            "type": "aggregate",
+            "x": 1009,
+            "y": 280,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "string2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "int2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "short2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_string0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_int0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_float0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_bigint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_double0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_short0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_boolean0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_date0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "left_timestamp0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_string1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_int1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_short1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "right_float1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rstring",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "lstring0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "lint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rfloat1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "groupBy": [],
+                "agregations": [
+                    {
+                        "function": "count",
+                        "column": "left_string0",
+                        "alias": "lstring0"
+                    },
+                    {
+                        "function": "avg",
+                        "column": "left_int0",
+                        "alias": "lint0"
+                    },
+                    {
+                        "function": "min",
+                        "column": "right_float1",
+                        "alias": "rfloat1"
+                    }
+                ],
+                "aggregations": [
+                    {
+                        "column": "left_string0",
+                        "function": "count",
+                        "alias": "lstring0"
+                    },
+                    {
+                        "column": "left_int0",
+                        "function": "avg",
+                        "alias": "lint0"
+                    },
+                    {
+                        "column": "right_float1",
+                        "function": "min",
+                        "alias": "rfloat1"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1220,
+            "y": 280,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "lstring0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "lint0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "rfloat1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "mixsteps_cdc_sink",
+                "escapeChar": "\\",
+                "quoteChar": "\"",
+                "dataset": "mixsteps_cdo_sink",
+                "description": "",
+                "path": "/tmp/out3/mixsteps_out.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "separator": ",",
+                "mode": "overwrite"
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "source_0",
+            "sourceOutput": "output",
+            "target": "join_0",
+            "targetInput": "left"
+        },
+        {
+            "name": "",
+            "source": "source_1",
+            "sourceOutput": "output",
+            "target": "join_0",
+            "targetInput": "right"
+        },
+        {
+            "name": "",
+            "source": "join_0",
+            "sourceOutput": "output",
+            "target": "transform_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "transform_0",
+            "sourceOutput": "output",
+            "target": "union_0",
+            "targetInput": "transform_0"
+        },
+        {
+            "name": "",
+            "source": "union_0",
+            "sourceOutput": "output",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "aggregate_0",
+            "sourceOutput": "output",
+            "target": "sink_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "source_2",
+            "sourceOutput": "output",
+            "target": "union_0",
+            "targetInput": "source_2"
+        }
+    ],
+    
+    "enabled": 1,
+    "expiredPeriod": 0
+}

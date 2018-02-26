@@ -1,0 +1,19 @@
+[ {
+  "name" : "sun",
+  "sum_distinct_height" : "234"
+}, {
+  "name" : "qian",
+  "sum_distinct_height" : "345"
+}, {
+  "name" : "kun",
+  "sum_distinct_height" : "2103"
+}, {
+  "name" : "wang",
+  "sum_distinct_height" : "1593"
+}, {
+  "name" : "ya",
+  "sum_distinct_height" : "775"
+}, {
+  "name" : "li",
+  "sum_distinct_height" : "454"
+} ]

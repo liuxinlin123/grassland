@@ -1,0 +1,14 @@
+{
+    "name": "transform_cdc_levenshtein_hdfs_in",
+    "description": "levenshtein",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr",
+            "type": "string"
+        },{
+            "name": "instr1",
+            "type": "string"
+        }
+    ]
+}

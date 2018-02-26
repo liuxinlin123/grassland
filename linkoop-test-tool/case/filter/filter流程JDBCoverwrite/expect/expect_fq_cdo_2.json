@@ -1,0 +1,27 @@
+{
+  "schemaName" : "cdc_name_JDBCOVERWRITE_1",
+  "schemaVersion" : 1,
+  "storage" : "JDBC",
+  "storageConfigurations" : {
+    "driver" : "com.mysql.jdbc.Driver",
+    "format" : "csv",
+    "table" : "table_10",
+    "password" : "carpo",
+    "user" : "carpo",
+    "url" : "jdbc:mysql://192.168.2.149:3306/carpometastore"
+  },
+  "formatConfigurations" : {
+    "driver" : "com.mysql.jdbc.Driver",
+    "table" : "table_10",
+    "password" : "carpo",
+    "user" : "carpo",
+    "url" : "jdbc:mysql://192.168.2.149:3306/carpometastore"
+  },
+  "name" : "cdo_filter_out_JDBCOVERWRITE_1",
+  "creator" : "SYSTEM",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

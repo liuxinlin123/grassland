@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "count_distinct_height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+   "name" : "cdc_aggregate_count_distinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "count_distinct_name_height",
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

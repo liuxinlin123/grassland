@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/aggregate_avg_name_height.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_aggregate_avg_name_height",
+    "schemaName": "cdc_aggregate_avg_name_height",
+    "schema": "",
+    "schemaVersion": 1
+}

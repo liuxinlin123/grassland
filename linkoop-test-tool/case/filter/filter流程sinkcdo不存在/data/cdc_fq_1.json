@@ -1,0 +1,27 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+                {
+            "name": "job",
+            "type": "string"
+        },
+        {
+            "name": "sex",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },
+        {
+            "name": "salary",
+            "type": "int"
+        }
+    ],
+    "name": "cdc_name_sinknull_1",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

@@ -1,0 +1,17 @@
+{
+  "fields" : [
+   {
+    "name" : "lstring0",
+    "type" : "string"
+  },{"name" : "lint0",
+    "type" : "float"
+  },{"name" : "rfloat1",
+    "type" : "double"
+  }
+  ],
+  "name" : "mixsteps_cdc_sink",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "mixsteps",
+  "expiredPeriod" : 0
+}

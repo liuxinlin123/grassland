@@ -1,0 +1,64 @@
+{
+  "id" : "",
+  "name" : "dataflow_mapping_2",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "source_0",
+    "type" : "source",
+    "x" : 312,
+    "y" : 347,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "sal"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "cdc_name_mapping_4",
+      "dataset" : "cdo_name_mapping_3"
+    }
+  }, {
+    "id" : "cache_0",
+    "name" : "cache_0",
+    "type" : "cache",
+    "x" : 600,
+    "y" : 340,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "sal"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "path"
+      }, {
+        "column" : "cdoName"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "keyColumn" : "name",
+      "schema" : "cdc_name_mapping_4",
+      "valueColumns" : [ "sal" ],
+      "dataset" : "cdo_name_mapping_5",
+      "engine" : "MapDB",
+      "repartition" : true,
+      "path" : "/tmp/out3/cdo_name_mapping_5"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "cache_0",
+    "targetInput" : "input"
+  } ],
+   "enabled" : 1,
+  "expiredPeriod" : 0
+}

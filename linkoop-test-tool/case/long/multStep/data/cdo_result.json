@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/4.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "mult_cdo_4",
+    "schemaName": "mult_cdc_4",
+    "schema": "",
+    "schemaVersion": 1
+}

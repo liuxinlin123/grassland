@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/union_out.csv"
+    },
+    "formatConfigurations": {
+        "header": "true",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "schemaName": "cdc_union_out_true",
+    "schema": "",
+    "schemaVersion": 1,
+    "name": "cdo_union_out_true"
+}

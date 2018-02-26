@@ -1,0 +1,27 @@
+{
+    "schema": "db35cad7-1b0a-4b73-85c6-2ac0058f1978",
+    "schemaName": "cdc_aggregate_avg_name_height_less",
+    "schemaVersion": 1,
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "path": "/tmp/out3/aggregate_avg_name_height.csv",
+        "format": "csv"
+    },
+    "formatConfigurations": {
+        "separator": ",",
+        "escapeChar": "\\",
+        "quoteChar": "\"",
+        "header": "false"
+    },
+    "name": "cdo_aggregate_avg_name_height_less",
+    "creator": "admin",
+    "createTime": 1476869265904,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1476869265904,
+    "owner": "admin",
+    "version": 1,
+    "enabled": 1,
+    "description": null,
+    "tags": null,
+    "expiredPeriod": 0
+}

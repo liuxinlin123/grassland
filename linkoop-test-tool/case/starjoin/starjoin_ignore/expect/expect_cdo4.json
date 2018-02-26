@@ -1,0 +1,25 @@
+{
+  "schema" : "397f54c6-3a82-4d16-8175-d300a2499ba8",
+  "schemaName" : "cdc_startjoin_out_ignore",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/startjoin_out.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+   "name" : "cdo_startjoin_out_ignore",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

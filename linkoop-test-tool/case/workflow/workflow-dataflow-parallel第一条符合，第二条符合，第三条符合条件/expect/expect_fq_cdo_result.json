@@ -1,0 +1,7 @@
+ {
+    "stype" : "SUCCEEDED",
+    "estimateTotal" : 3,
+    "others" : {
+      "outputs" : [ {"name" : "cdo_filter_out_fq_filter1"},{"name" : "cdo_filter_out_fq_1"}, {"name" : "cdo_name_fq_transform4"} ]
+    }
+        }

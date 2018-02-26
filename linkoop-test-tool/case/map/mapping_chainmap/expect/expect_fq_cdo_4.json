@@ -1,0 +1,22 @@
+{
+  "schemaName" : "cdc_name_chainmap_4",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/name1.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+  "name" : "cdo_name_chainmap_3",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

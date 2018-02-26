@@ -1,0 +1,11 @@
+{
+    "name": "transform_cdc_trim_hdfs_in",
+    "description": "trim",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ]
+}

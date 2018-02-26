@@ -1,0 +1,17 @@
+{
+  "schemaName" : "transform_cdc_string_bigint_p_multiply_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/string_p_add.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_string_bigint_p_multiply_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

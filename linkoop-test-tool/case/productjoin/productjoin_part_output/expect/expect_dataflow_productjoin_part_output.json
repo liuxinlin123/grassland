@@ -1,0 +1,187 @@
+{
+  "name" : "dataflow_productjoin_part_output",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "source_0",
+    "type" : "source",
+    "x" : 60,
+    "y" : 133,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "gender",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "salary",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "schema_productjoin_in",
+      "dataset" : "dataset_productjoin_part_in"
+    }
+  }, {
+    "id" : "productjoin_0",
+    "name" : "productjoin_0",
+    "type" : "productjoin",
+    "x" : 387,
+    "y" : 220,
+    "inputConfigurations" : [ {
+      "id" : "left",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "gender"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      }, {
+        "column" : "address"
+      } ]
+    }, {
+      "id" : "right",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "gender"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      }, {
+        "column" : "address"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "left_name",
+        "alias" : "lname"
+      }, {
+        "column" : "left_gender",
+        "alias" : "lgender"
+      }, {
+        "column" : "left_age",
+        "alias" : "lage"
+      }, {
+        "column" : "right_name",
+        "alias" : "rname"
+      },{
+        "column" : "right_salary",
+        "alias" : "rsalary"
+      }, {
+        "column" : "right_address",
+        "alias" : "raddress"
+      } ]
+    } ],
+    "otherConfigurations" : { }
+  }, {
+    "id" : "source_1",
+    "name" : "source_1",
+    "type" : "source",
+    "x" : 52,
+    "y" : 320,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "gender",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "salary",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "schema_productjoin_in",
+      "dataset" : "dataset_productjoin_part_in1"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "sink_0",
+    "type" : "sink",
+    "x" : 680,
+    "y" : 220,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "lname"
+      }, {
+        "column" : "lgender"
+      }, {
+        "column" : "lage"
+      },{
+        "column" : "rname"
+      },{
+        "column" : "rsalary"
+      }, {
+        "column" : "raddress"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "topic" : "",
+      "escapeChar" : "\\",
+      "partitionColumns" : "",
+      "format" : "csv",
+      "table" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "password" : "",
+      "url" : "",
+      "mode" : "overwrite",
+      "schema" : "schema_productjoin_part_out",
+      "groupId" : "",
+      "sql" : "",
+      "quoteChar" : "\"",
+      "dataset" : "dataset_productjoin_part_out",
+      "description" : "",
+      "path" : "/tmp/out3/dataset_productjoin_part_out",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "driver" : "",
+      "user" : "",
+      "separator" : ",",
+      "brokers" : ""
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "productjoin_0",
+    "targetInput" : "left"
+  }, {
+    "name" : "",
+    "source" : "source_1",
+    "sourceOutput" : "output",
+    "target" : "productjoin_0",
+    "targetInput" : "right"
+  }, {
+    "name" : "",
+    "source" : "productjoin_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

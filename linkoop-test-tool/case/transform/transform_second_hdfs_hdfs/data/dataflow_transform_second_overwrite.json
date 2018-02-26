@@ -1,0 +1,106 @@
+{
+  "id" : "",
+  "name" : "dataflow_transform_second_overwrite",
+  "tags" : [ "zx" ],
+  "description" : null,
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 147,
+    "y" : 187,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : null,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inDate",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "transform_cdc_second_hdfs_in",
+      "dataset" : "transform_cdo_second_hdfs_in"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 520,
+    "y" : 240,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inDate",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inDate",
+        "alias" : ""
+      }, {
+        "column" : "resultInt",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ "second(inDate) as resultInt" ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 834,
+    "y" : 340,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inDate",
+        "alias" : ""
+      }, {
+        "column" : "resultInt",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "path" : "/tmp/out3/second_result.csv",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "transform_cdc_second_hdfs_out",
+      "dataset" : "transform_cdo_second_hdfs_out",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "parameters" : null,
+  "expiredPeriod" : 0
+}

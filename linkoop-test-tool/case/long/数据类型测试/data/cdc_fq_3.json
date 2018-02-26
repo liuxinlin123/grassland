@@ -1,0 +1,28 @@
+{
+    "fields": [
+        {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "count1",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "avg1",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "count2",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "sum1",
+    "alias" : "",
+    "type" : "int"
+  } 
+    ],
+    "name": "filter_cdc_name_fq_4",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

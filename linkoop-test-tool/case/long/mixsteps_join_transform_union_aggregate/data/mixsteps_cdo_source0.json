@@ -1,0 +1,20 @@
+{
+  "schema" : "",
+  "schemaName" : "mixsteps_cdc_source0",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/source0.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "mixsteps_cdo_source0",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

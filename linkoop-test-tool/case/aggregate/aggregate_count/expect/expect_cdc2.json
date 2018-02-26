@@ -1,0 +1,23 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "count_height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "id" : "dcfe89fb-9a1f-44d5-844d-e9c14756ee1d",
+  "name" : "cdc_aggregate_count",
+  "creator" : "admin",
+  "createTime" : 1476198344134,
+  "lastModifier" : "admin",
+  "lastModifiedTime" : 1476198344134,
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "cdc_aggregate_count",
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

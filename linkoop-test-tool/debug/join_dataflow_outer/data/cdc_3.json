@@ -1,0 +1,22 @@
+{
+    "fields": [
+        {
+            "name": "lname",
+            "type": "string"
+        },
+        {
+            "name": "lage",
+            "type": "string"
+        },
+        {
+            "name": "rname",
+            "type": "string"
+        },
+        {
+            "name": "rsex",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_join_out",
+    "expiredPeriod": 0
+}

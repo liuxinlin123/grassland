@@ -1,0 +1,16 @@
+[ {
+  "inDate" : "2016-02-04",
+  "resultInt" : "4"
+}, {
+  "inDate" : "2017-04-05",
+  "resultInt" : "5"
+}, {
+  "inDate" : "2013-10-21",
+  "resultInt" : "21"
+}, {
+  "inDate" : "1994-12-12",
+  "resultInt" : "12"
+}, {
+  "inDate" : "1874-12-23",
+  "resultInt" : "23"
+} ]

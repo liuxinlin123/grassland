@@ -1,0 +1,23 @@
+{
+  "fields" : [ {
+    "name" : "start_inDate",
+    "alias" : "",
+    "type" : "date"
+  }, 
+   {
+    "name" : "end_inDate",
+    "alias" : "",
+    "type" : "date"
+  },
+  {
+    "name" : "result_date",
+    "alias" : "",
+    "type" : "int"
+  } ],
+  "name" : "transform_cdc_datediff_hdfs_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "接收转换后的数据的cdc",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

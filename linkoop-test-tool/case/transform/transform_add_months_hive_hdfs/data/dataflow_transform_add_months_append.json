@@ -1,0 +1,107 @@
+{
+  
+  "name" : "dataflow_transform_add_months_append",
+  "tags" : [ "zx" ],
+  "description" : null,
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 120,
+    "y" : 346,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : null,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "dateStr",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "dataset" : "transform_cdo_add_months_hive_in",
+      "schema" : "transform_cdc_add_months_hive_in"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 728,
+    "y" : 380,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "dateStr",
+        "alias" : ""
+      }, {
+        "column" : "add_months_date",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "quoteChar" : "\"",
+      "escapeChar" : "\\",
+      "description" : "",
+      "path" : "/tmp/out3/add_months_result.csv",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "dataset" : "transform_cdo_add_months_hdfs_out",
+      "schema" : "transform_cdc_add_months_hdfs_out",
+      "mode" : "append"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 500,
+    "y" : 300,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "dateStr",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "dateStr",
+        "alias" : ""
+      }, {
+        "column" : "add_months_date",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ "add_months(dateStr,12) as  add_months_date" ]
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "version" : 6,
+  "enabled" : 1,
+  "parameters" : null,
+  "expiredPeriod" : 0
+}

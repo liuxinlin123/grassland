@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_union_name_age",
+    "expiredPeriod": 0
+}

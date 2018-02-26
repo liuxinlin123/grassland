@@ -1,0 +1,119 @@
+{
+   "name" : "dataflow_aggregate_min_name_height",
+  "tags" : [ "wyk" ],
+  "description" : null,
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 60,
+    "y" : 74,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : null,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "height",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "cdc_aggregate_name_height",
+      "dataset" : "cdo_aggregate_name_height"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 525,
+    "y" : 213,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "min_height",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "path" : "/tmp/wyk/aggregate_min_name_height.csv",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "cdc_aggregate_min_name_height",
+      "dataset" : "cdo_aggregate_min_name_height",
+      "mode" : "append"
+    }
+  }, {
+    "id" : "aggregate_0",
+    "name" : "",
+    "type" : "aggregate",
+    "x" : 280,
+    "y" : 411,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "height",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "min_height",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "aggregations" : [ {
+        "function" : "min",
+        "column" : "height",
+        "alias" : "min_height"
+      } ],
+      "groupBy" : [ "name" ]
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "aggregate_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "aggregate_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "parameters" : null,
+  "expiredPeriod" : 0
+}

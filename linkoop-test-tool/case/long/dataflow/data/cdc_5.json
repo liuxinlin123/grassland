@@ -1,0 +1,39 @@
+{
+    "name": "cdc_dataflow_more_out",
+    "description": "cdc_dataflow_more_out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name2",
+            "type": "string"
+        },
+        {
+            "name": "height2",
+            "type": "string"
+        },
+        {
+            "name": "name1",
+            "type": "string"
+        },
+        {
+            "name": "sex1",
+            "type": "string"
+        },
+        {
+            "name": "name0",
+            "type": "string"
+        },
+        {
+            "name": "age0",
+            "type": "string"
+        },
+        {
+            "name": "name_agg",
+            "type": "string"
+        },
+        {
+            "name": "count_agg",
+            "type": "string"
+        }
+    ]
+}

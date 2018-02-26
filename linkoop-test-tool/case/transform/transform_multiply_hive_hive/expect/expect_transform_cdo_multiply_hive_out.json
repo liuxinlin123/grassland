@@ -1,0 +1,14 @@
+{
+  "schemaName" : "transform_cdc_multiply_hive_out",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "result_int",
+    "table" : "multiply_hive_hive"
+  },
+  "name" : "transform_cdo_multiply_hive_out",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

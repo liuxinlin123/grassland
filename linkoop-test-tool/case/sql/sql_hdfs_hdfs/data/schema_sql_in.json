@@ -1,0 +1,28 @@
+{
+    "id": "",
+    "name": "schema_sql_in",
+    "description": "sql_in",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "gender",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },
+        {
+            "name": "salary",
+            "type": "int"
+        },
+        {
+            "name": "address",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+	"steps" : [{
+			"id" : "dataflow_0",
+			"type" : "dataflow",
+			"x" : 246,
+			"y" : 240,
+					"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow-filter_fq_filter1",
+				"source_cdo" : "cdo_name_fq_filter1",
+				"condition" : "salary>200",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "cdo_filter_out_fq_filter1"
+			}
+		}, {
+			"id" : "parallel_0",
+			"type" : "parallel",
+			"x" : 505,
+			"y" : 236,
+			"otherConfigurations" : {
+				"conditions" : []
+			}
+		}, {
+			"id" : "dataflow_1",
+			"type" : "dataflow",
+			"x" : 860,
+			"y" : 180,
+					"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_fq_transform1",
+				"source_cdo" : "cdo_name_fq_transform1"
+			}
+		}, {
+			"id" : "dataflow_2",
+			"type" : "dataflow",
+			"x" : 840,
+			"y" : 360,
+					"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow-filter_fq_1",
+				"source_cdo" : "filter-cdo_name_fq_1",
+				"condition" : "salary>200",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "cdo_filter_out_fq_1"
+			}
+		}
+	],
+	"flowType" : "workflow",
+	"parameters" : [{
+			"refs" : ["dataflow_0.condition"],
+			"name" : "dataflow_0_condition",
+			"defaultVal" : "salary>500",
+			"description" : "dataflow_0_condition"
+		}, {
+			"refs" : ["dataflow_2.condition"],
+			"name" : "dataflow_2_condition",
+			"defaultVal" : "salary>400",
+			"description" : "dataflow_2_condition"
+		}
+	],
+	"links" : [{
+			"source" : "dataflow_0",
+			"target" : "parallel_0"
+		}, {
+			"source" : "parallel_0",
+			"target" : "dataflow_1"
+		}, {
+			"source" : "parallel_0",
+			"target" : "dataflow_2"
+		}
+	],
+	"name" : "workflow_fq_1"
+}

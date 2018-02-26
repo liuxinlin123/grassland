@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/$path"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_startjoin_out",
+    "schemaName": "cdc_startjoin_out",
+    "schema": "",
+    "schemaVersion": 1
+}

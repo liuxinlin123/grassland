@@ -1,0 +1,12 @@
+{
+  "fields" : [ {
+    "name" : "inStr",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_lower_hdfs_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "lower",
+  "expiredPeriod" : 0
+}

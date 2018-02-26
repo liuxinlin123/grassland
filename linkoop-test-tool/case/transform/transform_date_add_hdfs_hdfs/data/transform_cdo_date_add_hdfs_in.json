@@ -1,0 +1,27 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_date_add_hdfs_in",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/dateInput.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_date_add_hdfs_in",
+  "creator" : "admin",
+  "createTime" : 1474898965678,
+  "lastModifier" : "admin",
+  "lastModifiedTime" : 1474898970107,
+  "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

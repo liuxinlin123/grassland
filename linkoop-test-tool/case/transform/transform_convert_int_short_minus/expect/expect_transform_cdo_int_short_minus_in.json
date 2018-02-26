@@ -1,0 +1,17 @@
+{
+  "schemaName" : "transform_cdc_int_short_minus_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/string_add.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_int_short_minus_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

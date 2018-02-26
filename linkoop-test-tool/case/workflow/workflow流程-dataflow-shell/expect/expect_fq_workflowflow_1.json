@@ -1,0 +1,40 @@
+{
+  "name" : "workflow_fq_1",
+  "flowType" : "workflow",
+  "steps" : [ {
+    "id" : "dataflow_0",
+    "name" : "",
+    "type" : "dataflow",
+    "otherConfigurations" : {
+      "condition" : "salary>200",
+      "sink_HDFS" : "HDFS",
+      "sink_cdo" : "cdo_filter_out_fq_1",
+      "source_cdo" : "cdo_name_fq_1"
+    }
+  }, {
+    "id" : "shell_0",
+    "name" : "",
+    "type" : "shell",
+    "otherConfigurations" : {
+      "interceptor" : "",
+      "workingDiretory" : "/tmp",
+      "command" : "/bin/sh -c 'echo \"good\" > /tmp/good'",
+      "logFile" : "tmp/output.log",
+      "logPattern" : "[%p][%d]{MM-dd HH:mm:ss,SSS}-[%t]%n %m%n",
+      "dataflowId$" : "shell"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "dataflow_0",
+    "sourceOutput" : "output",
+    "target" : "shell_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

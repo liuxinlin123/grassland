@@ -1,0 +1,15 @@
+{
+  
+  "schemaName" : "transform_cdc_add_months_hive_in",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "dateStr",
+    "table" : "date_table_add"
+  },
+  "name" : "transform_cdo_add_months_hive_in",
+   "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

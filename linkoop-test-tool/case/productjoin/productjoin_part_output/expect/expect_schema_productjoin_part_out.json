@@ -1,0 +1,31 @@
+{
+  "fields" : [ {
+    "name" : "lname",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "lgender",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "lage",
+    "alias" : "",
+    "type" : "int"
+  },{
+    "name" : "rname",
+    "alias" : "",
+    "type" : "string"
+  },{
+    "name" : "rsalary",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "raddress",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "schema_productjoin_part_out",
+  "enabled" : 1,
+  "description" : "person",
+  "expiredPeriod" : 0
+}

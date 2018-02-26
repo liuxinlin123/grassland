@@ -1,0 +1,25 @@
+{
+  "schema" : "e3fe4cec-208a-45bb-b4c7-2d3bcfe372f6",
+  "schemaName" : "cdc_aggregate_avg_name_height",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/aggregate_avg_name_height.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+   "name" : "cdo_aggregate_avg_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

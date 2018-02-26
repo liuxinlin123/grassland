@@ -1,0 +1,17 @@
+[ {
+  "numberA" : "-10",
+  "numberB" : "5",
+  "result_int" : "-50"
+}, {
+  "numberA" : "10",
+  "numberB" : "15",
+  "result_int" : "150"
+}, {
+  "numberA" : "1",
+  "numberB" : "3",
+  "result_int" : "3"
+}, {
+  "numberA" : "2",
+  "numberB" : "3",
+  "result_int" : "6"
+} ]

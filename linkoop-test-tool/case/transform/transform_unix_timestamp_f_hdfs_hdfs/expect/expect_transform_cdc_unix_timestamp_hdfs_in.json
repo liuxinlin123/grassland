@@ -1,0 +1,12 @@
+{
+  "fields" : [ {
+    "name" : "inDate",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_unix_timestamp_hdfs_in",
+  "enabled" : 1,
+  "description" : "测试 transform 中的unix_timestamp函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

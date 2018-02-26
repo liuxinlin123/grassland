@@ -1,0 +1,18 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_minute_hive_out",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "time_date",
+    "table" : "minute_hive_hive"
+  },
+  "formatConfigurations" : null,
+  "name" : "transform_cdo_minute_hive_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

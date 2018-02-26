@@ -1,0 +1,16 @@
+{
+    "id": "",
+    "name": "cdc_aggregate_count_distinct",
+    "description": "count_distinct_name_height",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "count_distinct_height",
+            "type": "int"
+        }
+    ]
+}

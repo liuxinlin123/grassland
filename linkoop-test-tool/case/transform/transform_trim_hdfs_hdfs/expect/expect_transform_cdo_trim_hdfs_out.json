@@ -1,0 +1,17 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/trim_out.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "transform_cdo_trim_hdfs_out",
+    "schemaName": "transform_cdc_trim_hdfs_out",
+    "schemaVersion": 1
+}

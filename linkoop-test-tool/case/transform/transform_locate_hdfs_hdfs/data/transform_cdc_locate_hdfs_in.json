@@ -1,0 +1,11 @@
+{
+    "name": "transform_cdc_locate_hdfs_in",
+    "description": "locate",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ]
+}

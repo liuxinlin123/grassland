@@ -1,0 +1,24 @@
+{
+  "fields" : [ {
+    "name" : "result_int",
+    "alias" : "",
+    "type" : "int"
+  },
+   {
+    "name" : "numberA",
+    "alias" : "",
+    "type" : "int"
+  },
+  {
+    "name" : "numberB",
+    "alias" : "",
+    "type" : "int"
+  }
+   ],
+  "name" : "transform_cdc_division_hive_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的division 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

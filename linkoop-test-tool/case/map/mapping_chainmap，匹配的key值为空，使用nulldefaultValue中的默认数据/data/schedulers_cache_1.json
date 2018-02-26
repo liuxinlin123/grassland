@@ -1,0 +1,58 @@
+{
+	"configurations" : {
+		"startTime" : 1473609600000,
+		"arguments" : [],
+		"cron": "一次性", 
+"properties": [
+            {
+                "name": "all.debug",
+                "value": "false"
+            },
+            {
+                "name": "all.dataset-nullable",
+                "value": "false"
+            },
+            {
+                "name": "all.notify-output",
+                "value": "false"
+            },
+            {
+                "name": "all.debug-rows",
+                "value": "20"
+            },
+            {
+                "name": "dataflow.master",
+                "value": "yarn"
+            },
+            {
+                "name": "dataflow.queue",
+                "value": "default"
+            },
+            {
+                "name": "dataflow.num-executors",
+                "value": "2"
+            },
+            {
+                "name": "dataflow.driver-memory",
+                "value": "512M"
+            },
+            {
+                "name": "dataflow.executor-memory",
+                "value": "1G"
+            },
+            {
+                "name": "dataflow.executor-cores",
+                "value": "2"
+            },
+            {
+                "name": "dataflow.verbose",
+                "value": "true"
+            }
+        ]
+
+	},
+	"schedulerId" : "once",
+	"name" : "scheduler_cache1_chainmap_null",
+	"flowId" : "",
+	"flowName" : "dataflow_chainmap_nulldefault_2"
+}

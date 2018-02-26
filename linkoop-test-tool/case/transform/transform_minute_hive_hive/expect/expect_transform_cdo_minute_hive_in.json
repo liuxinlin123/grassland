@@ -1,0 +1,14 @@
+{
+  "schemaName" : "transform_cdc_minute_hive_in",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "time_date",
+    "table" : "time_table"
+  },
+  "name" : "transform_cdo_minute_hive_in",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,13 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "cdc_join_less6",
+  "expiredPeriod" : 0
+}

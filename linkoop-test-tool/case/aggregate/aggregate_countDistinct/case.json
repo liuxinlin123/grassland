@@ -1,0 +1,73 @@
+{
+    "case":[
+    	{
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_2.json",
+			"status":"201",
+            "expect":""
+        },
+      	{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_2.json",
+			"status":"201",
+            "expect":""
+        },
+      	{
+			"action":"create,dataflow,cdo_aggregate_name_height,cdc_aggregate_name_height,cdo_aggregate_countDistinct,cdc_aggregate_countDistinct",
+            "api":"/api/flows",
+            "sleepTime":"1000",
+            "data":"data/dataflow_1.json",
+			"status":"200",
+            "expect":""
+        },{
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"2000",
+            "data":"data/scheduler_1.json",
+            "status":"201",
+            "expect":""
+        },
+        {
+            "action":"monitor,schedule_aggregate_count",
+            "api":"/api/executions",
+            "sleepTime":"2000",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },{
+        	"action":"preview,cdo_aggregate_count_distinct,100",
+            "api":"/api/datasets",
+             "sleepTime":"3000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/expect_result1.json"
+        },  {
+		    "action" : "delete,all-server",
+		    "api" : "",
+		    "status" : "200",
+		    "sleepTime":"1000",
+		    "data":"",
+		    "expect":""
+		}
+   	]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "transform_cdc_int_p_multiply_in",
+    "description": "length",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr1",
+            "type": "int"
+        },{
+            "name": "instr2",
+            "type": "int"
+        }
+    ]
+}

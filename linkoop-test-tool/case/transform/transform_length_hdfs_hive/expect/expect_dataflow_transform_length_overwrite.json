@@ -1,0 +1,98 @@
+{
+  "name" : "dataflow_transform_length_overwrite",
+  "tags" : [ "zx" ],
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 147,
+    "y" : 187,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "transform_cdc_length_hdfs_in",
+      "dataset" : "transform_cdo_length_hdfs_in"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 520,
+    "y" : 240,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      }, {
+        "column" : "result_int",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ " length(inStr) as result_int" ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 834,
+    "y" : 340,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      }, {
+        "column" : "result_int",
+        "alias" : ""
+      } ]
+    } ],
+            "otherConfigurations": {
+                "schema": "transform_cdc_length_hive_out",
+                "escapeChar": "\\",
+                "quoteChar": "\"",
+                "dataset": "transform_cdo_length_hdfs_out",
+                "description": "",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HIVE",
+                "sliceType": "H",
+                "separator": ",",
+                "mode": "overwrite",
+                "table": "lenght_hive_out",
+                "partitionColumns": "result_int"
+            }
+        }
+    ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "owner" : "admin",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

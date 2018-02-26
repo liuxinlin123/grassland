@@ -1,0 +1,21 @@
+{
+  "schedulerId" : "once",
+  "flowName" : "dataflow_aggregate_avg_name_height",
+  "configurations" : {
+    "startTime" : 1474560000000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188099005,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_avg_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

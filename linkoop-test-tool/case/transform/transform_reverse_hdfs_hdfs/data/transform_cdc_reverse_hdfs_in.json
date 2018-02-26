@@ -1,0 +1,11 @@
+{
+    "name": "transform_cdc_reverse_hdfs_in",
+    "description": "reverse",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ]
+}

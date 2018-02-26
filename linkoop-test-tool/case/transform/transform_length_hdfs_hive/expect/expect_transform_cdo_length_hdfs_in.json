@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_length_hdfs_in",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/strInput.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

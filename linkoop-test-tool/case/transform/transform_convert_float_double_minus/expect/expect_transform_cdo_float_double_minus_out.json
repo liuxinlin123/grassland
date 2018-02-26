@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_float_double_minus_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/float_double_out2",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_float_double_minus_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

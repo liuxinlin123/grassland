@@ -1,0 +1,17 @@
+{
+  "schemaName" : "transform_cdc_short_divide_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/string_divide.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_short_divide_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

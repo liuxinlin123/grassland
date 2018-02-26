@@ -1,0 +1,25 @@
+{
+  "schema" : "63ca57ac-3d6d-4957-a083-ba093f0ab23f",
+  "schemaName" : "cdc_startjoin_name_height",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/wyk/startjoin_name_height.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+   "name" : "cdo_startjoin_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

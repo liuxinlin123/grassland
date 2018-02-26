@@ -1,0 +1,14 @@
+{
+    "name": "transform_cdc_string_int_divide_in",
+    "description": "length",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr1",
+            "type": "string"
+        },{
+            "name": "instr2",
+            "type": "int"
+        }
+    ]
+}

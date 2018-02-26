@@ -1,0 +1,10 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_initcap_hdfs_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

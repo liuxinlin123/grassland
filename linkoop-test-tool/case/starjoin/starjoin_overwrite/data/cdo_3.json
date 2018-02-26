@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/startjoin_name_height.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_startjoin_name_height_overwrite",
+    "schemaName": "cdc_startjoin_name_height_overwrite",
+    "schema": "553b9f86-0904-4431-b269-acf57e6c7f00",
+    "schemaVersion": 1
+}

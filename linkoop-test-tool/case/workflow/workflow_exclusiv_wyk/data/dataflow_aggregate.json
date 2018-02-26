@@ -1,0 +1,143 @@
+{
+    "name": "dataflow_aggregate_avg_name_height",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 758,
+            "y": 254,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_aggregate_name_height",
+                "dataset": "cdo_aggregate_name_height"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1490,
+            "y": 208,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "avg_height"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "schema": "cdc_aggregate_avg_name_height",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "dataset": "cdo_aggregate_avg_name_height",
+                "description": "",
+                "path": "/tmp/out3/aggregate_avg_name_height2.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "separator": ",",
+                "mode": "overwrite"
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "",
+            "type": "aggregate",
+            "x": 1081,
+            "y": 248,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "avg_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "groupBy": [
+                    "name"
+                ],
+                "aggregations": [
+                    {
+                        "column": "height",
+                        "function": "avg",
+                        "alias": "avg_height"
+                    }
+                ]
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "source_0",
+            "sourceOutput": "output",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "aggregate_0",
+            "sourceOutput": "output",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

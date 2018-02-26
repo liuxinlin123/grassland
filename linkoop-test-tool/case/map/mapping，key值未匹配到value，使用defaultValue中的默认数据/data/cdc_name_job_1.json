@@ -1,0 +1,23 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },        
+        {
+            "name": "sal",
+            "type": "int"
+        },        
+        {
+            "name": "job",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_name_defaultValue_1",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

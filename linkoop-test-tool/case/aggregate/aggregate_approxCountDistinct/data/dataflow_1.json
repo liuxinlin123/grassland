@@ -1,0 +1,148 @@
+{
+    "name": "dataflow_aggregate_approxCountDistinct",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 373,
+            "y": 280,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_aggregate_name_height",
+                "schema": "cdc_aggregate_name_height"
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "",
+            "type": "aggregate",
+            "x": 860,
+            "y": 280,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "approxCountDistinct_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "aggregations": [
+                    {
+                        "function": "approxCountDistinct",
+                        "column": "height",
+                        "alias": "approxCountDistinct_height"
+                    }
+                ],
+                "groupBy": [
+                    "name"
+                ]
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1325,
+            "y": 296,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "approxCountDistinct_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "description": "",
+                "path": "/tmp/out3/aggregate_approxCountDistinct_name_height.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "dataset": "cdo_aggregate_approxCountDistinct",
+                "schema": "cdc_aggregate_approxCountDistinct",
+                "mode": "overwrite"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "aggregate_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "creator": "admin",
+    "createTime": 1474874215824,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1474877013367,
+    "owner": "admin",
+    "version": 2,
+    "enabled": 1,
+    "parameters": [],
+    "expiredPeriod": 0
+}

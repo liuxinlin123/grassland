@@ -1,0 +1,19 @@
+{
+  "schemaName" : "filter_cdc_REGEXP_1_hdfs_in",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "sliceType" : "H",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/regexp_in.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false",
+    "separator" : ","
+  },
+  "name" : "filter_cdo_REGEXP_1_hdfs_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

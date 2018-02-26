@@ -1,0 +1,8 @@
+{
+    "roles": [
+        "ROLE_user"
+    ],
+    "name": "user_join_dataflow",
+    "loginId": "login_name",
+    "password": "password"
+}

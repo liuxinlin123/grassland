@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/cdo1.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "filter_cdo_name_not_equal_1",
+    "schema": "",
+    "schemaName": "filter_cdc_name_not_equal_1",
+    "schemaVersion": 1
+}

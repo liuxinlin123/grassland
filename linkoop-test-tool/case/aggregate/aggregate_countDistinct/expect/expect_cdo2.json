@@ -1,0 +1,24 @@
+{
+  "schema" : "ee766613-b394-431f-9b61-bce6f00dcf78",
+  "schemaName" : "cdc_aggregate_count_distinct",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/aggregate_countDistinct_name_height.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+   "name" : "cdo_aggregate_count_distinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

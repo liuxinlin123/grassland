@@ -1,0 +1,142 @@
+{
+  "name" : "dataflow_filter_var",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "source_0",
+    "type" : "source",
+    "x" : 120,
+    "y" : 170,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "gender",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "salary",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "schema_filter_var_in",
+      "dataset" : "dataset_filter_var_in"
+    }
+  }, {
+    "id" : "filter_0",
+    "name" : "filter_0",
+    "type" : "filter",
+    "x" : 413,
+    "y" : 168,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "gender"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      }, {
+        "column" : "address"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "gender",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "salary",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "condition" : "age > #{num:22} and gender = 'woman'"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "sink_0",
+    "type" : "sink",
+    "x" : 720,
+    "y" : 168,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "gender"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      }, {
+        "column" : "address"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "topic" : "",
+      "escapeChar" : "\\",
+      "partitionColumns" : "",
+      "format" : "csv",
+      "table" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "password" : "",
+      "url" : "",
+      "mode" : "overwrite",
+      "schema" : "schema_filter_var_in",
+      "groupId" : "",
+      "quoteChar" : "\"",
+      "sql" : "",
+      "dataset" : "dataset_filter_var_out",
+      "description" : "",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "path" : "/tmp/out3/dataset_filter_var_out",
+      "driver" : "",
+      "user" : "",
+      "brokers" : "",
+      "separator" : ","
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "filter_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "filter_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "parameters" : [ {
+    "name" : "num",
+    "category" : "var",
+    "refs" : [ "num" ],
+    "defaultVal" : "25"
+  } ],
+  "expiredPeriod" : 0
+}

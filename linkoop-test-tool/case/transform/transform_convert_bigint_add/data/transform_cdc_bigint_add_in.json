@@ -1,0 +1,14 @@
+{
+    "name": "transform_cdc_bigint_add_in",
+    "description": "length",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr1",
+            "type": "bigint"
+        },{
+            "name": "instr2",
+            "type": "bigint"
+        }
+    ]
+}

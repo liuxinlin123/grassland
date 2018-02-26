@@ -1,0 +1,16 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "address",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "id" : "",
+  "name" : "schema_sql_out",
+  "enabled" : 1,
+  "description" : "sql_out",
+  "expiredPeriod" : 0
+}

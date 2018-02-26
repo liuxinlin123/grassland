@@ -1,0 +1,16 @@
+[ {
+  "sex" : "man",
+  "age" : "24",
+  "name" : "feng",
+  "sal" : "22"
+}, {
+  "sex" : "man",
+  "age" : "25",
+  "name" : "qian",
+  "sal" : "23"
+}, {
+  "sex" : "woman",
+  "age" : "26",
+  "name" : "zhang",
+  "sal" : "24"
+} ]

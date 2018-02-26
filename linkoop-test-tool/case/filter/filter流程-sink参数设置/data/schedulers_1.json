@@ -1,0 +1,53 @@
+{
+	"configurations" : {
+		"startTime" : 1486656000000,
+		"arguments" : [{
+				"name" : "auto",
+				"value" : "filter_cdo_name_setsink_3"
+			}
+		],
+		"properties" : [{
+				"name" : "all.debug",
+				"value" : "false"
+			}, {
+				"name" : "all.dataset-nullable",
+				"value" : "false"
+			}, {
+				"name" : "all.notify-output",
+				"value" : "false"
+			}, {
+				"name" : "dataflow.master",
+				"value" : "yarn"
+			}, {
+				"name" : "dataflow.deploy-mode",
+				"value" : "client"
+			}, {
+				"name" : "dataflow.driver-memory",
+				"value" : "512M"
+			}, {
+				"name" : "dataflow.num-executors",
+				"value" : "2"
+			}, {
+				"name" : "dataflow.executor-memory",
+				"value" : "1G"
+			}, {
+				"name" : "dataflow.queue",
+				"value" : "default"
+			}, {
+				"name" : "dataflow.verbose",
+				"value" : "true"
+			}, {
+				"name" : "dataflow.executor-cores",
+				"value" : "3"
+			}, {
+				"name" : "dataflow.debug-rows",
+				"value" : "20"
+			}
+		]
+	},
+	"schedulerId" : "once",
+	"name" : "scheduler_sink_cssz",
+	"flowId" : "",
+	"flowName" : "dataflow-filter_setsink_1",
+	"flowType" : "dataflow"
+}

@@ -1,0 +1,47 @@
+{
+  "fields" : [ {
+    "name" : "lname",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "lgender",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "lage",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "lsalary",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "laddress",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "rname",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "rgender",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "rage",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "rsalary",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "raddress",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "schema_productjoin_all_out",
+  "enabled" : 1,
+  "description" : "person",
+  "expiredPeriod" : 0
+}

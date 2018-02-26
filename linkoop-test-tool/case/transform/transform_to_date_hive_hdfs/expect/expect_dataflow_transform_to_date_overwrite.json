@@ -1,0 +1,96 @@
+{
+  
+  "name" : "dataflow_transform_to_date_overwrite",
+  "tags" : [ "zx" ],
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 120,
+    "y" : 346,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "time_date",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "dataset" : "transform_cdo_to_date_hive_in",
+      "schema" : "transform_cdc_to_date_hive_in"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 728,
+    "y" : 380,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "time_date",
+        "alias" : ""
+      }, {
+        "column" : "result_date",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "quoteChar" : "\"",
+      "escapeChar" : "\\",
+      "description" : "",
+      "path" : "/tmp/out3/to_date_result.csv",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "dataset" : "transform_cdo_to_date_hdfs_out",
+      "schema" : "transform_cdc_to_date_hdfs_out",
+      "mode" : "overwrite"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 500,
+    "y" : 300,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "time_date",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "time_date",
+        "alias" : ""
+      }, {
+        "column" : "result_date",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ "to_date(time_date) as  result_date" ]
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

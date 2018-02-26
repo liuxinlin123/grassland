@@ -1,0 +1,19 @@
+{
+  "schemaName" : "transform_cdc_datediff_hdfs_out",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/datediff_result.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_datediff_hdfs_out",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

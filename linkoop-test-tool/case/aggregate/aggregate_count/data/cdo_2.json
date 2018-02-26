@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/aggregate_count.csv"
+    },
+    "formatConfigurations": {
+        "header": "true",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_aggregate_count",
+    "schemaName": "cdc_aggregate_name_height_count",
+    "schema": "62ca3339-0f0f-462d-a5d2-887836a833f9",
+    "schemaVersion": 2
+}

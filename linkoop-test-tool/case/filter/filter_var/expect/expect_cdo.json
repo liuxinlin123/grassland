@@ -1,0 +1,20 @@
+{
+  "schemaName" : "schema_filter_var_in",
+  "schemaVersion" : 1,
+  "rowNumber" : 0,
+  "storage" : "HDFS",
+  "sliceType" : "H",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/filter_var_in.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "separator" : ",",
+    "header" : "false"
+  },
+  "name" : "dataset_filter_var_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_regexp_extract_hdfs_out",
+    "description": "regexp_extract out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },{
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

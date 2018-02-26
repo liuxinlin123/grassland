@@ -1,0 +1,18 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "height",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_union_out_false",
+    "expiredPeriod": 0
+}

@@ -1,0 +1,160 @@
+//本用例是测试transform step中的运算符：+
+//预置条件：cdo中存在数据
+//预期结果：dataflow执行成功，且数据经加法运算后正确输出
+ {
+	"case" :[	
+	//创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_int_p_add_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_int_p_add_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_int_p_add_in.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action" : "create,cdo",
+			"api" :  "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdo_int_p_add_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdo
+	   {
+		"action":"query,cdo,transform_cdo_int_p_add_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_int_p_add_in.json"
+		
+     	},
+     	//创建sink的cdc
+     	{
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/transform_cdc_int_p_add_out.json",
+			"status":"201",
+            "expect":""
+       },
+        //查询sink的cdc
+        {
+		"action":"query,cdc,transform_cdc_int_p_add_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_int_p_add_out.json"
+		
+     	},
+     	//创建sink的cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_int_p_add_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,transform_cdo_int_p_add_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_int_p_add_out.json"
+		
+     	},
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_int_p_add.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_int_p_add",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_int_p_add.json"
+		
+     	},
+     	//运行dataflow流程
+     	/* {
+			"action":"run,dataflow,dataflow_transform_int_p_add",
+            "api":"/api/schedulers",
+             "sleepTime":"0",
+            "data":"data/transform_scheduler_int_p_add.json",
+			"status":"201",
+            "expect":""
+        }, */
+         {
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/transform_scheduler_int_p_add.json",
+            "status":"201",
+            "expect":""
+      }, 
+      {
+		"action":"query,scheduler,transform_scheduler_int_p_add",
+		"api":"/api/schedulers",
+        "sleepTime":"200",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_scheduler_int_p_add.json"
+		
+     	},
+     	//监控dataflow流程运行情况
+        {
+            "action":"monitor,transform_scheduler_int_p_add",
+            "api":"/api/executions",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":""
+        }
+        //预览流程运行成功后生成的cdo数据对象
+    ,    {
+        	"action":"preview,transform_cdo_int_p_add_out,10",
+            "api":"/api/datasets",
+            "sleepTime":"2000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_out.json"
+        },
+	   //删除运行生成的数据   
+         {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+}
+         
+	   ]
+}

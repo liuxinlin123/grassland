@@ -1,0 +1,17 @@
+{
+    "name": "transform_cdc_levenshtein_hdfs_out",
+    "description": "levenshtein out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr",
+            "type": "string"
+        },{
+            "name": "instr1",
+            "type": "string"
+        },{
+            "name" : "outstr",
+          "type" : "int"
+      }     
+    ]
+}

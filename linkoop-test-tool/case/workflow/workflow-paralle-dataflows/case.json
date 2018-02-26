@@ -1,0 +1,574 @@
+{
+    "case":[
+    //创建processconfigs
+    	{
+			"action":"create,processconfigs",
+            "api":"/api/processconfigs",
+            "sleepTime":"0",
+            "data":"data/workflow_processconfigs.json",
+			"status":"201",
+            "expect":""
+        },
+    //trim
+    //创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_trim_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_trim_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_trim_hdfs_in.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action" : "create,cdo",
+			"api" :  "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdo_trim_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdo
+	   {
+		"action":"query,cdo,transform_cdo_trim_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_trim_hdfs_in.json"
+		
+     	},
+     	//创建sink的cdc
+     	{
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/transform_cdc_trim_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+        //查询sink的cdc
+        {
+		"action":"query,cdc,transform_cdc_trim_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_trim_hdfs_out.json"
+		
+     	},
+     	//创建sink的cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_trim_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,transform_cdo_trim_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_trim_hdfs_out.json"
+		
+     	},
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_trim_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_trim_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_trim_hdfs.json"
+		
+     	},
+    //translate
+    //创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_translate_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_translate_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_translate_hdfs_in.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_translate_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdo
+	   {
+		"action":"query,cdc,transform_cdc_translate_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_translate_hdfs_out.json"
+		
+     	},
+     	//创建sink的cdc
+     	{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_translate_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+        //查询sink的cdc
+        {
+		"action":"query,cdo,transform_cdo_translate_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_translate_hdfs_in.json"
+		
+     	},
+     	//创建sink的cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_translate_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,transform_cdo_translate_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_translate_hdfs_out.json"
+		
+     	},
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_translate_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_translate_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_translate_hdfs.json"
+		
+     	},
+    //upper
+    {
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_upper_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   {
+		"action":"query,cdc,transform_cdc_upper_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_upper_hdfs_in.json"
+		
+     	},
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_upper_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   {
+		"action":"query,cdc,transform_cdc_upper_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_upper_hdfs_out.json"
+		
+     	},
+     	{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_upper_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+        {
+		"action":"query,cdo,transform_cdo_upper_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_upper_hdfs_in.json"
+		
+     	},
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_upper_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       {
+		"action":"query,cdo,transform_cdo_upper_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_upper_hdfs_out.json"
+		
+     	},
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_upper_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  {
+		"action":"query,dataflow,dataflow_transform_upper_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_upper_hdfs.json"
+		
+     	},
+    //lower
+    //创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_lower_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_lower_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_lower_hdfs_in.json"
+		
+     	},
+     	//创建sink的cdc
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_lower_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	    //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_lower_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_lower_hdfs_out.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_lower_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询source的cdo
+        {
+		"action":"query,cdo,transform_cdo_lower_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_lower_hdfs_in.json"
+		
+     	},
+     	//创建sink的cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_lower_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,transform_cdo_lower_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_lower_hdfs_out.json"
+		
+     	},
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_lower_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  },
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_lower_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_lower_hdfs.json"
+		
+     	},
+    //locate
+    //创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_locate_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,transform_cdc_locate_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_locate_hdfs_in.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_locate_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdo
+	   {
+		"action":"query,cdc,transform_cdc_locate_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_locate_hdfs_out.json"
+		
+     	},
+     	//创建sink的cdc
+     	{
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_locate_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+        //查询sink的cdc
+        {
+		"action":"query,cdo,transform_cdo_locate_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_locate_hdfs_in.json"
+		
+     	},
+     	//创建sink的cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_locate_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       //查询sink的cdo
+       {
+		"action":"query,cdo,transform_cdo_locate_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_locate_hdfs_out.json"
+		
+     	},
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_locate_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_locate_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_locate_hdfs.json"
+     	},  
+     	//创建workflow
+        {
+            "action":"create,workflow,dataflow_transform_trim_hdfs,dataflow_transform_upper_hdfs,dataflow_transform_translate_hdfs,dataflow_transform_locate_hdfs,dataflow_transform_lower_hdfs,workflow-dataflows",
+            "api":"/api/flows",
+             "sleepTime":"0",
+            "data":"data/workflow-dataflows.json",
+            "status":"200",
+            "expect":""
+        },
+       /*{
+			"action":"run,workflow,workflow-dataflows",
+            "api":"/api/schedulers",
+             "sleepTime":"10000",
+            "data":"data/scheduler_workflow.json",
+			"status":"201",
+            "expect":""
+        } , */
+         {
+            "action":"create,scheduler,workflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/scheduler_workflow.json",
+            "status":"201",
+            "expect":""
+      }, 
+      //查询scheduler
+      {
+		"action":"query,scheduler,scheduler_workflow",
+		"api":"/api/schedulers",
+        "sleepTime":"2000",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_scheduler_workflow.json"
+		
+     	},
+     	//监控scheduler
+        {
+            "action":"monitor,scheduler_workflow",
+            "api":"/api/executions",
+            "data":"",
+            "sleepTime":"1000",
+            "status":"200",
+            "expect":""
+        } ,
+        //预览流程运行成功后locate生成的cdo数据对象
+         {
+        	"action":"preview,transform_cdo_locate_hdfs_out,10",
+            "api":"/api/datasets",
+            "sleepTime":"20000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_locate.json"
+        },
+      //预览流程运行成功后lower生成的cdo数据对象
+        {
+        	"action":"preview,transform_cdo_lower_hdfs_out,10",
+            "api":"/api/datasets",
+            "sleepTime":"20000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_lower.json"
+        } ,
+	   //删除运行生成的数据
+	  {
+            "action" : "delete,all-server",
+        	"api" : "",
+        	"sleepTime":"1000",
+            "data":"",
+        	"status" : "200",
+        	"expect":""
+        }
+       
+       ]
+    }
+        

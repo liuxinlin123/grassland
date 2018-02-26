@@ -1,0 +1,29 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "gender",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "salary",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "address",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "id" : "",
+  "name" : "schema_productjoin_in",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "person",
+  "expiredPeriod" : 0
+}

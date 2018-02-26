@@ -1,0 +1,25 @@
+
+ {
+  "schema" : "",
+  "schemaName" : "transform_cdc_upper_hdfs_out",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/upper_out.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_upper_hdfs_out",
+  "creator" : "SYSTEM",
+  "createTime" : 1474899589535,
+  "lastModifier" : "admin",
+  "lastModifiedTime" : 1474899786658,
+  "owner" : "admin",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

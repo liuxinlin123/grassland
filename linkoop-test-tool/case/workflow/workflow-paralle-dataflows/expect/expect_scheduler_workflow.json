@@ -1,0 +1,13 @@
+{
+  "schedulerId" : "once",
+  "flowName" : "workflow-dataflows",
+  "configurations" : {
+    "startTime" : 1476028800000,
+    "arguments" : [ ]
+  }, 
+  "name" : "scheduler_workflow",
+  "enabled" : 1,
+   "expiredPeriod" : 0
+  
+  
+}

@@ -1,0 +1,110 @@
+{
+  "id" : "",
+  "name" : "dataflow-sql-HDFS",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "source_0",
+    "type" : "source",
+    "x" : 160,
+    "y" : 220,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "gender",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "salary",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "schema_sql_in",
+      "dataset" : "dataset_sql_in"
+    }
+  }, {
+    "id" : "sql_0",
+    "name" : "sql_0",
+    "type" : "sql",
+    "x" : 489,
+    "y" : 220,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "gender"
+      }, {
+        "column" : "age"
+      }, {
+        "column" : "salary"
+      }, {
+        "column" : "address"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "address",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "sql" : "select name,address from input"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "sink_0",
+    "type" : "sink",
+    "x" : 820,
+    "y" : 220,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name"
+      }, {
+        "column" : "address"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "escapeChar" : "\\",
+      "format" : "csv",
+      "separator": ",",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "mode" : "overwrite",
+      "schema" : "schema_sql_out",
+      "quoteChar" : "\"",
+      "dataset" : "dataset_sql_out",
+      "path" : "/tmp/out3/sql_out",
+      "expiredTime" : 0,
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "sql_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "sql_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

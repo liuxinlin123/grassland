@@ -1,0 +1,205 @@
+{
+    "name": "dataflow-minus",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 100,
+            "y": 100,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        },
+                        {
+                            "column": "address",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "schema_minus_in1",
+                "dataset": "dataset_minus_in1"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 740,
+            "y": 190,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "topic": "",
+                "escapeChar": "\\",
+                "partitionColumns": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "mode": "overwrite",
+                "schema": "schema_minus_out",
+                "quoteChar": "\"",
+                "dataset": "dataset_minus_out",
+                "path": "/tmp/out3/dataset_minus_out",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "separator": ","
+            }
+        },
+        {
+            "id": "minus_0",
+            "name": "",
+            "type": "minus",
+            "x": 440,
+            "y": 190,
+            "inputConfigurations": [
+                {
+                    "id": "source_0",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "gender"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        },
+                        {
+                            "column": "address"
+                        }
+                    ]
+                },
+                {
+                    "id": "source_1",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "gender"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {}
+        },
+        {
+            "id": "source_1",
+            "name": "",
+            "type": "source",
+            "x": 100,
+            "y": 289,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "schema_minus_in2",
+                "dataset": "dataset_minus_in2"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "minus_0",
+            "targetInput": "source_0"
+        },
+        {
+            "source": "source_1",
+            "target": "minus_0",
+            "targetInput": "source_1"
+        },
+        {
+            "source": "minus_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

@@ -1,0 +1,10 @@
+[ {
+  "inDate" : "2016-02-04",
+  "resultInt" : "35"
+}, {
+  "inDate" : "2017-04-05",
+  "resultInt" : "95"
+}, {
+  "inDate" : "2013-10-21",
+  "resultInt" : "294"
+} ]

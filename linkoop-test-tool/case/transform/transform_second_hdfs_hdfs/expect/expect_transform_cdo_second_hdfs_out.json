@@ -1,0 +1,19 @@
+ {
+  "schemaName" : "transform_cdc_second_hdfs_out",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/second_result.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_second_hdfs_out",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

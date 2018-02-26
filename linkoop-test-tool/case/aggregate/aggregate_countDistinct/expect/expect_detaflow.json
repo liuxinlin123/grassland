@@ -1,0 +1,119 @@
+{
+   "name" : "dataflow_aggregate_count_distinct",
+  "tags" : [ "wyk" ],
+  "description" : null,
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 373,
+    "y" : 280,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : null,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "height",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "cdc_aggregate_name_height",
+      "dataset" : "cdo_aggregate_name_height"
+    }
+  }, {
+    "id" : "aggregate_0",
+    "name" : "",
+    "type" : "aggregate",
+    "x" : 860,
+    "y" : 280,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "height",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "count_distinct_height",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "aggregations" : [ {
+        "function" : "countDistinct",
+        "column" : "height",
+        "alias" : "count_distinct_height"
+      } ],
+      "groupBy" : [ "name" ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 1325,
+    "y" : 296,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "count_distinct_height",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "path" : "/tmp/out3/aggregate_countDistinct_name_height.csv",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "cdc_aggregate_count_distinct",
+      "dataset" : "cdo_aggregate_count_distinct",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "aggregate_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "aggregate_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "parameters" : null,
+  "expiredPeriod" : 0
+}

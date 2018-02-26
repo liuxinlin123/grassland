@@ -1,0 +1,225 @@
+{
+    "name": "dataflow-intersect",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 100,
+            "y": 100,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        },
+                        {
+                            "column": "address",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "schema_intersect_in1",
+                "dataset": "dataset_intersect_in1"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 740,
+            "y": 190,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "topic": "",
+                "escapeChar": "\\",
+                "partitionColumns": "",
+                "table": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "password": "",
+                "url": "",
+                "mode": "overwrite",
+                "schema": "schema_intersect_out",
+                "groupId": "",
+                "sql": "",
+                "quoteChar": "\"",
+                "dataset": "dataset_intersect_out",
+                "description": "",
+                "path": "/tmp/out3/dataset_intersect_out",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "driver": "",
+                "user": "",
+                "separator": ",",
+                "brokers": ""
+            }
+        },
+        {
+            "id": "intersect_0",
+            "name": "",
+            "type": "intersect",
+            "x": 440,
+            "y": 190,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "source_0",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "gender"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        },
+                        {
+                            "column": "address"
+                        }
+                    ]
+                },
+                {
+                    "id": "source_1",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "gender"
+                        },
+                        {
+                            "column": "age"
+                        },
+                        {
+                            "column": "salary"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {}
+        },
+        {
+            "id": "source_1",
+            "name": "",
+            "type": "source",
+            "x": 100,
+            "y": 289,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "gender",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "schema_intersect_in2",
+                "dataset": "dataset_intersect_in2"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "intersect_0",
+            "targetInput": "source_0"
+        },
+        {
+            "source": "source_1",
+            "target": "intersect_0",
+            "targetInput": "source_1"
+        },
+        {
+            "source": "intersect_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

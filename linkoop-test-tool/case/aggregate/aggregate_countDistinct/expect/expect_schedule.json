@@ -1,0 +1,21 @@
+{
+  "schedulerId" : "once",
+  "flowId" : "a4302b87-b676-4c7a-a6b1-ee30abfbfa02",
+  "flowName" : "dataflow_aggregate_count_distinct",
+  "configurations" : {
+    "startTime" : 1474819200000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188167194,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_count_distinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

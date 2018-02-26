@@ -1,0 +1,104 @@
+{
+  "name" : "dataflow_transform_levenshtein_hdfs",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "type" : "source",
+    "x" : 147,
+    "y" : 187,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "instr",
+        "alias" : ""
+      },{
+        "column" : "instr1",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "transform_cdc_levenshtein_hdfs_in",
+      "dataset" : "transform_cdo_levenshtein_hdfs_in"
+    }
+  }, {
+    "id" : "transform_0",
+    "type" : "transform",
+    "x" : 520,
+    "y" : 240,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "instr",
+        "alias" : ""
+      },{
+        "column" : "instr1",
+        "alias" : ""
+      }  ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [{
+        "column" : "instr",
+        "alias" : ""
+      },{
+        "column" : "instr1",
+        "alias" : ""
+      },{
+        "column" : "outstr",
+        "alias" : ""
+      }]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ " levenshtein(instr,instr1) as outstr " ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 834,
+    "y" : 340,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [{
+        "column" : "instr",
+        "alias" : ""
+      },{
+        "column" : "instr1",
+        "alias" : ""
+      },{
+        "column" : "outstr",
+        "alias" : ""
+      }]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "path" : "/tmp/out3/levenshtein_out",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "transform_cdc_levenshtein_hdfs_out",
+      "dataset" : "transform_cdo_levenshtein_hdfs_out",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

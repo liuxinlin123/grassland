@@ -1,0 +1,16 @@
+{
+  "fields" : [ {
+    "name" : "string1",
+    "type" : "string"
+  },{"name" : "int1",
+    "type" : "int"
+  },{"name" : "short1",
+    "type" : "short"
+  },{"name" : "float1",
+    "type" : "float"
+  }],
+  "name" : "mixsteps_cdc_source1",
+  "enabled" : 1,
+  "description" : "lower",
+  "expiredPeriod" : 0
+}

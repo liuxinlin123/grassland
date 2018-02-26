@@ -1,0 +1,19 @@
+[ {
+  "inStr" : "asdasd1",
+  "resultStr" : "ASDASD1"
+}, {
+  "inStr" : "23asd",
+  "resultStr" : "23ASD"
+}, {
+  "inStr" : "34GYGKJL",
+  "resultStr" : "34GYGKJL"
+}, {
+  "inStr" : "6GIGJ",
+  "resultStr" : "6GIGJ"
+}, {
+  "inStr" : "789",
+  "resultStr" : "789"
+}, {
+  "inStr" :"ugugouhoiYIGIUO",
+  "resultStr" : "UGUGOUHOIYIGIUO"
+} ]

@@ -1,0 +1,15 @@
+{
+    "name": "cdc_aggregate_name_height",
+    "description": "cdc_aggregate",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "height",
+            "type": "double"
+        }
+    ]
+}

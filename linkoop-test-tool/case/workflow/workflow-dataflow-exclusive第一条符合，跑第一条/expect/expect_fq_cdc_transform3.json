@@ -1,0 +1,49 @@
+[ {
+  "sex" : "woman",
+  "age" : "18",
+  "name" : "fengqian",
+  "sal2" : "1100.0",
+  "job" : "ceo",
+  "salary" : "100",
+  "name1" : "FENGQIAN"
+}, {
+  "sex" : "man",
+  "age" : "19",
+  "name" : "zhangsan",
+  "sal2" : "800.0",
+  "job" : "coo",
+  "salary" : "200",
+  "name1" : "ZHANGSAN"
+}, {
+  "sex" : "woman",
+  "age" : "20",
+  "name" : "lisi",
+  "sal2" : "1100.0",
+  "job" : "cfo",
+  "salary" : "300",
+  "name1" : "LISI"
+}, {
+  "sex" : "man",
+  "age" : "21",
+  "name" : "wangwu",
+  "sal2" : "800.0",
+  "job" : "cs",
+  "salary" : "400",
+  "name1" : "WANGWU"
+}, {
+  "sex" : "woman",
+  "age" : "22",
+  "name" : "zhaoliu",
+  "sal2" : "900.0",
+  "job" : "kf",
+  "salary" : "500",
+  "name1" : "ZHAOLIU"
+}, {
+  "sex" : "woman",
+  "age" : "23",
+  "name" : "huanger",
+  "sal2" : "1000.0",
+  "job" : "rs",
+  "salary" : "600",
+  "name1" : "HUANGER"
+} ]

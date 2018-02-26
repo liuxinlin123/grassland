@@ -1,0 +1,30 @@
+{
+    "fields": [
+        {
+            "name": "name0",
+            "type": "string"
+        },
+        {
+            "name": "age0",
+            "type": "string"
+        },
+        {
+            "name": "name1",
+            "type": "string"
+        },
+        {
+            "name": "sex1",
+            "type": "string"
+        },
+        {
+            "name": "name2",
+            "type": "string"
+        },
+        {
+            "name": "heigh2",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_startjoin_out_error",
+    "expiredPeriod": 0
+}

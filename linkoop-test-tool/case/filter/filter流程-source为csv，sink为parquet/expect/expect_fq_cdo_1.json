@@ -1,0 +1,22 @@
+{
+  "schemaName" : "filter_cdc_name_sink_parquet",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/cdo1.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+  "name" : "filter_cdo_name_sink_parquet",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

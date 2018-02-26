@@ -1,0 +1,18 @@
+{
+  "fields" : [ {
+    "name" : "time_date",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "result_date",
+    "alias" : "",
+    "type" : "date"
+  } ],
+  "name" : "transform_cdc_to_date_hdfs_out",
+  "owner" : "SYSTEM",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : "",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,17 @@
+ {
+  "schemaName" : "transform_cdc_repeat_hdfs_out",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/repeat_out.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_repeat_hdfs_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

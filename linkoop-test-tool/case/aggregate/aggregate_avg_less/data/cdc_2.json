@@ -1,0 +1,11 @@
+{
+    "name": "cdc_aggregate_avg_name_height_less",
+    "description": "cdc_aggregate_avg_name_height_less",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "avg_height",
+            "type": "double"
+        }
+    ]
+}

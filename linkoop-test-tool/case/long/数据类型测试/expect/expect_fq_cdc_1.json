@@ -1,0 +1,47 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "kongjian",
+    "alias" : "",
+    "type" : "byte"
+  }, {
+    "name" : "sal",
+    "alias" : "",
+    "type" : "short"
+  }, {
+    "name" : "float",
+    "alias" : "",
+    "type" : "float"
+  }, {
+    "name" : "double",
+    "alias" : "",
+    "type" : "double"
+  }, {
+    "name" : "boolean",
+    "alias" : "",
+    "type" : "boolean"
+  }, {
+    "name" : "starttime",
+    "alias" : "",
+    "type" : "date"
+  }, {
+    "name" : "endtime",
+    "alias" : "",
+    "type" : "timestamp"
+  }, {
+    "name" : "bigint",
+    "alias" : "",
+    "type" : "bigint"
+  } ],
+  "name" : "filter_cdc_name_fq_1",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "TestCDC",
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,189 @@
+{
+    "name": "dataflow_union_true",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 377,
+            "y": 203,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_union_name_age_true",
+                "schema": "cdc_union_name_age_true"
+            }
+        },
+        {
+            "id": "source_1",
+            "name": "",
+            "type": "source",
+            "x": 380,
+            "y": 440,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_union_name_height_true",
+                "schema": "cdc_union_name_height_true"
+            }
+        },
+        {
+            "id": "union_0",
+            "name": "",
+            "type": "union",
+            "x": 820,
+            "y": 300,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "source_0",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "source_1",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "distinct": true
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1290,
+            "y": 351,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "description": "",
+                "path": "/tmp/out3/union_out.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "dataset": "cdo_union_out_true",
+                "schema": "cdc_union_out_true",
+                "mode": "overWrite"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "union_0",
+            "targetInput": "source_0"
+        },
+        {
+            "source": "source_1",
+            "target": "union_0",
+            "targetInput": "source_1"
+        },
+        {
+            "source": "union_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "version": 1,
+    "enabled": 1,
+    "parameters": null,
+    "expiredPeriod": 0
+}

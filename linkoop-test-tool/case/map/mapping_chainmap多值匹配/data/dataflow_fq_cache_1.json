@@ -1,0 +1,70 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 312,
+			"y" : 347,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "sal"
+						}, {
+							"column" : "sex"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_chainmap_mulValue_3",
+				"schema" : "cdc_name_chainmap_mulValue_4"
+			}
+		}, {
+			"id" : "cache_0",
+			"type" : "cache",
+			"x" : 600,
+			"y" : 340,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "sal"
+						}, {
+							"column" : "sex"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "path"
+						}, {
+							"column" : "cdoName"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"path" : "/tmp/out3/cdo_name_chainmap_mulValue_5",
+				"keyColumn" : "name",
+				"valueColumns" : ["sal","sex"],
+				"dataset" : "cdo_name_chainmap_mulValue_5",
+				"schema" : "cdc_name_chainmap_mulValue_4",
+				"engine" : "MapDB",
+				"repartition" : true
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "cache_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow_chainmap_mulValue_2"
+}

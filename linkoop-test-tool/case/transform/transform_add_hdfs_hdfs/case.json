@@ -1,0 +1,155 @@
+//这个函数测试的是transform step 中的 加号运算符
+//输入条件：两列 int 类型的数据
+//输出内容： 两列数据的和
+
+ {
+	"case" :[	
+	{
+	//创建cdc
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_add_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   {
+	   //查询cdc
+		"action":"query,cdc,transform_cdc_add_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_add_hdfs_in.json"
+		
+     	},
+     	{
+     	//创建 cdc
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_add_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   {
+	   // 查询 cdc
+		"action":"query,cdc,transform_cdc_add_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_add_hdfs_out.json"
+		
+     	},
+     	
+     	{
+     	//创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_add_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+        {
+        //查询cdo
+		"action":"query,cdo,transform_cdo_add_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_add_hdfs_in.json"
+		
+     	},
+       {
+       //创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_add_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       {
+       //查询 cdo
+		"action":"query,cdo,transform_cdo_add_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_add_hdfs_out.json"
+		
+     	},
+       {
+       //创建 dataflow
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_add_overwrite.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  {
+	  //查询 dataflow
+		"action":"query,dataflow,dataflow_transform_add_overwrite",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_add_overwrite.json"
+		
+     	},
+	  {
+	  //创建 scheduler
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/transform_scheduler_add_hdfs.json",
+            "status":"201",
+            "expect":""
+      }, 
+      {
+      //查询 scheduler
+		"action":"query,scheduler,transform_scheduler_add_hdfs",
+		"api":"/api/schedulers",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_scheduler_add_hdfs.json"
+		
+     	},
+      
+        {
+        //监控      transform_scheduler_add_hdfs
+            "action":"monitor,transform_scheduler_add_hdfs",
+            "api":"/api/executions",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },
+         {
+            //比对计算后的结果
+        	"action":"preview,transform_cdo_add_hdfs_out,50",
+            "api":"/api/datasets",
+             "sleepTime":"200000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_out.json"
+        },
+          {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+    }
+       
+	   ]
+}

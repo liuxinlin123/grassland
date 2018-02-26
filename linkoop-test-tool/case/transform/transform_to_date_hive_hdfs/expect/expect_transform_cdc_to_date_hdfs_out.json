@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "time_date",
+    "alias" : "",
+    "type" : "string"
+  },
+  {
+    "name" : "result_date",
+    "alias" : "",
+    "type" : "date"
+  }
+   ],
+  "name" : "transform_cdc_to_date_hdfs_out",
+  "enabled" : 1,
+  "description" : "测试 transform 中的 to_date 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+  
+  
+}

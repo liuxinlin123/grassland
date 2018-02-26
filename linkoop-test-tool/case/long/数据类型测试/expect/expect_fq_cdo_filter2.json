@@ -1,0 +1,21 @@
+{
+  "schemaName" : "filter_cdc_name_fq_2",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/filter_sink",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\""
+  },
+  "name" : "cdo_filter_out_fq_1",
+  "creator" : "SYSTEM",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

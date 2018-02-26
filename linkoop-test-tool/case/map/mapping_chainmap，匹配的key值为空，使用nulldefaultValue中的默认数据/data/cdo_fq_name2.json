@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/name2.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_name_chainmap_nulldefault_4",
+    "schema": "",
+    "schemaName": "cdc_name_chainmap_nulldefault_3",
+    "schemaVersion": 1
+}

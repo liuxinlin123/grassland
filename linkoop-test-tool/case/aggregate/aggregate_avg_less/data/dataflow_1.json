@@ -1,0 +1,144 @@
+{
+    "name": "dataflow_aggregate_avg_name_height_less",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 320,
+            "y": 189,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_aggregate_name_height_less",
+                "schema": "cdc_aggregate_name_height_avg_less"
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "",
+            "type": "aggregate",
+            "x": 874,
+            "y": 160,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "avg_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "aggregations": [
+                    {
+                        "function": "avg",
+                        "column": "height",
+                        "alias": "avg_height"
+                    }
+                ],
+                "groupBy": [
+                    "name"
+                ]
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1491,
+            "y": 209,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "avg_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "description": "",
+                "path": "/tmp/out3/aggregate_avg_name_height.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "dataset": "cdo_aggregate_avg_name_height_less",
+                "schema": "cdc_aggregate_avg_name_height_less",
+                "mode": "overwrite"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "aggregate_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "creator": "admin",
+    "createTime": 1474626931562,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1476869266269,
+    "owner": "admin",
+    "version": 1,
+    "enabled": 1,
+    "parameters": null,
+    "expiredPeriod": 0
+}

@@ -1,0 +1,21 @@
+{
+  "fields" : [ {
+    "name" : "id",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "age1",
+    "alias" : "",
+    "type" : "int"
+  } ],
+  "name" : "mult_cdc_4",
+  "expiredPeriod" : 0
+}

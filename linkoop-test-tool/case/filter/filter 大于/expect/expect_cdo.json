@@ -1,0 +1,17 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/xs.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    
+    "name": "cdo_filter_gt_1",
+    "tags" : [ "xs" ]
+    
+}

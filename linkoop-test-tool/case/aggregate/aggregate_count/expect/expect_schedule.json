@@ -1,0 +1,71 @@
+{
+  "schedulerId" : "once",
+  "flowName" : "dataflow_aggregate_count_distinct",
+  "configurations" : {
+    "startTime" : 1474819200000,
+    "arguments" : [ ],
+    "cron": "一次性",
+ "properties": [
+            {
+                "name": "all.debug",
+                "value": "false"
+            },
+            {
+                "name": "all.dataset-nullable",
+                "value": "false"
+            },
+            {
+                "name": "all.notify-output",
+                "value": "false"
+            },
+            {
+                "name": "all.debug-rows",
+                "value": "20"
+            },
+            {
+                "name": "dataflow.master",
+                "value": "yarn"
+            },
+            {
+                "name": "dataflow.queue",
+                "value": "default"
+            },
+            {
+                "name": "dataflow.num-executors",
+                "value": "2"
+            },
+            {
+                "name": "dataflow.driver-memory",
+                "value": "512M"
+            },
+            {
+                "name": "dataflow.executor-memory",
+                "value": "1G"
+            },
+            {
+                "name": "dataflow.executor-cores",
+                "value": "2"
+            },
+            {
+                "name": "dataflow.verbose",
+                "value": "true"
+            }
+        ]
+
+
+
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188167194,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_count_distinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

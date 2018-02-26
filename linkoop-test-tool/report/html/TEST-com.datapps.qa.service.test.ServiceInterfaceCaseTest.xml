@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="BAB1600987" name="com.datapps.qa.service.test.ServiceInterfaceCaseTest" skipped="0" tests="4" time="112.933" timestamp="2017-07-17T14:03:26">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/D:/BaiduYunDownload/eclipse/plugins/org.eclipse.pde.build_3.9.200.v20160204-0642/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib" value="lib" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_31\lib\resources.jar;C:\Program Files\Java\jre1.8.0_31\lib\rt.jar;C:\Program Files\Java\jre1.8.0_31\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_31\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_31\lib\jce.jar;C:\Program Files\Java\jre1.8.0_31\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_31\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_31\classes" />
+    <property name="report" value="report" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327" />
+    <property name="java.runtime.version" value="1.8.0_31-b13" />
+    <property name="user.name" value="pactera" />
+    <property name="dest" value="bin" />
+    <property name="user.language" value="zh" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_31\bin" />
+    <property name="ant.project.default-target" value="test" />
+    <property name="ant.project.name" value="BTEST" />
+    <property name="java.version" value="1.8.0_31" />
+    <property name="user.timezone" value="Asia/Shanghai" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jre1.8.0_31\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="GBK" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="classes.dir" value="bin/classes" />
+    <property name="java.class.version" value="52.0" />
+    <property name="src" value="src" />
+    <property name="user.country" value="CN" />
+    <property name="java.home" value="C:\Program Files\Java\jre1.8.0_31" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="D:\tool1\carpo-test-tool\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.31-b07" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/D:/BaiduYunDownload/eclipse/plugins/org.eclipse.pde.build_3.9.200.v20160204-0642/scripts/" />
+    <property name="user.home" value="C:\Users\pactera" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jre1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jre1.8.0_31/bin/server;C:/Program Files/Java/jre1.8.0_31/bin;C:/Program Files/Java/jre1.8.0_31/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\Program Files\Java\jdk1.8.0_31\\bin;C:\Program Files\Java\jdk1.8.0_31\\jar\bin;C:\Program Files (x86)\apache-maven-3.5.0\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;D:\BaiduYunDownload\eclipse;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.datapps.qa.service.test.ServiceInterfaceCaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\tool1\carpo-test-tool\report\TEST-com.datapps.qa.service.test.ServiceInterfaceCaseTest.xml crashfile=D:\tool1\carpo-test-tool\junitvmwatcher4115450909548313935.properties propsfile=D:\tool1\carpo-test-tool\junit5870817947956960241.properties" />
+    <property name="java.class.path" value="D:\tool1\carpo-test-tool\lib\commons-beanutils-1.7.0.jar;D:\tool1\carpo-test-tool\lib\commons-collections-3.2.jar;D:\tool1\carpo-test-tool\lib\commons-lang-2.4.jar;D:\tool1\carpo-test-tool\lib\commons-logging-1.1.jar;D:\tool1\carpo-test-tool\lib\ezmorph-1.0.6.jar;D:\tool1\carpo-test-tool\lib\fastjson-1.2.16.jar;D:\tool1\carpo-test-tool\lib\hamcrest-core-1.3.jar;D:\tool1\carpo-test-tool\lib\jersey-client-1.17.jar;D:\tool1\carpo-test-tool\lib\jersey-core-1.17.jar;D:\tool1\carpo-test-tool\lib\json-lib-2.2.2-jdk15.jar;D:\tool1\carpo-test-tool\lib\json-lib-2.2.3-jdk13.jar;D:\tool1\carpo-test-tool\lib\junit-4.12.jar;D:\tool1\carpo-test-tool\bin;D:\tool1\carpo-test-tool;C:\Program Files\Java\jdk1.8.0_31\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_31\lib\tools.jar;D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib\ant-launcher.jar;D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib\ant.jar;D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib\ant-junit.jar;D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
+    <property name="ant.file.type.BTEST" value="file" />
+    <property name="ant.file.BTEST" value="D:\tool1\carpo-test-tool\build.xml" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="eclipse.pdebuild.home" value="/D:/BaiduYunDownload/eclipse/plugins/org.eclipse.pde.build_3.9.200.v20160204-0642/./" />
+    <property name="java.io.tmpdir" value="C:\Users\pactera\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jre1.8.0_31\lib\ext;C:\windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="D:\tool1\carpo-test-tool" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="D:\tool1\carpo-test-tool" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="D:\BaiduYunDownload\eclipse\plugins\org.apache.ant_1.9.6.v201510161327\lib\ant.jar" />
+    <property name="file.encoding" value="GBK" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="src.dir" value="bin/src" />
+    <property name="ant.project.invoked-targets" value="test" />
+  </properties>
+  <testcase classname="com.datapps.qa.service.test.ServiceInterfaceCaseTest" name="doTest[0][union_false]" time="52.465" />
+  <testcase classname="com.datapps.qa.service.test.ServiceInterfaceCaseTest" name="doTest[1][union_hive]" time="2.904">
+    <error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at net.sf.json.JSONArray.get(JSONArray.java:1903)
+	at net.sf.json.JSONArray.getJSONObject(JSONArray.java:1992)
+	at com.datapps.qa.service.test.ServiceInterfaceCaseTest.testCase(Unknown Source)
+	at com.datapps.qa.service.test.ServiceInterfaceCaseTest.doTest(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</error>
+  </testcase>
+  <testcase classname="com.datapps.qa.service.test.ServiceInterfaceCaseTest" name="doTest[2][union_true]" time="57.413" />
+  <testcase classname="com.datapps.qa.service.test.ServiceInterfaceCaseTest" name="doTest[3][clean]" time="0.064" />
+  <system-out><![CDATA[load configuration from config.properties
+Test configuration: 
+  Version : zebra-3.0.0.19-20170717
+  BaseUrl : http://default:8512
+  LoginApi: /api/auth/login
+  UserName: admin
+  Password: 123456
+  CasePath: case
+  Cases   : union
+test cases location: case
+execute case: union_false
+execute case: union_hive
+execute case: union_true
+execute case: clean
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

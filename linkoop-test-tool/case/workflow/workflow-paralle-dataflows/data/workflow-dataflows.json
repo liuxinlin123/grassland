@@ -1,0 +1,170 @@
+{
+    "name": "workflow-dataflows",
+    "tags": null,
+    "description": null,
+    "flowType": "workflow",
+    "steps": [
+        {
+            "id": "dataflow_0",
+            "name": "dataflow_transform_trim_hdfs",
+            "type": "dataflow",
+            "x": 72,
+            "y": 59,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "condition": "trim(name) as name1",
+                "sink_HDFS": "HDFS",
+                "sink_cdo": "transform_cdo_trim_hdfs_out",
+                "dataflowId$": "dataflow_transform_trim_hdfs",
+                "source_cdo": "transform_cdo_trim_hdfs_in"
+            }
+        },
+        {
+            "id": "dataflow_1",
+            "name": "dataflow_transform_upper_hdfs",
+            "type": "dataflow",
+            "x": 70,
+            "y": 274,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "condition": "upper(inStr) as resultStr",
+                "sink_HDFS": "HDFS",
+                "sink_cdo": "transform_cdo_upper_hdfs_out",
+                "dataflowId$": "dataflow_transform_upper_hdfs",
+                "source_cdo": "transform_cdo_upper_hdfs_in"
+            }
+        },
+        {
+            "id": "dataflow_2",
+            "name": "dataflow_transform_translate_hdfs",
+            "type": "dataflow",
+            "x": 79,
+            "y": 488,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "condition": "translate(name,'Ja','Co') as name1",
+                "sink_HDFS": "HDFS",
+                "sink_cdo": "transform_cdo_translate_hdfs_out",
+                "dataflowId$": "dataflow_transform_translate_hdfs",
+                "source_cdo": "transform_cdo_translate_hdfs_in"
+            }
+        },
+        {
+            "id": "parallel_0",
+            "type": "parallel",
+            "x": 520,
+            "y": 280,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "conditions": [
+                    {
+                        "output": "shell_0",
+                        "condition": "workflow_processconfigs(3)"
+                    },
+                    {
+                        "output": "dataflow_4",
+                        "condition": "workflow_processconfigs(1)"
+                    },
+                    {
+                        "output": "dataflow_3",
+                        "condition": "workflow_processconfigs(1)"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "shell_0",
+            "type": "shell",
+            "x": 984,
+            "y": 56,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "interceptor": "",
+                "workingDiretory": "/tmp",
+                "command": "/bin/sh -c 'echo \"good\" > /tmp/sxh/log'",
+                "logFile": "/tmp/output.log",
+                "logPattern": "[%p][%d]{MM-dd HH:mm:ss,SSS}-[%t]%n %m%n",
+                "dataflowId$": "shell"
+            }
+        },
+        {
+            "id": "dataflow_3",
+            "name": "dataflow_transform_locate_hdfs",
+            "type": "dataflow",
+            "x": 992,
+            "y": 299,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "condition": "locate('test',name) as name1",
+                "sink_HDFS": "HDFS",
+                "sink_cdo": "transform_cdo_locate_hdfs_out",
+                "dataflowId$": "dataflow_transform_translate_hdfs",
+                "source_cdo": "transform_cdo_locate_hdfs_in"
+            }
+        },
+        {
+            "id": "dataflow_4",
+            "name": "dataflow_transform_lower_hdfs",
+            "type": "dataflow",
+            "x": 1008,
+            "y": 507,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "condition": "lower(inStr)asresultStr",
+                "sink_HDFS": "HDFS",
+                "sink_cdo": "transform_cdo_lower_hdfs_out",
+                "dataflowId$": "dataflow_transform_lower_hdfs",
+                "source_cdo": "transform_cdo_lower_hdfs_in"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "dataflow_0",
+            "target": "parallel_0"
+        },
+        {
+            "source": "dataflow_1",
+            "target": "parallel_0"
+        },
+        {
+            "source": "dataflow_2",
+            "target": "parallel_0"
+        },
+        {
+            "source": "parallel_0",
+            "target": "shell_0"
+        },
+        {
+            "source": "parallel_0",
+            "target": "dataflow_4"
+        },
+        {
+            "source": "parallel_0",
+            "target": "dataflow_3"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

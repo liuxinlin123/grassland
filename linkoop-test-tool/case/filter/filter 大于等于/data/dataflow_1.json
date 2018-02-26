@@ -1,0 +1,136 @@
+{
+    "steps": [
+        {
+            "id": "source_0",
+            "type": "source",
+            "x": 148,
+            "y": 157,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_xs_1",
+                "schema": "cdc_xs_1"
+            }
+        },
+        {
+            "id": "sink_0",
+            "type": "sink",
+            "x": 1320,
+            "y": 199,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "dataset": "cdo_result",
+                "schema": "cdc_xs_1",
+                "type": "HDFS",
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "path": "/tmp/out3/filter1",
+                "description": "",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "sliceType": "H",
+                "mode": "overwrite"
+            }
+        },
+        {
+            "id": "filter_0",
+            "type": "filter",
+            "x": 695,
+            "y": 178,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        },
+                        {
+                            "column": "salary",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "condition": "age >= 23"
+            }
+        }
+    ],
+    "flowType": "dataflow",
+    "parameters": [],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "filter_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "filter_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "name": "dataflow",
+    "tags" : [ "xs" ]
+}

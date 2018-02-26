@@ -1,0 +1,19 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/filter1"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_result",
+    "tags" : [ "xs" ],
+    "schemaName": "cdc_xs_1",
+    "schema": "",
+    "schemaVersion": 1
+}

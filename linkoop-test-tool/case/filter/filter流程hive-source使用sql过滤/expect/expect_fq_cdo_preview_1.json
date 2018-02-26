@@ -1,0 +1,13 @@
+ [{
+  "sex" : "woman",
+  "age" : "22",
+  "name" : "zhaoliu",
+  "job" : "kf",
+  "salary" : "900"
+}, {
+  "sex" : "woman",
+  "age" : "23",
+  "name" : "huanger",
+  "job" : "rs",
+  "salary" : "1000"
+} ]

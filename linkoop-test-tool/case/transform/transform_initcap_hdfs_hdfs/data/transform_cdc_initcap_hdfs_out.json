@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_initcap_hdfs_out",
+    "description": "initcap out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+    "name" : "name1",
+    "type" : "string"
+      }     
+    ]
+}

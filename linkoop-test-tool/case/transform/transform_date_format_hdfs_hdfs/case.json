@@ -1,0 +1,175 @@
+
+
+//本用例是测试 date_format step，
+//预置条件：date_format 两个参数的输入，一列 date 类型的数据，以及想要的 日期格式
+//预期结果为： 给定格式的日期数据
+ {
+	"case" :[	
+	
+	//创建 cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_date_format_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询cdc
+	   {
+		"action":"query,cdc,transform_cdc_date_format_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_date_format_hdfs_in.json"
+		
+     	},
+     	//创建 cdc
+     	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/transform_cdc_date_format_hdfs_out.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询cdc
+	   {
+		"action":"query,cdc,transform_cdc_date_format_hdfs_out",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdc_date_format_hdfs_out.json"
+		
+     	},
+     	
+     	//创建 cdo
+     	{
+     	
+     	
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_date_format_hdfs_in.json",
+			"status":"201",
+            "expect":""
+       },
+       
+       // 查询 cdo
+        {
+		"action":"query,cdo,transform_cdo_date_format_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_date_format_hdfs_in.json"
+		
+     	},
+     	
+     	//创建 cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/transform_cdo_date_format_hdfs_out.json",
+			"status":"201",
+            "expect":""
+       },
+       // 查询 cdo
+       
+       {
+		"action":"query,cdo,transform_cdo_date_format_hdfs_out",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_cdo_date_format_hdfs_out.json"
+		
+     	},
+     	
+     	//创建Dataflow
+     	
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_transform_date_format_overwrite.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  }
+	  ,
+	  
+	  //查询 dataflow
+	  {
+		"action":"query,dataflow,dataflow_transform_date_format_overwrite",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_transform_date_format_overwrite.json"
+		
+     	},
+     	
+     	// 创建 scheduler
+     	
+	  {
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/transform_scheduler_date_format_hdfs.json",
+            "status":"201",
+            "expect":""
+      }, 
+      
+       // 查询  scheduler
+       
+      {
+		"action":"query,scheduler,transform_scheduler_date_format_hdfs",
+		"api":"/api/schedulers",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_transform_scheduler_date_format_hdfs.json"
+		
+     	},
+     	
+     	
+       // 监控  transform_scheduler_date_format_hdfs
+       
+        {
+            "action":"monitor,transform_scheduler_date_format_hdfs",
+            "api":"/api/executions",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },
+        
+        // 比对计算结果是否符合预期
+        
+         {
+        	"action":"preview,transform_cdo_date_format_hdfs_out,50",
+            "api":"/api/datasets",
+             "sleepTime":"200000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_out.json"
+        },
+        
+	    // 删除所有内容
+         {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+}
+       
+	   ]
+}

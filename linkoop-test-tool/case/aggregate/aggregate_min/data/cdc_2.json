@@ -1,0 +1,16 @@
+{
+    "id": "",
+    "name": "cdc_aggregate_min_name_height",
+    "description": "min_aggregate_name_height",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "min_height",
+            "type": "string"
+        }
+    ]
+}

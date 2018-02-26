@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_float_p_multiply_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/float_p_out3",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_float_p_multiply_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

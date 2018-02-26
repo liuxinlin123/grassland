@@ -1,0 +1,14 @@
+{
+    "name": "transform_cdc_float_multiply_in",
+    "description": "length",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "instr1",
+            "type": "float"
+        },{
+            "name": "instr2",
+            "type": "float"
+        }
+    ]
+}

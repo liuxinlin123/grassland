@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_regexp_replace_hdfs_out",
+    "description": "regexp_replace out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },{
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

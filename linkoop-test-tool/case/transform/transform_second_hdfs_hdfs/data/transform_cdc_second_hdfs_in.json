@@ -1,0 +1,13 @@
+{
+  "fields" : [ {
+    "name" : "inDate",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_second_hdfs_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的second函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

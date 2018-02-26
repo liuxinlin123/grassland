@@ -1,0 +1,27 @@
+{
+  "schema" : "62ca3339-0f0f-462d-a5d2-887836a833f9",
+  "schemaName" : "cdc_aggregate_name_height_count",
+  "schemaVersion" : 2,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/wyk/aggregate_countDistinct_name_height.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "true"
+  },
+   "name" : "cdo_aggregate_count",
+  "creator" : "admin",
+  "createTime" : 1476199483352,
+  "lastModifier" : "admin",
+  "lastModifiedTime" : 1476199539483,
+  "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

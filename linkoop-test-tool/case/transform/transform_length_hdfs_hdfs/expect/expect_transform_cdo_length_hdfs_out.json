@@ -1,0 +1,17 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/length_out.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "transform_cdo_length_hdfs_out",
+    "schemaName": "transform_cdc_length_hdfs_out",
+    "schemaVersion": 1
+}

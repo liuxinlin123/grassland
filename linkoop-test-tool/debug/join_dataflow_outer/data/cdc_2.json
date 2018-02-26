@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "sex",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_join_name_sex",
+    "expiredPeriod": 0
+}

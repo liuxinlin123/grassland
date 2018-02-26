@@ -1,0 +1,13 @@
+{
+	"storage" : "HIVE",
+	"storageConfigurations" : {
+		"sql" : "select * from hive_source where age>21 ",
+		"partitionColumns" : ""
+	},
+	"formatConfigurations" : {},
+	"expiredPeriod" : 0,
+	"schemaName" : "filter_cdc_name_source_sql_1",
+	"schema" : "",
+	"schemaVersion" : 1,
+	"name" : "filter_cdo_name_source_sql_1"
+}

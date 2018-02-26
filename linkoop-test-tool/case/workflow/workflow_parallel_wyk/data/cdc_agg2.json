@@ -1,0 +1,16 @@
+{
+    "id": "",
+    "name": "cdc_aggregate_avg_name_height",
+    "description": "aggregate_avg",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "avg_height",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaName" : "cdc_union_out",
+  "schemaVersion" : 1,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "name",
+    "table" : "hive_union_out"
+  },
+  "formatConfigurations" : null,
+   "name" : "cdo_union_out",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

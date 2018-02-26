@@ -1,0 +1,19 @@
+{
+  "fields" : [ {
+    "name" : "result_int",
+    "alias" : "",
+    "type" : "int"
+  },
+  {
+    "name" : "time_date",
+    "alias" : "",
+    "type" : "string"
+  }
+   ],
+  "name" : "transform_cdc_minute_hive_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的minute 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

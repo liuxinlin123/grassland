@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_string_short_multiply_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/string_short_out3",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_string_short_multiply_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

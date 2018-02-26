@@ -1,0 +1,24 @@
+{
+    "name": "transform_cdc_int_float_multiply_out",
+    "description": "float_multiply",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "outstr1",
+            "type": "int"
+        },{
+            "name" : "outstr2",
+            "type" : "bigint"
+      },{
+            "name" : "outstr3",
+            "type" : "short"
+      },{
+            "name" : "outstr4",
+            "type" : "float"
+      },{
+            "name" : "outstr5",
+            "type" : "double"
+      }
+            
+    ]
+}

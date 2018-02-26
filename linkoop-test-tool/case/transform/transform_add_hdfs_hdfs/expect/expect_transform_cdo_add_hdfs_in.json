@@ -1,0 +1,20 @@
+{
+ 
+  "schemaName" : "transform_cdc_add_hdfs_in",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/twoInteger.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_add_hdfs_in",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

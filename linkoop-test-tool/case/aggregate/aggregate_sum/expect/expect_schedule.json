@@ -1,0 +1,20 @@
+{
+  "schedulerId" : "once",
+  "flowId" : "23de5925-4b2d-4ceb-8254-1c5feae31cd2",
+  "flowName" : "dataflow_aggregate_sum_name_height",
+  "configurations" : {
+    "startTime" : 1474560000000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188341518,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_sum_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

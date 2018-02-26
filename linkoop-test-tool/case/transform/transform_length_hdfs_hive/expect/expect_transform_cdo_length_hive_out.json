@@ -1,0 +1,14 @@
+{
+    "schemaName": "transform_cdc_length_hive_out",
+    "storage": "HIVE",
+    "sliceType": "H",
+    "storageConfigurations": {
+        "sql": "",
+        "partitionColumns": "result_int",
+        "table": "lenght_hive_out"
+    },
+    "name" : "transform_cdo_length_hdfs_out",
+    "enabled": 1,
+    "tags": [ "zx" ],
+    "expiredPeriod": 0
+}

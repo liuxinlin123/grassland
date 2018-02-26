@@ -1,0 +1,15 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        }
+    ],
+    "name": "cdc_name_chainmap_mulValue_2",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

@@ -1,0 +1,7 @@
+{
+	"processConfigType" : "dataflow selector",
+	"className" : "com.datapps.carpo.common.workflow.step.TestIfElseCondition",
+	"name" : "ifelse_new",
+	"parameterlist" : "1",
+	"returnType" : "int"
+}

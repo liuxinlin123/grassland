@@ -1,0 +1,33 @@
+[ {
+  "sum1" : "1008",
+  "name" : "changqian",
+  "count2" : "1",
+  "count1" : "1",
+  "avg1" : "9"
+}, {
+  "sum1" : "9",
+  "name" : "fengqian",
+  "count2" : "1",
+  "count1" : "1",
+  "avg1" : "1"
+}, {
+  "sum1" : "9",
+  "name" : "fengqian",
+  "count2" : "1",
+  "count1" : "1",
+  "avg1" : "1"
+}, {
+  "sum1" : "1008",
+  "name" : "changqian",
+  "count2" : "1",
+  "count1" : "1",
+  "avg1" : "9"
+}, {
+  "name" : "1",
+  "count1" : "fe",
+  "avg1" : "22"
+}, {
+  "name" : "1",
+  "count1" : "fq",
+  "avg1" : "33"
+} ]

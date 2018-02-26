@@ -1,0 +1,152 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 192,
+			"y" : 261,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_chainmap_mulValue_2",
+				"schema" : "cdc_name_chainmap_mulValue_2"
+			}
+		}, {
+			"id" : "lookup_0",
+			"type" : "lookup",
+			"x" : 420,
+			"y" : 260,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "sal",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+"ruleSettings" : [{
+						"dataset" : "cdo_name_chainmap_mulValue_6",
+						"schema" : "cdc_name_chainmap_mulValue_3",
+						"inputKeyColumn" : "name",
+						"valueColumns" : [{
+								"name" : "sal",
+								"alias" : "sal",
+								"defaultNoMatch" : "33",
+								"defaultNullKey" : "44"
+							}, {
+								"name" : "sex",
+								"alias" : "sex",
+								"defaultNoMatch" : "'33'",
+								"defaultNullKey" : "'44'"
+							}
+						]
+					}, {
+						"dataset" : "cdo_name_chainmap_mulValue_5",
+						"schema" : "cdc_name_chainmap_mulValue_4",
+						"inputKeyColumn" : "name",
+						"valueColumns" : [{
+								"name" : "sal",
+								"alias" : "sal",
+								"defaultNoMatch" : "55",
+								"defaultNullKey" : "66"
+							}, {
+								"name" : "sex",
+								"alias" : "sex",
+								"defaultNoMatch" : "'55'",
+								"defaultNullKey" : "'66'"
+							}
+						]
+					}
+				],
+				"numMappings" : 2,
+"mode" : "chain"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 670,
+			"y" : 254,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "sal",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_chainmap_mulValue_mapping",
+				"schema" : "cdc_name_chainmap_mulValue_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/cdo_name_chainmap_mulValue_mapping",
+				"sql" : "",
+				"table" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "lookup_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "lookup_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-mapping"
+}

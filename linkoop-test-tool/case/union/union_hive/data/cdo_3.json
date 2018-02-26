@@ -1,0 +1,23 @@
+{
+    "schema": "",
+    "schemaName": "cdc_union_out",
+    "schemaVersion": 1,
+    "storage": "HIVE",
+    "storageConfigurations": {
+        "sql": "",
+        "table": "hive_union_out",
+        "partitionColumns": "name"
+    },
+    "formatConfigurations": {},
+    "name": "cdo_union_out",
+    "creator": "admin",
+    "createTime": 1476183383095,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1476183383095,
+    "owner": "admin",
+    "version": 1,
+    "enabled": 1,
+    "description": null,
+    "tags": null,
+    "expiredPeriod": 0
+}

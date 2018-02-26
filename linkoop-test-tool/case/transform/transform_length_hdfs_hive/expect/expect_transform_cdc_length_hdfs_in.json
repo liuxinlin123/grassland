@@ -1,0 +1,12 @@
+{
+  "fields" : [ {
+    "name" : "inStr",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_length_hdfs_in",
+  "enabled" : 1,
+  "description" : "测试 transform 中的length函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

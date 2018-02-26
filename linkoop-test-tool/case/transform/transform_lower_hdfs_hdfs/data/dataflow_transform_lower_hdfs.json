@@ -1,0 +1,110 @@
+{
+  "id" : "",
+  "name" : "dataflow_transform_lower_hdfs",
+  "description" : null,
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 147,
+    "y" : 187,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : null,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "transform_cdc_lower_hdfs_in",
+      "dataset" : "transform_cdo_lower_hdfs_in"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 520,
+    "y" : 240,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      }, {
+        "column" : "resultStr",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ " lower(inStr) as resultStr " ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 834,
+    "y" : 340,
+    "implementation" : null,
+    "libs" : null,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "inStr",
+        "alias" : ""
+      }, {
+        "column" : "resultStr",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : null,
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "path" : "/tmp/out3/lower_out.csv",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "transform_cdc_lower_hdfs_out",
+      "dataset" : "transform_cdo_lower_hdfs_out",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "createTime" : 1474899496759,
+  "lastModifier" : "admin",
+  "lastModifiedTime" : 1474899504161,
+  "owner" : "admin",
+  "enabled" : 1,
+  "parameters" : null,
+  "expiredPeriod" : 0
+}

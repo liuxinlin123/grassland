@@ -1,0 +1,105 @@
+{
+    "case":[
+   
+        {
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+        	"action":"query,cdc,cdc_filter_gt_1",
+            "api":"/api/schemas",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdc.json"
+        },
+        {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+			"action":"query,cdo,cdo_filter_gt_1",
+            "api":"/api/datasets",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdo.json"
+        },
+        {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_result.json",
+			"status":"201",
+            "expect":""
+        },
+	{
+			"action":"query,cdo,cdo_result",
+            "api":"/api/datasets",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_resultcdo.json"
+        },   
+        {
+            "action":"create,dataflow,cdo_filter_gt_1,cdc_filter_gt_1,cdo_result",
+            "api":"/api/flows",
+            "sleepTime":"0",
+            "data":"data/dataflow_1.json",
+            "status":"200",
+            "expect":""
+        },
+        {
+        	"action":"query,dataflow,dataflow_filter_gt",
+            "api":"/api/flows",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_dataflow.json"
+        },
+        {
+        	"action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"2000",
+            "data":"data/scheduler_1.json",
+            "status":"201",
+            "expect":""
+        },
+        {
+        	"action":"monitor,scheduler_filter_gt",
+        	"api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/result.json"
+        },
+        {
+        	"action":"preview,cdo_result,10",
+            "api":"/api/datasets",
+            "sleepTime":"3000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result.json" 
+        },
+ {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+}
+    ]
+}
+
+
+
+

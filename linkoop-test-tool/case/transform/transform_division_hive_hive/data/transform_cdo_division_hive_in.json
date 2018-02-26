@@ -1,0 +1,18 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_division_hive_in",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "numberA",
+    "table" : "int_table"
+  },
+  "formatConfigurations" : null,
+  "name" : "transform_cdo_division_hive_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

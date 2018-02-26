@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/mapping_chains.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_name_chainmap_mulValue_3",
+    "schema": "",
+    "schemaName": "cdc_name_chainmap_mulValue_4",
+    "schemaVersion": 1
+}

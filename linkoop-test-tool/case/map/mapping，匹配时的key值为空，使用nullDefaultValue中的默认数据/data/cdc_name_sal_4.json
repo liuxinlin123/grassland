@@ -1,0 +1,15 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "sal",
+            "type": "int"
+        }
+    ],
+    "name": "cdc_name_mulValue_4",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

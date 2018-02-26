@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_bigint_int_divide_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/bigint_int_out4",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_bigint_int_divide_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

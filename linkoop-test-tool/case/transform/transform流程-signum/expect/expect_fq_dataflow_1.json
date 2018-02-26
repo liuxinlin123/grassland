@@ -1,0 +1,155 @@
+{
+  "name" : "dataflow_fq_1",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "job",
+        "alias" : ""
+      }, {
+        "column" : "ceil",
+        "alias" : ""
+      }, {
+        "column" : "xuhao",
+        "alias" : ""
+      }, {
+        "column" : "round",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "dataset" : "cdo_name_fq_1",
+      "schema" : "cdc_name_fq_1"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "job",
+        "alias" : ""
+      }, {
+        "column" : "ceil",
+        "alias" : ""
+      }, {
+        "column" : "xuhao",
+        "alias" : ""
+      }, {
+        "column" : "round",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "job",
+        "alias" : ""
+      }, {
+        "column" : "ceil",
+        "alias" : ""
+      }, {
+        "column" : "xuhao",
+        "alias" : ""
+      }, {
+        "column" : "round",
+        "alias" : ""
+      }, {
+        "column" : "signums",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      
+      "expressions" : [ "signum(ceil) as signums" ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "job",
+        "alias" : ""
+      }, {
+        "column" : "ceil",
+        "alias" : ""
+      }, {
+        "column" : "xuhao",
+        "alias" : ""
+      }, {
+        "column" : "round",
+        "alias" : ""
+      }, {
+        "column" : "signums",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "partitionColumns" : "",
+      "table" : "",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "cdc_name_fq_2",
+      "mode" : "overwrite",
+      "sql" : "",
+      "quoteChar" : "\"",
+      "description" : "",
+      "path" : "/tmp/out3/fengqian01",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "",
+      "dataset" : "cdo_name_fq_3"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

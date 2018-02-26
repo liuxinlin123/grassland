@@ -1,0 +1,27 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "gender",            
+            "type": "string"
+        },
+        {
+            "name": "age",            
+            "type": "int"
+        },
+        {
+            "name": "salary",
+            "type": "int"
+        },
+        {
+            "name": "address",
+             "type": "string"
+        }
+    ],
+    "name": "schema_minus_in1",
+    "enabled": 1,
+    "expiredPeriod": 0
+}

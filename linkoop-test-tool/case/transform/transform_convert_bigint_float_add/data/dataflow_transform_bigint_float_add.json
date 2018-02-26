@@ -1,0 +1,113 @@
+{
+  "id" : "",
+  "name" : "dataflow_transform_bigint_float_add",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "source_0",
+    "type" : "source",
+    "x" : 147,
+    "y" : 187,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "instr1",
+        "alias" : ""
+      }, {
+        "column" : "instr2",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "transform_cdc_bigint_float_add_in",
+      "dataset" : "transform_cdo_bigint_float_add_in"
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "transform_0",
+    "type" : "transform",
+    "x" : 520,
+    "y" : 240,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "instr1"
+      }, {
+        "column" : "instr2"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "outstr1",
+        "alias" : ""
+      }, {
+        "column" : "outstr2",
+        "alias" : ""
+      }, {
+        "column" : "outstr3",
+        "alias" : ""
+      }, {
+        "column" : "outstr4",
+        "alias" : ""
+      }, {
+        "column" : "outstr5",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "expressions" : [ " instr1 + instr2 as outstr1 ", " instr1 + instr2 as outstr2 ", " instr1 + instr2 as outstr3 ", " instr1 + instr2 as outstr4 ", " instr1 + instr2 as outstr5 " ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "sink_0",
+    "type" : "sink",
+    "x" : 834,
+    "y" : 340,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "outstr1"
+      }, {
+        "column" : "outstr2"
+      }, {
+        "column" : "outstr3"
+      }, {
+        "column" : "outstr4"
+      }, {
+        "column" : "outstr5"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "escapeChar" : "\\",
+      "format" : "csv",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "header" : "false",
+      "mode" : "overwrite",
+      "schema" : "transform_cdc_bigint_float_add_out",
+      "quoteChar" : "\"",
+      "dataset" : "transform_cdo_bigint_float_add_out",
+      "description" : "",
+      "path" : "/tmp/out3/bigint_float_out1",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "separator" : ","
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

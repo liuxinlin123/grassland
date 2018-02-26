@@ -1,0 +1,14 @@
+{
+ "schedulerId" : "once",
+  "flowName" : "dataflow_mixsteps_join_transform_union_aggregate",
+  "configurations" : {
+    "startTime" : 1474875600000,
+    "arguments" : [ ]
+  },
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+  
+  "name" : "scheduler_mixsteps",
+  "enabled" : 1,
+  "expiredPeriod" : 0 
+}

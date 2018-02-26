@@ -1,0 +1,15 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "job",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_name_defaultValue_3",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

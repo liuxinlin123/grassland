@@ -1,0 +1,14 @@
+{
+  "schemaName" : "transform_cdc_trunc_hive_in",
+  "schemaVersion" : 3,
+  "storage" : "HIVE",
+  "storageConfigurations" : {
+    "sql" : "",
+    "partitionColumns" : "",
+    "table" : "date_table"
+  },
+  "name" : "transform_cdo_trunc_hive_in",
+  "enabled" : 1,
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

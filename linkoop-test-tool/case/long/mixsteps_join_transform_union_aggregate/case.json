@@ -1,0 +1,228 @@
+//�����������ö��steps��dataflow
+//Ԥ��������Դ�ļ����ڰ�������
+//Ԥ�ڽ����dataflowִ�гɹ�����������ʾ��ȷ
+ {
+	"case" :[	
+	//����source0��cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdc_source0.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource0��cdc
+	   {
+		"action":"query,cdc,mixsteps_cdc_source0",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdc_source0.json"
+		
+     	},
+     	//����source0��cdo
+     	{
+			"action" : "create,cdo",
+			"api" : "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdo_source0.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource��cdo
+	   {
+		"action":"query,cdo,mixsteps_cdo_source0",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdo_source0.json"
+		
+     	},
+     //����source1��cdc
+	  {
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdc_source1.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource1��cdc
+	   {
+		"action":"query,cdc,mixsteps_cdc_source1",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdc_source1.json"
+		
+     	},
+     	//����source1��cdo
+     	{
+			"action" : "create,cdo",
+			"api" : "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdo_source1.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource1��cdo
+	   {
+		"action":"query,cdo,mixsteps_cdo_source1",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdo_source1.json"
+		
+     	},
+     	//����source2��cdc
+	    {
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdc_source2.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource2��cdc
+	   {
+		"action":"query,cdc,mixsteps_cdc_source2",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdc_source2.json"
+		
+     	},
+     	//����source2��cdo
+     	{
+			"action" : "create,cdo",
+			"api" : "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/mixsteps_cdo_source2.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //��ѯsource2��cdo
+	   {
+		"action":"query,cdo,mixsteps_cdo_source2",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdo_source2.json"
+		
+     	},
+     	//����sink��cdc
+     	{
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/mixsteps_cdc_sink.json",
+			"status":"201",
+            "expect":""
+       },
+        //��ѯsink��cdc
+        {
+		"action":"query,cdc,mixsteps_cdc_sink",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdc_sink.json"
+		
+     	},
+     	//����sink��cdo
+       {
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/mixsteps_cdo_sink.json",
+			"status":"201",
+            "expect":""
+       },
+       //��ѯsink��cdo
+       {
+		"action":"query,cdo,mixsteps_cdo_sink",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_mixsteps_cdo_sink.json"
+		
+     	},
+     	//����dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_mixsteps_join_transform_union_aggregate.json",
+		"status":"200",
+		"expect" : ""	
+	  
+	  },
+	  //��ѯdataflow
+	  {
+		"action":"query,dataflow,dataflow_mixsteps_join_transform_union_aggregate",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_mixsteps_join_transform_union_aggregate.json"
+     	},
+     	//����scheduler
+     /*	{
+			"action":"run,dataflow,dataflow_mixsteps_join_transform_union_aggregate",
+            "api":"/api/schedulers",
+             "sleepTime":"0",
+            "data":"data/scheduler_mixsteps.json",
+			"status":"201",
+            "expect":""
+        }, */
+        {
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/scheduler_mixsteps.json",
+            "status":"201",
+            "expect":""
+      }, 
+       //���scheduler
+        {
+            "action":"monitor,scheduler_mixsteps",
+            "api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },
+        //Ԥ���������гɹ������ɵ�cdo���ݶ���
+         {
+        	"action":"preview,mixsteps_cdo_sink,5",
+            "api":"/api/datasets",
+            "sleepTime":"3000",
+            "sleepTime":"0",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result.json"
+        },
+        {
+	    "action" : "delete,all-server",
+	    "api" : "",
+	    "status" : "200",
+	    "sleepTime":"1000",
+	    "data":"",
+	    "expect":""
+	}
+	   ]
+}

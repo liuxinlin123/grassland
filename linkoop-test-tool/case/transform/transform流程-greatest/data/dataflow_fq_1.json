@@ -1,0 +1,161 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 12,
+			"y" : 230,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [ {
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "id",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "ceil",
+							"alias" : ""
+						}, {
+							"column" : "xuhao",
+							"alias" : ""
+						}, {
+							"column" : "round",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_fq_1",
+				"schema" : "cdc_name_fq_1"
+			}
+		}, {
+			"id" : "transform_0",
+                 	"name" : "",
+			"type" : "transform",
+			"x" : 373,
+			"y" : 209,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [ {
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "id",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "ceil",
+							"alias" : ""
+						}, {
+							"column" : "xuhao",
+							"alias" : ""
+						}, {
+							"column" : "round",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [ {
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "id",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "ceil",
+							"alias" : ""
+						}, {
+							"column" : "xuhao",
+							"alias" : ""
+						}, {
+							"column" : "round",
+							"alias" : ""
+						}, {
+							"column" : "greatests",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"expressions" : ["greatest(id,xuhao)  as greatests"]
+			}
+		}, {
+			"id" : "sink_0",
+                         "name" : "",
+			"type" : "sink",
+			"x" : 914,
+			"y" : 220,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "id",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "ceil",
+							"alias" : ""
+						}, {
+							"column" : "xuhao",
+							"alias" : ""
+						}, {
+							"column" : "round",
+							"alias" : ""
+						}, {
+							"column" : "greatests",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_fq_3",
+				"schema" : "cdc_name_fq_2",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/fengqian01",
+				"sql" : "",
+				"table" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "transform_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "transform_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow_fq_1"
+}

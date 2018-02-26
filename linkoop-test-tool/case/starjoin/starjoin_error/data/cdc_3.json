@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "height",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_startjoin_name_height_error",
+    "expiredPeriod": 0
+}

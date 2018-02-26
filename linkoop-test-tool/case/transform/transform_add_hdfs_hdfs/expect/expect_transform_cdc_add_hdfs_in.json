@@ -1,0 +1,18 @@
+{
+  "fields" : [ {
+    "name" : "a",
+    "alias" : "",
+    "type" : "int"
+  },
+   {
+    "name" : "b",
+    "alias" : "",
+    "type" : "int"
+  }
+   ],
+  "name" : "transform_cdc_add_hdfs_in",
+  "enabled" : 1,
+  "description" : "测试 transform 中的add函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

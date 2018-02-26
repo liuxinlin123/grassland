@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+   "name" : "cdc_aggregate_name_height_avg",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "cdc_aggregate",
+  "tags" : null,
+  "expiredPeriod" : 0
+}

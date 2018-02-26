@@ -1,0 +1,17 @@
+[ {
+  "age" : "24",
+  "name" : "feng",
+  "sal" : "2000"
+}, {
+  "age" : "25",
+  "name" : "qian",
+  "sal" : "23"
+}, {
+  "age" : "26",
+  "name" : "zhang",
+  "sal" : "24"
+}, {
+  "age" : "27",
+  "name" : "liu",
+  "sal" : "1"
+} ]

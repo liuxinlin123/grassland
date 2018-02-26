@@ -1,0 +1,129 @@
+{
+	"steps" : [{
+			"id" : "dataflow_0",
+			"type" : "dataflow",
+			"x" : 72,
+			"y" : 59,
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_transform_trim_hdfs",
+				"source_cdo" : "transform_cdo_trim_hdfs_in",
+				"condition" : "trim(name) as name1",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "transform_cdo_trim_hdfs_out"
+			}
+		},
+		{
+			"id" : "dataflow_1",
+			"type" : "dataflow",
+			"x" : 70,
+			"y" : 274,
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_transform_upper_hdfs",
+				"source_cdo" : "transform_cdo_upper_hdfs_in",
+				"condition" : "upper(inStr) as resultStr",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "transform_cdo_upper_hdfs_out"
+			}
+		},
+		{
+			"id" : "dataflow_2",
+			"type" : "dataflow",
+			"x" : 79,
+			"y" : 488,
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_transform_translate_hdfs",
+				"source_cdo" : "transform_cdo_translate_hdfs_in",
+				"condition" : "translate(name,'Ja','Co') as name1",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "transform_cdo_translate_hdfs_out"
+			}
+		}, {
+			"id" : "parallel_0",
+           "type": "parallel",
+           "otherConfigurations": {
+           "conditions": [
+            {
+                "output": "shell_0",
+                "condition": "con1(1)"
+            },
+            {
+                "output": "dataflow_4",
+                "condition": "con1(3)"
+            },
+            {
+                "output": "dataflow_3",
+                "condition": "con1(7)"
+            }
+          ]
+         }
+		}, 
+		{
+            "id": "shell_0",
+           "type": "shell",
+           "x": 984.75,
+           "y": 56,
+           "otherConfigurations": {
+           "dataflowId$": "shell",
+           "workingDiretory": "/tmp",
+            "command": "/bin/sh -c 'echo \"good\" > /tmp/out/sxh'",
+            "logFile": "/tmp/output.log",
+             "logPattern": "[%p][%d]{MM-dd HH:mm:ss,SSS}-[%t]%n %m%n",
+             "interceptor": ""
+            }
+        },
+		{
+			"id" : "dataflow_3",
+			"type" : "dataflow",
+			"x" : 992.75,
+			"y" : 299,
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_transform_locate_hdfs",
+				"source_cdo" : "transform_cdo_locate_hdfs_in"
+				"condition" : "locate('test',name) as name1",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "transform_cdo_locate_hdfs_out"
+			}
+		}, {
+			"id" : "dataflow_4",
+			"type" : "dataflow",
+			"x" : 1008.75,
+			"y" : 506,
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_transform_lower_hdfs",
+				"source_cdo" : "transform_cdo_lower_hdfs_in",
+				"condition" : "lower(inStr) as resultStr",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "transform_cdo_lower_hdfs_out"
+			}
+		}
+	],
+	"name" : "workflow"
+	"flowType" : "workflow",
+	"parameters" : [],
+	"links" : [
+	{
+   "source": "dataflow_0",
+   "target": "parallel_0"
+  },
+  {
+   "source": "dataflow_1",
+   "target": "parallel_0"
+  },
+  {
+   "source": "dataflow_2",
+   "target": "parallel_0"
+  },
+  {
+   "source": "parallel_0",
+   "target": "shell_0"
+  },
+  {
+   "source": "parallel_0",
+   "target": "dataflow_4"
+  },
+  {
+   "source": "parallel_0",
+   "target": "dataflow_3"
+  }
+	]
+}

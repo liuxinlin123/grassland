@@ -1,0 +1,23 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "sal",
+    "alias" : "",
+    "type" : "int"
+  },{
+    "name" : "sex",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "cdc_name_chainmap_mulValue_4",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "TestCDC",
+  "expiredPeriod" : 0
+}

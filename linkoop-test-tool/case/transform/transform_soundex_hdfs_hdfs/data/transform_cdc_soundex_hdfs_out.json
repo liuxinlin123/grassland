@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_soundex_hdfs_out",
+    "description": "soundex out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "inStr",
+            "type": "string"
+        },{
+    "name" : "resultStr",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

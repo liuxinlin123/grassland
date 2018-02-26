@@ -1,0 +1,18 @@
+{
+  "schemaName" : "transform_cdc_double_p_minus_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/double_p_out2",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_double_p_minus_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,34 @@
+{
+  "fields" : [ {
+    "name" : "string0",
+    "type" : "string"
+  },{ "name" : "int0",
+    
+    "type" : "int"
+  },{ "name" : "float0",
+    
+    "type" : "float"
+  },{ "name" : "bigint0",
+    
+    "type" : "bigint"
+  },{ "name" : "double0",
+    
+    "type" : "double"
+  },{ "name" : "short0",
+    
+    "type" : "short"
+  },{ "name" : "boolean0",
+    
+    "type" : "boolean"
+  },{ "name" : "date0",
+    
+    "type" : "date"
+  },{ "name" : "timestamp0",
+    
+    "type" : "timestamp"
+  }],
+  "name" : "mixsteps_cdc_source0",
+  "enabled" : 1,
+  "description" : "source0",
+  "expiredPeriod" : 0
+}

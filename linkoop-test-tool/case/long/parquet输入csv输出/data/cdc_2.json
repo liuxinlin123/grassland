@@ -1,0 +1,17 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "avg_height",
+    "alias" : "",
+    "type" : "double"
+  } ],
+  "id" : "",
+  "name" : "schema_parquet_csv_avg",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "schema_parquet_csv_avg",
+  "expiredPeriod" : 0
+}

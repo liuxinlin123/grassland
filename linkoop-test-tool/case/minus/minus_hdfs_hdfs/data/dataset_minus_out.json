@@ -1,0 +1,17 @@
+{
+  "schema" : "",
+   "schemaName" : "schema_minus_out",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/dataset_minus_out",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "separator" : ","
+  },
+  "name" : "dataset_minus_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

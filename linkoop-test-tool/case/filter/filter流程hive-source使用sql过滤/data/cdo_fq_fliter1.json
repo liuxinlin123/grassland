@@ -1,0 +1,14 @@
+{
+	"storage" : "HIVE",
+	"storageConfigurations" : {
+		"sql" : "",
+		"table" : "$path",
+		"partitionColumns" : ""
+	},
+	"formatConfigurations" : {},
+	"expiredPeriod" : 0,
+	"schemaName" : "filter_cdc_name_source_sql_1",
+	"schema" : "",
+	"schemaVersion" : 1,
+	"name" : "cdo_filter_out_source_sql_1"
+}

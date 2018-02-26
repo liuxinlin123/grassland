@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/startjoin_name_sex.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_startjoin_name_sex_overwrite",
+    "schemaName": "cdc_startjoin_name_sex_overwrite",
+    "schema": "43e034ed-b5f5-45b8-92a9-43720fd8d31c",
+    "schemaVersion": 1
+}

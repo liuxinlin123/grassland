@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "dateStr",
+    "alias" : "",
+    "type" : "date"
+  },
+  {
+    "name" : "add_months_date",
+    "alias" : "",
+    "type" : "date"
+  }
+   ],
+  "name" : "transform_cdc_add_months_hdfs_out",
+  "enabled" : 1,
+  "description" : "测试 transform 中的 add_months 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+  
+  
+}

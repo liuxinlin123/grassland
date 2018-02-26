@@ -1,0 +1,16 @@
+{
+    "id": "",
+    "name": "cdc_aggregate_sum_name_height",
+    "description": "aggregate_sum",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "sum_height",
+            "type": "float"
+        }
+    ]
+}

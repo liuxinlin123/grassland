@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_locate_hdfs_out",
+    "description": "locate out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },{
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

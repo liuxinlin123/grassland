@@ -1,0 +1,5 @@
+{
+    "processConfigType": "workflow interceptor",
+    "name": "workflow_processconfigs1",
+    "className": "com.datapps.carpo.common.workflow.sdk.FlowSelectorTest"
+}

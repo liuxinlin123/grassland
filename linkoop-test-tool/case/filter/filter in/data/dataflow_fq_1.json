@@ -1,0 +1,121 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 344,
+			"y" : 278,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "filter_cdo_name_in_1",
+				"schema" : "filter_cdc_name_in_1"
+			}
+		}, {
+			"id" : "filter_0",
+			"type" : "filter",
+			"x" : 611,
+			"y" : 260,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"condition" : "age in(13,19,22,30)"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 937,
+			"y" : 270,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_filter_out_in_1",
+				"schema" : "filter_cdc_name_in_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/filter1",
+				"sql" : "",
+				"table" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "filter_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "filter_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-filter_in"
+}

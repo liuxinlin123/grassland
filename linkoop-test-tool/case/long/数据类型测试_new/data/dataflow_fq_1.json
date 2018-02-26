@@ -1,0 +1,830 @@
+{
+    "id": "",
+    "name": "dataflow-filter_fq_1",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "source_0",
+            "type": "source",
+            "x": 91,
+            "y": 240,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "filter_cdc_name_fq_1",
+                "dataset": "filter_cdo_name_fq_1"
+            }
+        },
+        {
+            "id": "filter_0",
+            "name": "filter_0",
+            "type": "filter",
+            "x": 287,
+            "y": 240,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "condition": "sal>0"
+            }
+        },
+        {
+            "id": "transform_0",
+            "name": "transform_0",
+            "type": "transform",
+            "x": 451,
+            "y": 240,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "keepOrignalColumns": true,
+                "expressions": [
+                    "year(starttime) as time1"
+                ]
+            }
+        },
+        {
+            "id": "split_0",
+            "name": "split_0",
+            "type": "split",
+            "x": 640,
+            "y": 240,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal"
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "yes",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "no",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "condition": "boolean = true"
+            }
+        },
+        {
+            "id": "sink_1",
+            "name": "sink_1",
+            "type": "sink",
+            "x": 1133,
+            "y": 220,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "count1"
+                        },
+                        {
+                            "column": "avg1"
+                        },
+                        {
+                            "column": "count2"
+                        },
+                        {
+                            "column": "sum1"
+                        },
+                        {
+                            "column": "decimal1"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "escapeChar": "\\",
+                "format": "csv",
+                "type": "HDFS",
+                "sliceType": "H",
+                "password": "123456",
+                "mode": "overwrite",
+                "schema": "filter_cdc_name_fq_4",
+                "quoteChar": "\"",
+                "dataset": "filter_cdo_name_fq_4",
+                "description": "",
+                "path": "/tmp/out3/filter_cdc_name_fq_4",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "user": "admin",
+                "separator": ","
+            }
+        },
+        {
+            "id": "sink_2",
+            "name": "sink_2",
+            "type": "sink",
+            "x": 1114,
+            "y": 360,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "kongjian"
+                        },
+                        {
+                            "column": "sal"
+                        },
+                        {
+                            "column": "float"
+                        },
+                        {
+                            "column": "double"
+                        },
+                        {
+                            "column": "boolean"
+                        },
+                        {
+                            "column": "starttime"
+                        },
+                        {
+                            "column": "endtime"
+                        },
+                        {
+                            "column": "bigint"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "escapeChar": "\\",
+                "partitionColumns": "",
+                "table": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "password": "123456",
+                "url": "",
+                "mode": "overwrite",
+                "schema": "filter_cdc_name_fq_2",
+                "quoteChar": "\"",
+                "sql": "",
+                "dataset": "cdo_filter_out_fq_2",
+                "description": "",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "path": "/tmp/out3/cdo_filter_out_fq_2",
+                "driver": "",
+                "user": "admin",
+                "separator": ","
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "aggregate_0",
+            "type": "aggregate",
+            "x": 874,
+            "y": 220,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal"
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "count1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "avg1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "count2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sum1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "decimal1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "groupBy": [
+                    "name"
+                ],
+                "aggregations": [
+                    {
+                        "function": "count",
+                        "column": "sal",
+                        "alias": "count1"
+                    },
+                    {
+                        "function": "avg",
+                        "column": "float",
+                        "alias": "avg1"
+                    },
+                    {
+                        "function": "countDistinct",
+                        "column": "double",
+                        "alias": "count2"
+                    },
+                    {
+                        "function": "sum",
+                        "column": "bigint",
+                        "alias": "sum1"
+                    },
+                    {
+                        "column": "decimal",
+                        "function": "max",
+                        "alias": "decimal1"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "top_0",
+            "name": "top_0",
+            "type": "top",
+            "x": 888,
+            "y": 400,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "kongjian",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sal",
+                            "alias": ""
+                        },
+                        {
+                            "column": "float",
+                            "alias": ""
+                        },
+                        {
+                            "column": "double",
+                            "alias": ""
+                        },
+                        {
+                            "column": "boolean",
+                            "alias": ""
+                        },
+                        {
+                            "column": "starttime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "endtime",
+                            "alias": ""
+                        },
+                        {
+                            "column": "bigint",
+                            "alias": ""
+                        },
+                        {
+                            "column": "time1",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "limit": 20,
+                "groupBy": [],
+                "orderBy": [
+                    "bigint asc"
+                ]
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "source_0",
+            "sourceOutput": "output",
+            "target": "filter_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "filter_0",
+            "sourceOutput": "output",
+            "target": "transform_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "transform_0",
+            "sourceOutput": "output",
+            "target": "split_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "aggregate_0",
+            "sourceOutput": "output",
+            "target": "sink_1",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "top_0",
+            "sourceOutput": "output",
+            "target": "sink_2",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "split_0",
+            "sourceOutput": "yes",
+            "target": "top_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "split_0",
+            "sourceOutput": "no",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

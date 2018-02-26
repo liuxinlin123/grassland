@@ -1,0 +1,18 @@
+ {  
+    "schema" : "",
+    "schemaName": "schema_minus_in1",
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "path": "/tmp/int/intersect_in1.csv",
+        "format": "csv"
+    },
+    "formatConfigurations": {
+        "escapeChar": "\\",
+        "quoteChar": "\"",
+        "separator": ",",
+        "header": "false"
+    },
+    "name": "dataset_minus_in1",
+    "enabled": 1,
+    "expiredPeriod": 0
+}

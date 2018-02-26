@@ -1,0 +1,136 @@
+//本用例是测试splite在hdfs下返回空数据
+//预设条件：splite下有一个dataflow,测试返回符合条件的条目
+//预期结果：有正确的数据返回
+{
+    "case":[
+    
+        {
+	//创建cdc
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//查询cdc
+			"action":"query,cdc,student_cdc",
+            "api":"/api/schemas",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdc.json"
+        },
+        {
+	//创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_2.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_3.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//查询cdo
+			"action":"query,cdo,student_cdo",
+            "api":"/api/datasets",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdo1.json"
+        },
+        {
+	//创建dataflow
+			"action":"create,dataflow",
+            "api":"/api/flows",
+            "sleepTime":"1000",
+            "data":"data/dataflow_1.json",
+			"status":"200",
+            "expect":""
+        },
+        {
+	//查询dataflow
+			"action":"query,dataflow,dataflowstudent_split",
+            "api":"/api/flows",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_3.json"
+        },
+        {
+	//创建scheduler
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/scheduler.json",
+            "status":"201",
+            "expect":""
+        },
+        {
+	//创建monitor
+            "action":"monitor,scheduler_null",
+            "api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":""
+        }, 
+        /*{
+	//预览流程运行成功后生成的cdo数据对象
+            "action":"query,result_cdo,scheduler1",
+            "api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/result_cdo.json"
+        },
+        {
+	//预览流程运行成功后生成的cdo数据对象
+        	"action":"preview,student_out1_cdo,10",
+            "api":"/api/datasets",
+             "sleepTime":"3000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/true.json"
+        },*/
+        {
+	//预览流程运行成功后生成的cdo数据对象
+        	"action":"preview,student_out2_cdo,10",
+            "api":"/api/datasets",
+             "sleepTime":"3000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/false.json"
+        },
+        {
+	//删除运行生成的数据
+        	"action" : "delete,all-server",
+        	"api" : "",
+        	"sleepTime" : "0",
+        	"data" : "",
+        	"status" : "200",
+        	"expect" : ""
+        }
+
+        
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_instr_hdfs_out",
+    "description": "instr out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },{
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+      }     
+    ]
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="PC-201706301756" name="com.datapps.qa.service.test.ServiceInterfaceCaseTest" skipped="0" tests="1" time="43.391" timestamp="2018-02-24T10:26:19">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="C:\Users\Administrator\.p2\pool\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\templates" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib" value="lib" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\java\jre1.8.0_151\lib\resources.jar;C:\Program Files\java\jre1.8.0_151\lib\rt.jar;C:\Program Files\java\jre1.8.0_151\lib\sunrsasign.jar;C:\Program Files\java\jre1.8.0_151\lib\jsse.jar;C:\Program Files\java\jre1.8.0_151\lib\jce.jar;C:\Program Files\java\jre1.8.0_151\lib\charsets.jar;C:\Program Files\java\jre1.8.0_151\lib\jfr.jar;C:\Program Files\java\jre1.8.0_151\classes" />
+    <property name="report" value="report" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840" />
+    <property name="java.runtime.version" value="1.8.0_151-b12" />
+    <property name="user.name" value="Administrator" />
+    <property name="dest" value="bin" />
+    <property name="user.language" value="zh" />
+    <property name="sun.boot.library.path" value="C:\Program Files\java\jre1.8.0_151\bin" />
+    <property name="ant.project.default-target" value="test" />
+    <property name="ant.project.name" value="BTEST" />
+    <property name="java.version" value="1.8.0_151" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\java\jre1.8.0_151\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="GBK" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="classes.dir" value="bin/classes" />
+    <property name="java.class.version" value="52.0" />
+    <property name="src" value="src" />
+    <property name="user.country" value="CN" />
+    <property name="java.home" value="C:\Program Files\java\jre1.8.0_151" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="D:\work\eclipse\project\linkoop-test-tool\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.151-b12" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="C:\Users\Administrator\.p2\pool\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\scripts" />
+    <property name="user.home" value="C:\Users\Administrator" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\java\jre1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_151/bin/server;C:/Program Files/Java/jre1.8.0_151/bin;C:/Program Files/Java/jre1.8.0_151/lib/amd64;D:\Program Files\Git\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\java\jdk1.8.0_144\bin;C:\Program Files\java\jdk1.8.0_144\jre\bin;D:\maven352\apache-maven-3.5.2-bin\apache-maven-3.5.2\bin;E:\Brackets\command;%M2_HOME%\bin;E:\database\mysql\mysql-5.6.38-winx64\bin;C:\Users\Administrator\Desktop;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.datapps.qa.service.test.ServiceInterfaceCaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\work\eclipse\project\linkoop-test-tool\report\TEST-com.datapps.qa.service.test.ServiceInterfaceCaseTest.xml crashfile=D:\work\eclipse\project\linkoop-test-tool\junitvmwatcher6290277263448809627.properties propsfile=D:\work\eclipse\project\linkoop-test-tool\junit4483495393875469322.properties" />
+    <property name="java.class.path" value="D:\work\eclipse\project\linkoop-test-tool\lib\commons-beanutils-1.7.0.jar;D:\work\eclipse\project\linkoop-test-tool\lib\commons-collections-3.2.jar;D:\work\eclipse\project\linkoop-test-tool\lib\commons-lang-2.4.jar;D:\work\eclipse\project\linkoop-test-tool\lib\commons-logging-1.1.jar;D:\work\eclipse\project\linkoop-test-tool\lib\ezmorph-1.0.6.jar;D:\work\eclipse\project\linkoop-test-tool\lib\fastjson-1.2.16.jar;D:\work\eclipse\project\linkoop-test-tool\lib\hamcrest-core-1.3.jar;D:\work\eclipse\project\linkoop-test-tool\lib\jersey-client-1.17.jar;D:\work\eclipse\project\linkoop-test-tool\lib\jersey-core-1.17.jar;D:\work\eclipse\project\linkoop-test-tool\lib\json-lib-2.2.2-jdk15.jar;D:\work\eclipse\project\linkoop-test-tool\lib\json-lib-2.2.3-jdk13.jar;D:\work\eclipse\project\linkoop-test-tool\lib\junit-4.12.jar;D:\work\eclipse\project\linkoop-test-tool\bin;D:\work\eclipse\project\linkoop-test-tool;C:\Program Files\java\jdk1.8.0_144\lib;C:\Program Files\java\jdk1.8.0_144\lib\tools.jar;C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-launcher.jar;C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant.jar;C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-junit.jar;C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.1 compiled on February 2 2017" />
+    <property name="ant.file.type.BTEST" value="file" />
+    <property name="ant.file.BTEST" value="D:\work\eclipse\project\linkoop-test-tool\build.xml" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="eclipse.pdebuild.home" value="C:\Users\Administrator\.p2\pool\plugins\org.eclipse.pde.build_3.9.300.v20170515-0912\." />
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\java\jre1.8.0_151\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="D:\work\eclipse\project\linkoop-test-tool" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="D:\work\eclipse\project\linkoop-test-tool" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="C:\Users\Administrator\.p2\pool\plugins\org.apache.ant_1.10.1.v20170504-0840\lib\ant.jar" />
+    <property name="file.encoding" value="GBK" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="src.dir" value="bin/src" />
+    <property name="ant.project.invoked-targets" value="test" />
+  </properties>
+  <testcase classname="com.datapps.qa.service.test.ServiceInterfaceCaseTest" name="doTest[0][join_dataflow_left_outer]" time="43.355" />
+  <system-out><![CDATA[load configuration from config.properties
+Test configuration: 
+  Version : _carpo-default-version_
+  BaseUrl : http://192.168.145.225:17510
+  LoginApi: /api/auth/login
+  UserName: admin
+  Password: 123456
+  CasePath: case
+  Cases   : debug
+test cases location: case
+execute case: join_dataflow_left_outer
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

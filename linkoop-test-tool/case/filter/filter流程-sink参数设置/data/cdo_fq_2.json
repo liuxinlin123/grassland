@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/fengqian"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "filter_cdo_name_setsink_3",
+    "schema": "",
+    "schemaName": "filter_cdc_name_setsink_1",
+    "schemaVersion": 1
+}

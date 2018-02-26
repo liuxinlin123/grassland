@@ -1,0 +1,15 @@
+{
+    "name": "cdc_aggregate_approxCountDistinct",
+    "description": "approxCountDistinct_name_height",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "approxCountDistinct_height",
+            "type": "string"
+        }
+    ]
+}

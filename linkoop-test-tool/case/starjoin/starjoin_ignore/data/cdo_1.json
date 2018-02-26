@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/int/startjoin_name_age.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_startjoin_name_age_ignore",
+    "schemaName": "cdc_startjoin_name_age_ignore",
+    "schema": "40f582ce-ea32-4973-8a05-3a1f7adffc31",
+    "schemaVersion": 1
+}

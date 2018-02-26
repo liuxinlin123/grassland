@@ -1,0 +1,13 @@
+{
+  "fields" : [ {
+    "name" : "inDate",
+    "alias" : "",
+    "type" : "date"
+  } ],
+  "name" : "transform_cdc_date_format_hdfs_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的date_format函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

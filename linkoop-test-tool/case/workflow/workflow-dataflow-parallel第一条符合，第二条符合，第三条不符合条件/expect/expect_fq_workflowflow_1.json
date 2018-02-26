@@ -1,0 +1,76 @@
+{
+  "name" : "workflow-fq_parallel",
+  "flowType" : "workflow",
+  "steps" : [ {
+    "id" : "parallel_0",
+    "name" : "",
+    "type" : "parallel",
+    "otherConfigurations" : {
+      "conditions" : [ {
+        "output" : "dataflow_0",
+        "condition" : "cond1(1)"
+      }, {
+        "output" : "dataflow_1",
+        "condition" : "cond1(1)"
+      }, {
+        "output" : "dataflow_2",
+        "condition" : "cond1(2)"
+      } ]
+    }
+  }, {
+    "id" : "dataflow_0",
+    "name" : "dataflow-filter_fq_filter1",
+    "type" : "dataflow",
+    "otherConfigurations" : {
+      "condition" : "salary>200",
+      "sink_HDFS" : "HDFS",
+      "sink_cdo" : "cdo_filter_out_fq_filter1",
+      "source_cdo" : "cdo_name_fq_filter1",
+      "mode" : "overwrite"
+    }
+  }, {
+    "id" : "dataflow_1",
+    "name" : "dataflow-filter_fq_1",
+    "type" : "dataflow",
+    "otherConfigurations" : {
+      "condition" : "salary>200",
+      "sink_HDFS" : "HDFS",
+      "sink_cdo" : "cdo_filter_out_fq_1",
+      "source_cdo" : "filter-cdo_name_fq_1",
+      "mode" : "overwrite"
+    }
+  }, {
+    "id" : "dataflow_2",
+    "name" : "dataflow_fq_transform1",
+    "type" : "dataflow",
+    "otherConfigurations" : {
+      "source_cdo" : "cdo_name_fq_transform1",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "parallel_0",
+    "sourceOutput" : "output",
+    "target" : "dataflow_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "parallel_0",
+    "sourceOutput" : "output",
+    "target" : "dataflow_1",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "parallel_0",
+    "sourceOutput" : "output",
+    "target" : "dataflow_2",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,149 @@
+{
+    "id": "959e36ea-6cdf-47b2-bb3f-df2c84e3cd5d",
+    "name": "dataflow_aggregate_count",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 373,
+            "y": 280,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_aggregate_name_height_count",
+                "schema": "cdc_aggregate_name_height_count"
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "name": "",
+            "type": "aggregate",
+            "x": 860,
+            "y": 280,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "count_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "aggregations": [
+                    {
+                        "function": "count",
+                        "column": "height",
+                        "alias": "count_height"
+                    }
+                ],
+                "groupBy": [
+                    "name"
+                ]
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1320,
+            "y": 300,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "count_height",
+                            "alias": "height"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "description": "",
+                "path": "/tmp/out3/aggregate_count.csv",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "type": "HDFS",
+                "sliceType": "H",
+                "dataset": "cdo_aggregate_count",
+                "schema": "cdc_aggregate_name_height_count",
+                "mode": "overwrite"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "aggregate_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "creator": "admin",
+    "createTime": 1474874215824,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1477903113500,
+    "owner": "admin",
+    "version": 2,
+    "enabled": 1,
+    "parameters": null,
+    "expiredPeriod": 0
+}

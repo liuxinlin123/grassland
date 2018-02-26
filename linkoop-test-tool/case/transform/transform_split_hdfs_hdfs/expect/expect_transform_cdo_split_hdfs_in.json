@@ -1,0 +1,17 @@
+{
+  "schemaName" : "transform_cdc_split_hdfs_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/split_in.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_split_hdfs_in",
+  "enabled" : 1,
+   "expiredPeriod" : 0
+}

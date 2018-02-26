@@ -1,0 +1,128 @@
+{
+    "steps": [
+        {
+            "id": "source_0",
+            "type": "source",
+            "x": 373,
+            "y": 280,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "dataset": "cdo_aggregate_name_height",
+                "schema": "cdc_aggregate_name_height"
+            }
+        },
+        {
+            "id": "aggregate_0",
+            "type": "aggregate",
+            "x": 860,
+            "y": 280,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sum_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "groupBy": [
+                    "name"
+                ],
+                "aggregations": [
+                    {
+                        "column": "height",
+                        "function": "sum",
+                        "alias": "sum_height"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "sink_0",
+            "type": "sink",
+            "x": 1325,
+            "y": 296,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sum_height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "dataset": "cdo_aggregate_sum_name_height",
+                "schema": "cdc_aggregate_sum_name_height",
+                "type": "HDFS",
+                "separator": ",",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "path": "/tmp/out3/aggregate_sum_name_height.csv",
+                "description": "",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "sliceType": "H",
+                "mode": "overwrite"
+            }
+        }
+    ],
+    "flowType": "dataflow",
+    "parameters": [],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "aggregate_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "aggregate_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "name": "dataflow_aggregate_sum_name_height"
+}

@@ -1,0 +1,11 @@
+{
+    "name": "transform_cdc_split_hdfs_in",
+    "description": "split",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "inStr",
+            "type": "string"
+        }
+    ]
+}

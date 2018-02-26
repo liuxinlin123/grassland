@@ -1,0 +1,22 @@
+{
+    "schema": "",
+    "schemaName": "cdc_join_more2",
+    "schemaVersion": 1,
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "path": "/tmp/int/join_more.csv",
+        "format": "csv"
+    },
+    "formatConfigurations": {
+        "separator": ",",
+        "escapeChar": "\\",
+        "quoteChar": "\"",
+        "header": "true"
+    },
+    "name": "cdo_join_more2",
+    "version": 1,
+    "enabled": 1,
+    "description": null,
+    "tags": null,
+    "expiredPeriod": 0
+}

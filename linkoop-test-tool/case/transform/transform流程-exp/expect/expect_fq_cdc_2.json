@@ -1,0 +1,39 @@
+{
+  "fields" : [  {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "id",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "job",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "ceil",
+    "alias" : "",
+    "type" : "float"
+  }, {
+    "name" : "xuhao",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "round",
+    "alias" : "",
+    "type" : "float"
+  }, {
+    "name" : "exps",
+    "alias" : "",
+    "type" : "double"
+  }],
+  "name" : "cdc_name_fq_2",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "TestCDC",
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,144 @@
+{
+  "tags" : ["spc"],
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 294,
+    "y" : 268,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "schema" : "student_cdc",
+      "dataset" : "student_cdo"
+    }
+  }, {
+    "id" : "split_0",
+    "name" : "",
+    "type" : "split",
+    "x" : 569,
+    "y" : 262,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "yes",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    }, {
+      "id" : "no",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "condition" : "age like '2%'"
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 809,
+    "y" : 88,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "escapeChar" : "\\",
+      "quoteChar" : "\"",
+      "description" : "",
+      "expiredTime" : 0,
+      "path" : "/tmp/out3/student_out.csv",
+      "sliceTimeColumn" : "id",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "schema" : "student_cdc",
+      "dataset" : "student_out1_cdo",
+      "mode" : "overwrite"
+    }
+  }, {
+    "id" : "sink_1",
+    "name" : "",
+    "type" : "sink",
+    "x" : 814,
+    "y" : 400,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id"
+      }, {
+        "column" : "name"
+      }, {
+        "column" : "age"
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "quoteChar" : "\"",
+      "escapeChar" : "\\",
+      "description" : "",
+      "path" : "/tmp/out3/student_out2.csv",
+      "expiredTime" : 0,
+      "sliceTimeColumn" : "id",
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "dataset" : "student_out2_cdo",
+      "schema" : "student_cdc",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "split_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "split_0",
+    "sourceOutput" : "yes",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "split_0",
+    "sourceOutput" : "no",
+    "target" : "sink_1",
+    "targetInput" : "input"
+  } ],
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

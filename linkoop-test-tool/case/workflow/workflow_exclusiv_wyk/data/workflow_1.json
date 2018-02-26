@@ -1,0 +1,181 @@
+{
+    "name": "workflow_exclusiv_wyk",
+    "tags": [
+        "aa"
+    ],
+    "description": null,
+    "flowType": "workflow",
+    "steps": [
+        {
+            "id": "dataflow_0",
+            "name": "dataflow_aggregate_avg_name_height",
+            "type": "dataflow",
+            "x": 430,
+            "y": 80,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "dataflowId$": "dataflow_aggregate_avg_name_height"
+            }
+        },
+        {
+            "id": "dataflow_1",
+            "name": "dataflow_join",
+            "type": "dataflow",
+            "x": 430,
+            "y": 273,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "dataflowId$": "dataflow_join"
+            }
+        },
+        {
+            "id": "dataflow_2",
+            "name": "dataflow_startjoin",
+            "type": "dataflow",
+            "x": 451,
+            "y": 440,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "dataflowId$": "dataflow_startjoin"
+            }
+        },
+        {
+            "id": "exclusive_0",
+            "name": "",
+            "type": "exclusive",
+            "x": 708,
+            "y": 267,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "conditions": [
+                    {
+                        "output": "shell_0",
+                        "condition": "workflow_processconfigs1(7)"
+                    },
+                    {
+                        "output": "spark_0",
+                        "condition": "workflow_processconfigs1(1)"
+                    },
+                    {
+                        "output": "dataflow_3",
+                        "condition": "workflow_processconfigs1(1)"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "shell_0",
+            "name": "",
+            "type": "shell",
+            "x": 1226,
+            "y": 111,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "interceptor": "",
+                "workingDiretory": "/tmp",
+                "command": "/bin/sh -c 'echo \"good\" > /tmp/good'",
+                "logFile": "/tmp/output.log",
+                "logPattern": "[%p][%d]{MM-dd HH:mm:ss,SSS}-[%t]%n %m%n",
+                "dataflowId$": "shell"
+            }
+        },
+        {
+            "id": "spark_0",
+            "name": "",
+            "type": "spark",
+            "x": 1235,
+            "y": 291,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "application-args": "1000",
+                "interceptor": "",
+                "application-class": "org.apache.spark.examples.SparkPi",
+                "deploymode": "client",
+                "workingDiretory": "/tmp",
+                "application-jar": "${spark.home}/examples/jars/spark-examples_2.11-2.1.1.2.6.1.0-129.jar",
+                "sparkHome": "/usr/hdp/current/spark2-client",
+                "logFile": "/tmp/output-${ENV.TASK.ID}.log",
+                "dataflowId$": "spark",
+                "master": "yarn"
+            }
+        },
+        {
+            "id": "dataflow_3",
+            "name": "dataflow_union_true",
+            "type": "dataflow",
+            "x": 1227,
+            "y": 489,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [],
+            "outputConfigurations": [],
+            "otherConfigurations": {
+                "dataflowId$": "dataflow_union_true"
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "dataflow_0",
+            "sourceOutput": "output",
+            "target": "exclusive_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "dataflow_1",
+            "sourceOutput": "output",
+            "target": "exclusive_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "dataflow_2",
+            "sourceOutput": "output",
+            "target": "exclusive_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "exclusive_0",
+            "sourceOutput": "output",
+            "target": "shell_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "exclusive_0",
+            "sourceOutput": "output",
+            "target": "spark_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "exclusive_0",
+            "sourceOutput": "output",
+            "target": "dataflow_3",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

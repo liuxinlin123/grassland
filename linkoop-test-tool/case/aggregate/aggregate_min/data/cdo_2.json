@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/aggregate_min_name_height.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_aggregate_min_name_height",
+    "schemaName": "cdc_aggregate_min_name_height",
+    "schema": "f2cbaf96-afc3-4b4c-b9cf-5c893e3f31fd",
+    "schemaVersion": 1
+}

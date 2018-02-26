@@ -1,0 +1,127 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 379,
+			"y" : 275,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "age"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_mapping_2",
+				"schema" : "cdc_name_mapping_2"
+			}
+		}, {
+			"id" : "lookup_0",
+			"type" : "lookup",
+			"x" : 633,
+			"y" : 272,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "age"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "sal"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "job"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+					"mode" : "mapping",
+				"ruleSettings": [{
+						"dataset" : "cdo_name_mapping_5",
+						"schema" : "cdc_name_mapping_4",
+						"inputKeyColumn" : "name",
+						"valueColumns" : [{
+						 "name" :"sal",
+						"alias" : "sal",
+						"defaultNoMatch" : "1",
+						"defaultNullKey" : "2"
+					}]
+					}, {
+						"dataset" : "cdo_name_mapping_6",
+						"schema" : "cdc_name_mapping_3",
+						"inputKeyColumn" : "name",
+						"valueColumns" : [{
+						 "name" :"job",
+						"alias" : "job",
+						"defaultNoMatch" : "'3'",
+						"defaultNullKey" : "'4'"
+					}]}
+				],
+				"numMappings" : 1
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 850,
+			"y" : 270,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "sal"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "job"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_mapping_mapping",
+				"schema" : "cdc_name_mapping_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/cdo_name_mapping_mapping",
+				"sql" : "",
+				"table" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "lookup_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "lookup_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-mapping"
+}

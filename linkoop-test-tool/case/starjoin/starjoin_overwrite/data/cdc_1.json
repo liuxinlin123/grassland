@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_startjoin_name_age_overwrite",
+    "expiredPeriod": 0
+}

@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/aggregate_sum_name_height.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_aggregate_sum_name_height",
+    "schemaName": "cdc_aggregate_sum_name_height",
+    "schema": "7eccf8d0-7fe4-4c70-bc8d-7e86be5430e6",
+    "schemaVersion": 1
+}

@@ -1,0 +1,25 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "sex",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "cdc_join_more2",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "description" : "more_name_age_height_sex",
+  "expiredPeriod" : 0
+}

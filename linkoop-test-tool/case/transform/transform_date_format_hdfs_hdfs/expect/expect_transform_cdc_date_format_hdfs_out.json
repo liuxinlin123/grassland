@@ -1,0 +1,16 @@
+{
+  "fields" : [ {
+    "name" : "inDate",
+    "alias" : "",
+    "type" : "date"
+  }, {
+    "name" : "result_date",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_date_format_hdfs_out",
+  "enabled" : 1,
+  "description" : "接收转换后的数据的cdc",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

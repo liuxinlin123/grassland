@@ -1,0 +1,19 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },
+        {
+            "name": "salary",
+            "type": "int"
+        }
+    ],
+    "tags" : [ "xs" ],
+    "name": "cdc_filter_gt_1",
+    "expiredPeriod": 0
+}

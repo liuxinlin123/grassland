@@ -1,0 +1,12 @@
+{
+  "fields" : [ {
+    "name" : "inDate",
+    "alias" : "",
+    "type" : "date"
+  } ],
+  "name" : "transform_cdc_year_hdfs_in",
+  "enabled" : 1,
+  "description" : "测试 transform 中的year函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

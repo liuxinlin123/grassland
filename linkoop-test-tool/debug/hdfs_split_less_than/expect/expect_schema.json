@@ -1,0 +1,18 @@
+{
+  "fields" : [ {
+    "name" : "id",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "int"
+  } ],
+  "name" : "student_schema",
+  "tags" : ["spc"],
+  "expiredPeriod" : 0
+}

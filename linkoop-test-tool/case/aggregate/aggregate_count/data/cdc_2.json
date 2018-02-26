@@ -1,0 +1,15 @@
+{
+     "name": "cdc_aggregate_count",
+    "description": "cdc_aggregate_count",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "count_height",
+            "type": "int"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "fields" : [ {
+    "name" : "inStr",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "resultStr",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_substring_hdfs_out",
+  "enabled" : 1,
+  "description" : "接收转换后的数据的cdc",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

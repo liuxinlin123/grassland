@@ -1,0 +1,19 @@
+[ {
+  "name" : "sun",
+  "count_distinct_height" : "1"
+}, {
+  "name" : "qian",
+  "count_distinct_height" : "1"
+}, {
+  "name" : "kun",
+  "count_distinct_height" : "3"
+}, {
+  "name" : "wang",
+  "count_distinct_height" : "4"
+}, {
+  "name" : "ya",
+  "count_distinct_height" : "2"
+}, {
+  "name" : "li",
+  "count_distinct_height" : "1"
+} ]

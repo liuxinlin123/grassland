@@ -1,0 +1,55 @@
+[ {
+  "outstr2" : "3",
+  "outstr1" : "3",
+  "outstr3" : "3",
+  "outstr4" : "3.2",
+  "outstr5" : "3.2"
+}, {
+  "outstr2" : "60",
+  "outstr1" : "60",
+  "outstr3" : "60",
+  "outstr4" : "60.799999",
+  "outstr5" : "60.8"
+}, {
+  "outstr2" : "108",
+  "outstr1" : "108",
+  "outstr3" : "108",
+  "outstr4" : "108.900002",
+  "outstr5" : "108.9"
+}, {
+  "outstr2" : "2",
+  "outstr1" : "2",
+  "outstr3" : "2",
+  "outstr4" : "2.3",
+  "outstr5" : "2.3"
+}, {
+  "outstr2" : "0",
+  "outstr1" : "0",
+  "outstr3" : "0",
+  "outstr4" : "0",
+  "outstr5" : "0"
+}, {
+  "outstr2" : "-3",
+  "outstr1" : "-3",
+  "outstr3" : "-3",
+  "outstr4" : "-3.5",
+  "outstr5" : "-3.5"
+}, {
+  "outstr2" : "0",
+  "outstr1" : "0",
+  "outstr3" : "0",
+  "outstr4" : "-0.9",
+  "outstr5" : "-0.9"
+}, {
+  "outstr2" : "-1",
+  "outstr1" : "-1",
+  "outstr3" : "-1",
+  "outstr4" : "-1.1",
+  "outstr5" : "-1.1"
+}, {
+  "outstr2" : "0",
+  "outstr1" : "0",
+  "outstr3" : "0",
+  "outstr4" : "0.8",
+  "outstr5" : "0.8"
+} ]

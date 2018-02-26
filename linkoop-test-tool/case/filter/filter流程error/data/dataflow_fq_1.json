@@ -1,0 +1,121 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 344,
+			"y" : 278,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_error_1",
+				"schema" : "cdc_name_error_1"
+			}
+		}, {
+			"id" : "filter_0",
+			"type" : "filter",
+			"x" : 611,
+			"y" : 260,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"condition" : "salary>400"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 937,
+			"y" : 270,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_filter_out_error_1",
+				"schema" : "cdc_name_error_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/$path",
+				"sql" : "",
+				"table" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "append"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "filter_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "filter_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-filter_error_1"
+}

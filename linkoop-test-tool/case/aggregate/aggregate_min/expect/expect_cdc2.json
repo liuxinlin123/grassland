@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "min_height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+   "name" : "cdc_aggregate_min_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "min_aggregate_name_height",
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

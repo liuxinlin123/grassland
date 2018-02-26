@@ -1,0 +1,13 @@
+{
+  "fields" : [ {
+    "name" : "time_date",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "transform_cdc_to_date_hive_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的 to_date 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

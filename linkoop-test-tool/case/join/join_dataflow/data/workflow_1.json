@@ -1,0 +1,56 @@
+{
+    "name": "workflow_join",
+    "tags": null,
+    "description": null,
+    "flowType": "workflow",
+    "steps": [
+        {
+            "id": "dataflow_0",
+            "name": "",
+            "type": "dataflow",
+            "x": 713,
+            "y": 211,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "dataflowId$": "dataflow_join"
+            }
+        },
+        {
+            "id": "shell_0",
+            "name": "",
+            "type": "shell",
+            "x": 1000,
+            "y": 202,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "interceptor": "",
+                "workingDiretory": "/tmp",
+                "command": "/bin/sh -c 'echo \"goodwork3\" > /tmp/good'",
+                "logFile": "tmp/output.log",
+                "logPattern": "[%p][%d]{MM-dd HH:mm:ss,SSS}-[%t]%n %m%n",
+                "dataflowId$": "shell"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "dataflow_0",
+            "target": "shell_0"
+        }
+    ],
+    "creator": "admin",
+    "createTime": 1474515141187,
+    "lastModifier": "admin",
+    "lastModifiedTime": 1474529110306,
+    "owner": "admin",
+    "version": 2,
+    "enabled": 1,
+    "parameters": null,
+    "expiredPeriod": 0
+}

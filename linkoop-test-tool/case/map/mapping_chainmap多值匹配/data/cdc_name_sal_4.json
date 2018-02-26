@@ -1,0 +1,18 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "sal",
+            "type": "int"
+        },{
+            "name": "sex",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_name_chainmap_mulValue_4",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

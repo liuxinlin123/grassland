@@ -1,0 +1,19 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "height",
+    "alias" : "",
+    "type" : "string"
+  } ],
+   "name" : "cdc_startjoin_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

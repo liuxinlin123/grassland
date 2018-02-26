@@ -1,0 +1,28 @@
+{
+  "fields" : [ {
+    "name" : "lname",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "lage",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "rname",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "rsex",
+    "alias" : "",
+    "type" : "string"
+  } ],
+   "name" : "cdc_join_out",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

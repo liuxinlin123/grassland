@@ -1,0 +1,133 @@
+{
+    "name": "dataflow_filter_REGEXP_2_hdfs",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "source_0",
+            "type": "source",
+            "x": 80,
+            "y": 169,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "id",
+                            "alias": ""
+                        },
+                        {
+                            "column": "name",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "filter_cdc_REGEXP_2_hdfs_in",
+                "dataset": "filter_cdo_REGEXP_2_hdfs_in"
+            }
+        },
+        {
+            "id": "filter_0",
+            "name": "filter_0",
+            "type": "filter",
+            "x": 400,
+            "y": 169,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "id"
+                        },
+                        {
+                            "column": "name"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "id",
+                            "alias": ""
+                        },
+                        {
+                            "column": "name",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "condition": "NOT name REGEXP '0'"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "sink_0",
+            "type": "sink",
+            "x": 700,
+            "y": 169,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "id"
+                        },
+                        {
+                            "column": "name"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "topic": "",
+                "escapeChar": "\\",
+                "partitionColumns": "",
+                "format": "csv",
+                "table": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "password": "",
+                "url": "",
+                "mode": "overwrite",
+                "schema": "filter_cdc_REGEXP_2_hdfs_in",
+                "groupId": "",
+                "sql": "",
+                "quoteChar": "\"",
+                "dataset": "filter_REGEXP_2_hdfs_out",
+                "description": "",
+                "path": "/tmp/out3/REGEXP_2_out",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "driver": "",
+                "user": "",
+                "separator": ",",
+                "brokers": ""
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "source_0",
+            "sourceOutput": "output",
+            "target": "filter_0",
+            "targetInput": "input"
+        },
+        {
+            "name": "",
+            "source": "filter_0",
+            "sourceOutput": "output",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

@@ -1,0 +1,73 @@
+[ {
+  "sex" : "20",
+  "age" : "300",
+  "name" : "lisi",
+  "job" : "woman",
+  "salary" : "800"
+}, {
+  "sex" : "20",
+  "age" : "400",
+  "name" : "lisi",
+  "job" : "woman",
+  "salary" : "900"
+}, {
+  "sex" : "20",
+  "age" : "500",
+  "name" : "lisi",
+  "job" : "woman",
+  "salary" : "1000"
+}, {
+  "sex" : "23",
+  "age" : "600",
+  "name" : "huanger",
+  "job" : "woman",
+  "salary" : "103"
+}, {
+  "sex" : "21",
+  "age" : "400",
+  "name" : "wangwu",
+  "job" : "man",
+  "salary" : "101"
+}, {
+  "sex" : "19",
+  "age" : "200",
+  "name" : "zhangsan",
+  "job" : "man",
+  "salary" : "500"
+}, {
+  "sex" : "19",
+  "age" : "300",
+  "name" : "zhangsan",
+  "job" : "man",
+  "salary" : "600"
+}, {
+  "sex" : "19",
+  "age" : "400",
+  "name" : "zhangsan",
+  "job" : "man",
+  "salary" : "700"
+}, {
+  "sex" : "18",
+  "age" : "100",
+  "name" : "fengqian",
+  "job" : "woman",
+  "salary" : "200"
+}, {
+  "sex" : "18",
+  "age" : "200",
+  "name" : "fengqian",
+  "job" : "woman",
+  "salary" : "300"
+}, {
+  "sex" : "18",
+  "age" : "300",
+  "name" : "fengqian",
+  "job" : "woman",
+  "salary" : "400"
+}, {
+  "sex" : "22",
+  "age" : "500",
+  "name" : "zhaoliu",
+  "job" : "woman",
+  "salary" : "102"
+} ]

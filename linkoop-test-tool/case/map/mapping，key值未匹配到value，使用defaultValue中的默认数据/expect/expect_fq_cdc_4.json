@@ -1,0 +1,19 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "sal",
+    "alias" : "",
+    "type" : "int"
+  } ],
+  "name" : "cdc_name_defaultValue_4",
+  "creator" : "admin",
+  "lastModifier" : "admin",
+  "owner" : "admin",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "TestCDC",
+  "expiredPeriod" : 0
+}

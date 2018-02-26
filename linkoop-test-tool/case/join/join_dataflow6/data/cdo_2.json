@@ -1,0 +1,18 @@
+{
+    "schema": "",
+    "schemaName": "cdc_join_less6",
+    "schemaVersion": 1,
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "path": "/tmp/int/join_less.csv",
+        "format": "csv"
+    },
+    "formatConfigurations": {
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\",
+        "header": "true"
+    },
+    "name": "cdo_join_less6",
+    "expiredPeriod": 0
+}

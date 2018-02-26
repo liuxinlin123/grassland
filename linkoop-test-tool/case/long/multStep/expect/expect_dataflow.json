@@ -1,0 +1,260 @@
+{
+  "id" : "30c476e1-6281-4368-9673-f188c0ffc1f0",
+  "name" : "mult_dataflow",
+  "flowType" : "dataflow",
+  "steps" : [ {
+    "id" : "source_0",
+    "name" : "",
+    "type" : "source",
+    "x" : 34,
+    "y" : 260,
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "dataset" : "mult_cdo_input",
+      "schema" : "mult_cdc_input"
+    }
+  }, {
+    "id" : "union_0",
+    "name" : "",
+    "type" : "union",
+    "x" : 200,
+    "y" : 260,
+    "inputConfigurations" : [ {
+      "id" : "source_0",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "distinct" : false
+    }
+  }, {
+    "id" : "transform_0",
+    "name" : "",
+    "type" : "transform",
+    "x" : 378,
+    "y" : 269,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "keepOrignalColumns" : true,
+      "expressions" : [ "age + 1 as age1" ]
+    }
+  }, {
+    "id" : "filter_0",
+    "name" : "",
+    "type" : "filter",
+    "x" : 578,
+    "y" : 275,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "condition" : "id > 2"
+    }
+  }, {
+    "id" : "top_0",
+    "name" : "",
+    "type" : "top",
+    "x" : 789,
+    "y" : 280,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "outputConfigurations" : [ {
+      "id" : "output",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "orderBy" : ["id desc"],
+      "limit" : 20,
+      "groupBy" : [ ]
+    }
+  }, {
+    "id" : "sink_0",
+    "name" : "",
+    "type" : "sink",
+    "x" : 959,
+    "y" : 296,
+    "inputConfigurations" : [ {
+      "id" : "input",
+      "fields" : [ {
+        "column" : "id",
+        "alias" : ""
+      }, {
+        "column" : "name",
+        "alias" : ""
+      }, {
+        "column" : "age",
+        "alias" : ""
+      }, {
+        "column" : "age1",
+        "alias" : ""
+      } ]
+    } ],
+    "otherConfigurations" : {
+      "separator" : ",",
+      "quoteChar" : "\"",
+      "escapeChar" : "\\",
+      "description" : "",
+      "path" : "/tmp/out3/4.csv",
+      "sliceTimeColumn" : "",
+      "expiredTime" : 0,
+      "type" : "HDFS",
+      "sliceType" : "H",
+      "dataset" : "mult_cdo_4",
+      "schema" : "mult_cdc_4",
+      "mode" : "overwrite"
+    }
+  } ],
+  "links" : [ {
+    "name" : "",
+    "source" : "source_0",
+    "sourceOutput" : "output",
+    "target" : "union_0",
+    "targetInput" : "source_0"
+  }, {
+    "name" : "",
+    "source" : "union_0",
+    "sourceOutput" : "output",
+    "target" : "transform_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "transform_0",
+    "sourceOutput" : "output",
+    "target" : "filter_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "filter_0",
+    "sourceOutput" : "output",
+    "target" : "top_0",
+    "targetInput" : "input"
+  }, {
+    "name" : "",
+    "source" : "top_0",
+    "sourceOutput" : "output",
+    "target" : "sink_0",
+    "targetInput" : "input"
+  } ],
+  "creator" : "admin",
+  "createTime" : 1476928058081,
+  "owner" : "admin",
+  "version" : 6,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

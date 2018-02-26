@@ -1,0 +1,20 @@
+{
+  "fields" : [ {
+    "name" : "string2",
+    "alias" : "",
+    "type" : "string"
+  },{"name" : "int2",
+    "alias" : "",
+    "type" : "int"
+  },{"name" : "short2",
+    "alias" : "",
+    "type" : "short"
+  },{"name" : "float2",
+    "alias" : "",
+    "type" : "float"
+  }],
+  "name" : "mixsteps_cdc_source2",
+  "enabled" : 1,
+  "description" : "source2",
+  "expiredPeriod" : 0
+}

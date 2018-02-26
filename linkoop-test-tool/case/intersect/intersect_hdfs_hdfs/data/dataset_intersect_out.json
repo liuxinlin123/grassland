@@ -1,0 +1,17 @@
+{
+  "schema" : "",
+   "schemaName" : "schema_intersect_out",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/dataset_intersect_out",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "separator" : ","
+  },
+  "name" : "dataset_intersect_out",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

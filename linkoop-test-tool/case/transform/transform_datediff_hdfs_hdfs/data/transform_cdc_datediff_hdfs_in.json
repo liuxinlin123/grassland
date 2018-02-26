@@ -1,0 +1,19 @@
+{
+  "fields" : [ {
+    "name" : "start_inDate",
+    "alias" : "",
+    "type" : "date"
+  },
+  {
+    "name" : "end_inDate",
+    "alias" : "",
+    "type" : "date"
+  }
+   ],
+  "name" : "transform_cdc_datediff_hdfs_in",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的datediff函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

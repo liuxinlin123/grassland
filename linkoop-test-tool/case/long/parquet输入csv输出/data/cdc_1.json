@@ -1,0 +1,17 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "height",
+    "alias" : "",
+    "type" : "double"
+  } ],
+  "id" : "",
+  "name" : "schema_parquet_csv",
+  "version" : 1,
+  "enabled" : 1,
+  "description" : "parquet_csv",
+  "expiredPeriod" : 0
+}

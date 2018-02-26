@@ -1,0 +1,25 @@
+[ {
+  "age" : "18",
+  "name" : "fengqian",
+  "salary" : "100"
+}, {
+  "age" : "19",
+  "name" : "zhangsan",
+  "salary" : "800"
+}, {
+  "age" : "20",
+  "name" : "lisi",
+  "salary" : "300"
+}, {
+  "age" : "21",
+  "name" : "wangwu",
+  "salary" : "800"
+}, {
+  "age" : "22",
+  "name" : "zhaoliu",
+  "salary" : "900"
+}, {
+  "age" : "23",
+  "name" : "huanger",
+  "salary" : "1000"
+} ]

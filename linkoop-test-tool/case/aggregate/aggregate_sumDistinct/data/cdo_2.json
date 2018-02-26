@@ -1,0 +1,24 @@
+{
+  "schema" : "eff29000-71eb-434a-a57e-9af97f896585",
+  "schemaName" : "cdc_aggregate_sum_distinct",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/aggregate_sumDistinct_name_height.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+   "name" : "cdo_aggregate_sum_distinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

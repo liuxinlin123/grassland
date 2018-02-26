@@ -1,0 +1,23 @@
+{
+	"steps" : [{
+			"id" : "dataflow_0",
+			"type" : "dataflow",
+			"x" : 230,
+			"y" : 260,
+					"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow-filter_fq_1",
+				"source_cdo" : "cdo_name_fq_1",
+				"condition" : "salary>200",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "cdo_filter_out_fq_1"
+		},
+	"name" : "dataflow-filter_fq_1"
+		}
+	],
+	"flowType" : "workflow",
+	"parameters" : [],
+	"links" : [],
+	"name" : "workflow_fq_1"
+}

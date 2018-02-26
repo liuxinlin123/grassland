@@ -1,0 +1,199 @@
+{
+    "id": "",
+    "name": "dataflow_join",
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "source_0",
+            "type": "source",
+            "x": 160,
+            "y": 151,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_join_name_age",
+                "dataset": "cdo_join_name_age"
+            }
+        },
+        {
+            "id": "join_0",
+            "name": "join_0",
+            "type": "join",
+            "x": 417,
+            "y": 226,
+            "inputConfigurations": [
+                {
+                    "id": "left",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "age"
+                        }
+                    ]
+                },
+                {
+                    "id": "right",
+                    "fields": [
+                        {
+                            "column": "name"
+                        },
+                        {
+                            "column": "sex"
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "left_name",
+                            "alias": "lname"
+                        },
+                        {
+                            "column": "left_age",
+                            "alias": "lage"
+                        },
+                        {
+                            "column": "right_name",
+                            "alias": "rname"
+                        },
+                        {
+                            "column": "right_sex",
+                            "alias": "rsex"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "joinConditions": [
+                    {
+                        "leftColumn": "name",
+                        "rightColumn": "name"
+                    }
+                ],
+                "joinType": "inner"
+            }
+        },
+        {
+            "id": "source_1",
+            "name": "source_1",
+            "type": "source",
+            "x": 160,
+            "y": 300,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sex",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_join_name_sex",
+                "dataset": "cdo_join_name_sex"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "sink_0",
+            "type": "sink",
+            "x": 700,
+            "y": 220,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "lname"
+                        },
+                        {
+                            "column": "lage"
+                        },
+                        {
+                            "column": "rname"
+                        },
+                        {
+                            "column": "rsex"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "topic": "",
+                "escapeChar": "\\",
+                "partitionColumns": "",
+                "format": "csv",
+                "table": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "password": "",
+                "header": "false",
+                "url": "",
+                "mode": "overwrite",
+                "schema": "cdc_join_out",
+                "groupId": "",
+                "quoteChar": "\"",
+                "sql": "",
+                "dataset": "cdo_join_out",
+                "description": "",
+                "sliceTimeColumn": "",
+                "expiredTime": 0,
+                "path": "/tmp/out3/join_out.csv",
+                "driver": "",
+                "user": "",
+                "brokers": "",
+                "separator": ","
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "",
+            "source": "source_0",
+            "sourceOutput": "output",
+            "target": "join_0",
+            "targetInput": "left"
+        },
+        {
+            "name": "",
+            "source": "source_1",
+            "sourceOutput": "output",
+            "target": "join_0",
+            "targetInput": "right"
+        },
+        {
+            "name": "",
+            "source": "join_0",
+            "sourceOutput": "output",
+            "target": "sink_0",
+            "targetInput": "input"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+}

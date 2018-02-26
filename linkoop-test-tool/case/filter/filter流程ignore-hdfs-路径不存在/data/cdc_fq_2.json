@@ -1,0 +1,37 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+                {
+            "name": "job",
+            "type": "string"
+        },
+        {
+            "name": "sex",
+            "type": "string"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },
+        {
+            "name": "salary",
+            "type": "int"
+        }
+        ,
+        {
+            "name": "sal2",
+            "type": "int"
+        }
+        ,
+        {
+            "name": "name1",
+            "type": "string"
+        }
+    ],
+    "name": "cdc_name_ignore_pathn_2",
+    "description": "TestCDC",
+    "expiredPeriod": 0
+}

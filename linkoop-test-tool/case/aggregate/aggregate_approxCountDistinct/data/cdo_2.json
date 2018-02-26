@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/aggregate_approxCountDistinct_name_height.csv"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_aggregate_approxCountDistinct",
+    "schemaName": "cdc_aggregate_approxCountDistinct",
+    "schema": "fa7da5d0-69bd-4838-9745-26a962ee8fd2",
+    "schemaVersion": 1
+}

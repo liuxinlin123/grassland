@@ -1,0 +1,23 @@
+{
+  "schema" : "",
+  "schemaName" : "schema_productjoin_in",
+  "schemaVersion" : 1,
+  "rowNumber" : 0,
+  "storage" : "HDFS",
+  "sliceType" : "H",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/productjoin_in.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "separator" : ",",
+    "header" : "false"
+  },
+  "id" : "",
+  "name" : "dataset_productjoin_part_in",
+  "version" : 1,
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

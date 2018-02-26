@@ -1,0 +1,8 @@
+{
+    "roles": [
+        "ROLE_admin"
+    ],
+    "name": "user",
+    "loginId": "user",
+    "password": "123456"
+}

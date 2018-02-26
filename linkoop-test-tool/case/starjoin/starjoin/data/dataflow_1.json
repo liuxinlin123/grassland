@@ -1,0 +1,281 @@
+{
+    "name": "dataflow_startjoin",
+    "tags": null,
+    "description": null,
+    "flowType": "dataflow",
+    "steps": [
+        {
+            "id": "source_0",
+            "name": "",
+            "type": "source",
+            "x": 460,
+            "y": 267,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_startjoin_name_age",
+                "dataset": "cdo_startjoin_name_age"
+            }
+        },
+        {
+            "id": "starjoin_0",
+            "name": "",
+            "type": "starjoin",
+            "x": 970,
+            "y": 360,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": [
+                {
+                    "id": "source_0",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "source_1",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sex",
+                            "alias": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "source_2",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "source_2_name",
+                            "alias": "name2"
+                        },
+                        {
+                            "column": "source_2_height",
+                            "alias": "heigh2"
+                        },
+                        {
+                            "column": "source_1_name",
+                            "alias": "name1"
+                        },
+                        {
+                            "column": "source_1_sex",
+                            "alias": "sex1"
+                        },
+                        {
+                            "column": "source_0_name",
+                            "alias": "name0"
+                        },
+                        {
+                            "column": "source_0_age",
+                            "alias": "age0"
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "conditions": [
+                    {
+                        "tableName": "source_1",
+                        "dimColumn": "name",
+                        "factColumn": "name"
+                    },
+                    {
+                        "tableName": "source_2",
+                        "dimColumn": "name",
+                        "factColumn": "name"
+                    }
+                ],
+                "joinConditions": [
+                    {
+                        "tableName": "source_1",
+                        "dimColumn": "name",
+                        "factColumn": "name"
+                    },
+                    {
+                        "tableName": "source_2",
+                        "dimColumn": "name",
+                        "factColumn": "name"
+                    }
+                ],
+                "factTable": "source_0"
+            }
+        },
+        {
+            "id": "sink_0",
+            "name": "",
+            "type": "sink",
+            "x": 1212,
+            "y": 370,
+            "implementation": null,
+            "inputConfigurations": [
+                {
+                    "id": "input",
+                    "fields": [
+                        {
+                            "column": "name2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "heigh2",
+                            "alias": ""
+                        },
+                        {
+                            "column": "name1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sex1",
+                            "alias": ""
+                        },
+                        {
+                            "column": "name0",
+                            "alias": ""
+                        },
+                        {
+                            "column": "age0",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "outputConfigurations": null,
+            "otherConfigurations": {
+                "schema": "cdc_startjoin_out",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "dataset": "cdo_startjoin_out",
+                "description": "",
+                "path": "/tmp/out3/$path",
+                "expiredTime": 0,
+                "sliceTimeColumn": "",
+                "type": "HDFS",
+                "sliceType": "H",
+                "separator": ",",
+                "mode": "append"
+            }
+        },
+        {
+            "id": "source_1",
+            "name": "",
+            "type": "source",
+            "x": 360,
+            "y": 540,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "sex",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_startjoin_name_sex",
+                "dataset": "cdo_startjoin_name_sex"
+            }
+        },
+        {
+            "id": "source_2",
+            "name": "",
+            "type": "source",
+            "x": 626,
+            "y": 120,
+            "implementation": null,
+            "libs": null,
+            "inputConfigurations": null,
+            "outputConfigurations": [
+                {
+                    "id": "output",
+                    "fields": [
+                        {
+                            "column": "name",
+                            "alias": ""
+                        },
+                        {
+                            "column": "height",
+                            "alias": ""
+                        }
+                    ]
+                }
+            ],
+            "otherConfigurations": {
+                "schema": "cdc_startjoin_name_height",
+                "dataset": "cdo_startjoin_name_height"
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "source_0",
+            "target": "starjoin_0",
+            "targetInput": "source_0"
+        },
+        {
+            "source": "starjoin_0",
+            "target": "sink_0",
+            "targetInput": "input"
+        },
+        {
+            "source": "source_1",
+            "target": "starjoin_0",
+            "targetInput": "source_1"
+        },
+        {
+            "source": "source_2",
+            "target": "starjoin_0",
+            "targetInput": "source_2"
+        }
+    ],
+    "enabled": 1,
+    "expiredPeriod": 0
+ }

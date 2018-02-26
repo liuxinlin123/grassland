@@ -1,0 +1,18 @@
+{
+    "storage": "HDFS",
+    "storageConfigurations": {
+        "format": "csv",
+        "path": "/tmp/out3/top"
+    },
+    "formatConfigurations": {
+        "header": "false",
+        "separator": ",",
+        "quoteChar": "\"",
+        "escapeChar": "\\"
+    },
+    "expiredPeriod": 0,
+    "name": "cdo_name_fq_top_out",
+    "schema": "592d9b6f-abff-4912-a8de-ebe7e44101b6",
+    "schemaName": "cdc_name_fq_1",
+    "schemaVersion": 1
+}

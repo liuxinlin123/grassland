@@ -1,0 +1,18 @@
+ {
+  "schemaName" : "transform_cdc_next_day_hdfs_out",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/next_day_result.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_next_day_hdfs_out",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

@@ -1,0 +1,19 @@
+{
+  "schemaName" : "student_schema",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/student.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "escapeChar" : "\\",
+    "quoteChar" : "\"",
+    "header" : "false"
+  },
+  "name" : "student_dataset",
+  "enabled" : 1,
+ "tags" : ["spc"],
+  "expiredPeriod" : 0
+}

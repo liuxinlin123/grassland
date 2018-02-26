@@ -1,0 +1,15 @@
+{
+    "name": "transform_cdc_length_hdfs_out",
+    "description": "length out",
+    "expiredPeriod": 0,
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+    "name" : "count",
+    "type" : "int"
+      }     
+    ]
+}

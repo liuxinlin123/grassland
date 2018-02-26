@@ -1,0 +1,19 @@
+{
+  "fields" : [ {
+    "name" : "result_int",
+    "alias" : "",
+    "type" : "int"
+  },
+  {
+    "name" : "time_date",
+    "alias" : "",
+    "type" : "string"
+  }
+   ],
+  "name" : "transform_cdc_hour_hive_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : "测试 transform 中的hour 函数",
+  "tags" : [ "zx" ],
+  "expiredPeriod" : 0
+}

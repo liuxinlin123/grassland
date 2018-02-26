@@ -1,0 +1,7 @@
+{
+	"processConfigType" : "workflow selector",
+	"name" : "cond1",
+	"className" : "com.datapps.carpo.common.workflow.sdk.FlowSelectorTest",
+	"parameterlist" : "1",
+	"returnType" : "string"
+}

@@ -1,0 +1,25 @@
+[ {
+  "sex" : "woman",
+  "age" : "18",
+  "name" : "fengqian",
+  "job" : "ceo",
+  "salary" : "100"
+}, {
+  "sex" : "woman",
+  "age" : "20",
+  "name" : "lisi",
+  "job" : "cfo",
+  "salary" : "300"
+}, {
+  "sex" : "man",
+  "age" : "21",
+  "name" : "wangwu",
+  "job" : "cs",
+  "salary" : "800"
+}, {
+  "sex" : "woman",
+  "age" : "23",
+  "name" : "huanger",
+  "job" : "rs",
+  "salary" : "1000"
+} ]

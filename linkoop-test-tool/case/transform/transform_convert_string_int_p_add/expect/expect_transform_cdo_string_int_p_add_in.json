@@ -1,0 +1,17 @@
+{
+  "schemaName" : "transform_cdc_string_int_p_add_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/string_p_add.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_string_int_p_add_in",
+  "enabled" : 1,
+  "expiredPeriod" : 0
+}

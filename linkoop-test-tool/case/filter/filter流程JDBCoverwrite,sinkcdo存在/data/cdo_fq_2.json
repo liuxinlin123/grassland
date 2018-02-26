@@ -1,0 +1,16 @@
+{
+	"storage" : "JDBC",
+	"storageConfigurations" : {
+		"driver" : "com.mysql.jdbc.Driver",
+		"url" : "jdbc:mysql://192.168.1.75:3306/carpo",
+		"table" : "table_11",
+		"user" : "root",
+		"password" : "123456"
+	},
+	"formatConfigurations" : {},
+	"expiredPeriod" : 0,
+	"name" : "cdo_name_sinkcdo_3",
+	"schema": "",
+	"schemaName" : "cdc_name_sinkcdo_1",
+	"schemaVersion" : 1
+}

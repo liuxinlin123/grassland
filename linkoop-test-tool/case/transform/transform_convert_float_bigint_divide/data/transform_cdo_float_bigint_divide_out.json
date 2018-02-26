@@ -1,0 +1,20 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_float_bigint_divide_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/float_bigint_out4",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_float_bigint_divide_out",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

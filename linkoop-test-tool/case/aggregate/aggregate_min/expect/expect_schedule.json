@@ -1,0 +1,22 @@
+{
+  "schedulerId" : "once",
+  "flowId" : "10ba005f-d8ed-4246-8f9f-1d4e6bcba417",
+  "flowName" : "dataflow_aggregate_min_name_height",
+  "configurations" : {
+    "startTime" : 1474819200000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188281483,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_min_name_height",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

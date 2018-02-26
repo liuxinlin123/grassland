@@ -1,0 +1,139 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 170,
+			"y" : 140,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "cdo_name_JDBCERROR_1",
+				"schema" : "cdc_name_JDBCERROR_1"
+			}
+		}, {
+			"id" : "filter_0",
+			"type" : "filter",
+			"x" : 393,
+			"y" : 140,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"condition" : "salary >400"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 660,
+			"y" : 140,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_filter_out_JDBCERROR_1",
+				"schema" : "cdc_name_JDBCERROR_1",
+				"type" : "JDBC",
+				"table" : "$path",
+				"driver" : "com.mysql.jdbc.Driver",
+				"url" : "jdbc:mysql://192.168.1.75:3306/carpo",
+				"user" : "root",
+				"password" : "123456",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "error"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "filter_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "filter_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-filter_JDBCERROR_1"
+}

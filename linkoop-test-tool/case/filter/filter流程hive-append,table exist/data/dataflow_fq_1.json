@@ -1,0 +1,129 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 344,
+			"y" : 278,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "filter_cdo_name_append_exist_1",
+				"schema" : "filter_cdc_name_append_exist_1"
+			}
+		}, {
+			"id" : "filter_0",
+			"type" : "filter",
+			"x" : 611,
+			"y" : 260,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"condition" : "salary>400"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 937,
+			"y" : 270,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name"
+						}, {
+							"column" : "job"
+						}, {
+							"column" : "sex"
+						}, {
+							"column" : "age"
+						}, {
+							"column" : "salary"
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_filter_out_append_exist_1_new",
+				"schema" : "filter_cdc_name_append_exist_1",
+				"type" : "HIVE",
+				"format" : "csv",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "",
+				"sql" : "",
+				"table" : "test_2017",
+				"driver" : "",
+				"url" : "",
+				"user" : "root",
+				"password" : "123456",
+				"brokers" : "",
+				"topic" : "",
+				"groupId" : "",
+				"partitionColumns" : "",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "append"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "filter_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "filter_0",
+			"target" : "sink_0",
+			"targetInput" : "input"
+		}
+	],
+	"name" : "dataflow-filter_append_exist_1"
+}

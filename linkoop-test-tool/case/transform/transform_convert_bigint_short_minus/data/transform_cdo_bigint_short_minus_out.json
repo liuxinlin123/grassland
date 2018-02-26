@@ -1,0 +1,20 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_bigint_short_minus_out",
+  "schemaVersion" : 1,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/bigint_short_out2",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_bigint_short_minus_out",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

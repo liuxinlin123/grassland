@@ -1,0 +1,35 @@
+{
+  "fields" : [ {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "job",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "sex",
+    "alias" : "",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "salary",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "sal2",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "name1",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "cdc_name_empty_2",
+  "enabled" : 1,
+  "description" : "TestCDC",
+  "expiredPeriod" : 0
+}

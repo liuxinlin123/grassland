@@ -1,0 +1,122 @@
+//本用例是测试filter step中的REGEXP_NOT(正则表达式)
+//预置条件：cdo中存在数据
+//预期结果：dataflow执行成功，且数据经filter中的正则表达式过滤得出结果
+ {
+	"case" :[	
+	//创建source的cdc
+	{
+			"action" : "create,cdc",
+			"api" : "/api/schemas",
+			"sleepTime" : "0",
+			"data" : "data/filter_cdc_REGEXP_NOT_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdc
+	   {
+		"action":"query,cdc,filter_cdc_REGEXP_NOT_hdfs_in",
+		"api":"/api/schemas",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_filter_cdc_REGEXP_NOT_hdfs_in.json"
+		
+     	},
+     	//创建source的cdo
+     	{
+			"action" : "create,cdo",
+			"api" :  "/api/datasets",
+			"sleepTime" : "0",
+			"data" : "data/filter_cdo_REGEXP_NOT_hdfs_in.json",
+			"status" : "201",
+			"expect" : ""
+					
+	   },
+	   //查询source的cdo
+	   {
+		"action":"query,cdo,filter_cdo_REGEXP_NOT_hdfs_in",
+		"api":"/api/datasets",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_filter_cdo_REGEXP_NOT_hdfs_in.json"
+		
+     	},
+     	
+     	//创建dataflow
+       {
+	    "action":"create,dataflow",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"data/dataflow_filter_REGEXP_NOT_hdfs.json",
+		"status":"200",
+		"expect" : ""	
+	  }
+	  ,
+	  //查询dataflow
+	  {
+		"action":"query,dataflow,dataflow_filter_REGEXP_NOT_hdfs",
+		"api":"/api/flows",
+        "sleepTime":"0",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_dataflow_filter_REGEXP_NOT_hdfs.json"
+		
+     	},
+     	//运行dataflow流程
+     	/* {
+			"action":"run,dataflow,dataflow_filter_REGEXP_NOT_hdfs",
+            "api":"/api/schedulers",
+             "sleepTime":"0",
+            "data":"data/filter_scheduler_REGEXP_NOT_hdfs.json",
+			"status":"201",
+            "expect":""
+        }, */
+         {
+            "action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"1000",
+            "data":"data/filter_scheduler_REGEXP_NOT_hdfs.json",
+            "status":"201",
+            "expect":""
+      }, 
+      {
+		"action":"query,scheduler,scheduler_filter_REGEXP_NOT",
+		"api":"/api/schedulers",
+        "sleepTime":"200",
+        "data":"",
+		"status":"200",
+		"expect" : "expect/expect_filter_scheduler_REGEXP_NOT_hdfs.json"
+		
+     	},
+     	//监控dataflow流程运行情况
+        {
+            "action":"monitor,scheduler_filter_REGEXP_NOT",
+            "api":"/api/executions",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":""
+        }
+        //预览流程运行成功后生成的cdo数据对象
+    ,    {
+        	"action":"preview,filter_REGEXP_NOT_hdfs_out,10",
+            "api":"/api/datasets",
+            "sleepTime":"2000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/result_cdo_out.json"
+        },
+	   //删除运行生成的数据   
+         {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+}
+         
+	   ]
+}

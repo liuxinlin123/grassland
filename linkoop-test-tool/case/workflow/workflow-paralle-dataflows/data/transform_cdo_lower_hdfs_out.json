@@ -1,0 +1,22 @@
+
+ {
+  "schema" : "",
+  "schemaName" : "transform_cdc_lower_hdfs_out",
+  "schemaVersion" : 3,
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/out3/lower_out.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_lower_hdfs_out",
+  "version" : 2,
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}

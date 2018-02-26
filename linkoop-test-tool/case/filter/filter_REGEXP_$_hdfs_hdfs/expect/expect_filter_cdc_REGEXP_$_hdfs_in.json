@@ -1,0 +1,15 @@
+{
+  "fields" : [ {
+    "name" : "id",
+    "alias" : "",
+    "type" : "int"
+  }, {
+    "name" : "name",
+    "alias" : "",
+    "type" : "string"
+  } ],
+  "name" : "filter_cdc_REGEXP_1_hdfs_in",
+  "enabled" : 1,
+  "description" : "REGEXP_1",
+  "expiredPeriod" : 0
+}

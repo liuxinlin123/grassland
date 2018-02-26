@@ -1,0 +1,118 @@
+//本测试用例为测试dataflow中多个step的流程
+//测试结果返回正确的数据
+{
+    "case":[
+   
+        {
+	//创建 cdc1
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_1.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//查询cdc1
+        	"action":"query,cdc,mult_cdc_input",
+            "api":"/api/schemas",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdc_1.json"
+        },
+        {
+	//创建 cdc4
+			"action":"create,cdc",
+            "api":"/api/schemas",
+            "sleepTime":"0",
+            "data":"data/cdc_4.json",
+			"status":"201",
+            "expect":""
+        },
+	{
+	//查询cdc4
+        	"action":"query,cdc,mult_cdc_4",
+            "api":"/api/schemas",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_cdc_4.json"
+        },
+        {
+	//创建cdo_input
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_input.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//创建cdo
+			"action":"create,cdo",
+            "api":"/api/datasets",
+            "sleepTime":"0",
+            "data":"data/cdo_result.json",
+			"status":"201",
+            "expect":""
+        },
+        {
+	//创建dataflow
+            "action":"create,dataflow",
+            "api":"/api/flows",
+            "sleepTime":"0",
+            "data":"data/dataflow_1.json",
+            "status":"200",
+            "expect":""
+        },
+        {
+	//查询dataflow
+        	"action":"query,dataflow,mult_dataflow",
+            "api":"/api/flows",
+            "sleepTime":"0",
+            "data":"",
+			"status":"200",
+            "expect":"expect/expect_dataflow.json"
+        },
+        {
+	//创建scheduler
+        	"action":"create,scheduler,dataflow",
+            "api":"/api/schedulers",
+            "sleepTime":"2000",
+            "data":"data/scheduler_1.json",
+            "status":"201",
+            "expect":""
+        },
+        {
+	//监控scheduler
+        	"action":"monitor,mult_dataflow",
+        	"api":"/api/executions",
+            "sleepTime":"1000",
+            "data":"",
+			"status":"200",
+            "expect":""
+        },
+        {
+	//预览数据
+        	"action":"preview,mult_cdo_4,10",
+            "api":"/api/datasets",
+            "sleepTime":"3000",
+            "data":"",
+            "status":"200",
+            "expect":"expect/expect_cdo_4.json" 
+        },
+     {
+    "action" : "delete,all-server",
+    "api" : "",
+    "status" : "200",
+    "sleepTime":"1000",
+    "data":"",
+    "expect":""
+}
+    ]
+}
+
+
+
+

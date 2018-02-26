@@ -1,0 +1,207 @@
+{
+	"steps" : [{
+			"id" : "source_0",
+			"type" : "source",
+			"x" : 207,
+			"y" : 280,
+			"outputConfigurations" : [{
+					"id" : "output",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"dataset" : "desion_cdo_name_yes_1",
+				"schema" : "desion_cdc_name_yes_1"
+			}
+		}, {
+			"id" : "decision_0",
+			"type" : "decision",
+			"x" : 449,
+			"y" : 280,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : [{
+					"id" : "yes",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}, {
+					"id" : "no",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"otherConfigurations" : {
+				"interceptor" : "",
+				"condition" : "ifelse_new(1,7,3)"
+			}
+		}, {
+			"id" : "sink_0",
+			"type" : "sink",
+			"x" : 794,
+			"y" : 200,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_ifelse_1",
+				"schema" : "desion_cdc_name_yes_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/cdo_ifelse_1",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite",
+				"user" : "admin",
+				"password" : "123456"
+			}
+		}, {
+			"id" : "sink_1",
+			"type" : "sink",
+			"x" : 790,
+			"y" : 372,
+			"inputConfigurations" : [{
+					"id" : "input",
+					"fields" : [{
+							"column" : "name",
+							"alias" : ""
+						}, {
+							"column" : "job",
+							"alias" : ""
+						}, {
+							"column" : "sex",
+							"alias" : ""
+						}, {
+							"column" : "age",
+							"alias" : ""
+						}, {
+							"column" : "salary",
+							"alias" : ""
+						}
+					]
+				}
+			],
+			"outputConfigurations" : null,
+			"otherConfigurations" : {
+				"dataset" : "cdo_ifelse_2",
+				"schema" : "desion_cdc_name_yes_1",
+				"type" : "HDFS",
+				"separator" : ",",
+				"quoteChar" : "\"",
+				"escapeChar" : "\\",
+				"path" : "/tmp/out3/cdo_ifelse_2",
+				"description" : "",
+				"expiredTime" : 0,
+				"sliceTimeColumn" : "",
+				"sliceType" : "H",
+				"mode" : "overwrite"
+			}
+		}
+	],
+	"flowType" : "dataflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "source_0",
+			"target" : "decision_0",
+			"targetInput" : "input"
+		}, {
+			"source" : "decision_0",
+			"target" : "sink_0",
+			"targetInput" : "input",
+			"sourceOutput" : "yes"
+		}, {
+			"source" : "decision_0",
+			"target" : "sink_1",
+			"targetInput" : "input",
+			"sourceOutput" : "no"
+		}
+	],
+	"name" : "dataflow-desion_yes"
+}

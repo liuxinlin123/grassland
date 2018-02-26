@@ -1,0 +1,78 @@
+{
+	"steps" : [{
+			"id" : "dataflow_0",
+			"type" : "dataflow",
+			"x" : 497,
+			"y" : 231,
+				"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow-filter_fq_1",
+				"source_cdo" : "filter-cdo_name_fq_1",
+				"condition" : "salary>200",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "cdo_filter_out_fq_1",
+				"mode" : "overwrite"
+			},
+			"name" : "dataflow-filter_fq_1"
+		}, {
+			"id" : "dataflow_2",
+			"type" : "dataflow",
+			"x" : 940,
+			"y" : 320,
+				"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow_fq_transform1",
+				"source_cdo" : "cdo_name_fq_transform1",
+				"mode" : "overwrite"
+			},
+			"name" : "dataflow_fq_transform1"
+		}, {
+			"id" : "dataflow_1",
+			"type" : "dataflow",
+			"x" : 952,
+			"y" : 149,
+	"inputConfigurations" : [],
+			"outputConfigurations" : [],
+			"otherConfigurations" : {
+				"dataflowId$" : "dataflow-filter_fq_filter1",
+				"source_cdo" : "cdo_name_fq_filter1",
+				"condition" : "salary>200",
+				"sink_HDFS" : "HDFS",
+				"sink_cdo" : "cdo_filter_out_fq_filter1",
+				"mode" : "overwrite"
+			},
+			"name" : "dataflow-filter_fq_filter1"
+		}, {
+			"id" : "exclusive_0",
+			"type" : "exclusive",
+			"x" : 740,
+			"y" : 230,
+			"otherConfigurations" : {
+				"conditions" : [{
+						"output" : "dataflow_1",
+						"condition" : "cond1(1)"
+					}, {
+						"output" : "dataflow_2",
+						"condition" : "cond1(2)"
+					}
+				]
+			}
+		}
+	],
+	"flowType" : "workflow",
+	"parameters" : [],
+	"links" : [{
+			"source" : "dataflow_0",
+			"target" : "exclusive_0"
+		}, {
+			"source" : "exclusive_0",
+			"target" : "dataflow_1"
+		}, {
+			"source" : "exclusive_0",
+			"target" : "dataflow_2"
+		}
+	],
+	"name" : "workflow-exclusive_fq"
+}

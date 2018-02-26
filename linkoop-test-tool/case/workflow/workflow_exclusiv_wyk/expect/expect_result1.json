@@ -1,0 +1,55 @@
+[ {
+  "count_agg" : "1",
+  "name_agg" : "sun",
+  "name1" : "sun",
+  "name2" : "sun",
+  "age0" : "34",
+  "height2" : "234",
+  "name0" : "sun",
+  "sex1" : "woman"
+}, {
+  "count_agg" : "1",
+  "name_agg" : "qian",
+  "name1" : "qian",
+  "name2" : "qian",
+  "age0" : "34",
+  "height2" : "345",
+  "name0" : "qian",
+  "sex1" : "man"
+}, {
+  "count_agg" : "3",
+  "name_agg" : "kun",
+  "name1" : "kun",
+  "name2" : "kun",
+  "age0" : "56",
+  "height2" : "423",
+  "name0" : "kun",
+  "sex1" : "man"
+}, {
+  "count_agg" : "4",
+  "name_agg" : "wang",
+  "name1" : "wang",
+  "name2" : "wang",
+  "age0" : "67",
+  "height2" : "123",
+  "name0" : "wang",
+  "sex1" : "man"
+}, {
+  "count_agg" : "2",
+  "name_agg" : "ya",
+  "name1" : "ya",
+  "name2" : "ya",
+  "age0" : "89",
+  "height2" : "435",
+  "name0" : "ya",
+  "sex1" : "man"
+}, {
+  "count_agg" : "1",
+  "name_agg" : "li",
+  "name1" : "null",
+  "name2" : "li",
+  "age0" : "19",
+  "height2" : "454",
+  "name0" : "li",
+  "sex1" : "null"
+} ]

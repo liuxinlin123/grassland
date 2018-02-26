@@ -1,0 +1,21 @@
+{
+  "schedulerId" : "once",
+  "flowName" : "dataflow_aggregate_approxCountDistinct",
+  "configurations" : {
+    "startTime" : 1474819200000,
+    "arguments" : [ ]
+  },
+  "totalExecuted" : 1,
+  "lastExecutedTime" : 1476188033923,
+  "schedulerDebug" : false,
+  "schedulerRowCount" : 20,
+   "name" : "schedule_aggregate_approxCountDistinct",
+  "creator" : "admin",
+   "lastModifier" : "admin",
+   "owner" : "admin",
+  "version" : 3,
+  "enabled" : 1,
+  "description" : null,
+  "tags" : [ "wyk" ],
+  "expiredPeriod" : 0
+}

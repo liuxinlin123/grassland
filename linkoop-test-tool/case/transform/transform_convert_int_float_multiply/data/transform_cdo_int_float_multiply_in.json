@@ -1,0 +1,19 @@
+{
+  "schema" : "",
+  "schemaName" : "transform_cdc_int_float_multiply_in",
+  "storage" : "HDFS",
+  "storageConfigurations" : {
+    "path" : "/tmp/int/string_add.csv",
+    "format" : "csv"
+  },
+  "formatConfigurations" : {
+    "separator" : ",",
+    "quoteChar" : "\"",
+    "escapeChar" : "\\",
+    "header" : "false"
+  },
+  "name" : "transform_cdo_int_float_multiply_in",
+  "enabled" : 1,
+  "description" : null,
+  "expiredPeriod" : 0
+}
